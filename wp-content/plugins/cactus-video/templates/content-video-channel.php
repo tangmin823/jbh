@@ -19,7 +19,7 @@ $time_video = function_exists( 'videopro_secondsToTime' ) ? videopro_secondsToTi
                 </a>
                 
                 <?php echo videopro_post_rating(get_the_ID());?>
-                <?php if($like!=''){?><div class="cactus-note font-size-1"><i class="fa fa-thumbs-up"></i><span><?php $like;?></span></div><?php }
+                <?php
                 if($time_video!='00:00' && $time_video!='00' && $time_video!='' ){?>
                     <div class="cactus-note ct-time font-size-1"><span><?php echo $time_video;?></span></div>
                 <?php }?>                                       
@@ -39,7 +39,6 @@ $time_video = function_exists( 'videopro_secondsToTime' ) ? videopro_secondsToTi
             </div><!--excerpt-->   
             
             <div class="posted-on metadata-font">
-                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );?>" class="vcard author cactus-info font-size-1"><span class="fn"><?php echo esc_html( get_the_author() );?></span></a>
                 <div class="date-time cactus-info font-size-1"><?php echo videopro_get_datetime(); ?></div>
             </div> 
             

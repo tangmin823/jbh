@@ -73,6 +73,13 @@ if($videopro_layout == '' || $videopro_layout == 'fullwidth'){
                                 <a href="<?php echo esc_url($video_url);?>" target="<?php echo apply_filters('videopro_loop_item_url_target', '_self', $id);?>" title="<?php the_title_attribute(array('post' => $id));?>"><?php echo get_the_title($id); ?></a>
                             </h3><!--Title-->
                             <div class="posted-on metadata-font">
+                                <?php 
+                                $show_author = ot_get_option('show_author_single_post','on');
+                                if($show_author != 'off'){?>
+                                <a href="<?php echo get_author_posts_url( get_the_author_meta('ID', $related_post->post_author) ); ?>" class="vcard author cactus-info font-size-1">
+									<span class="fn"><?php echo get_userdata($related_post->post_author)->display_name ;?></span>
+                               </a>
+                                <?php }?>
                                 <div class="date-time cactus-info font-size-1"><?php echo videopro_get_datetime($id, $video_url);?></div>
                             </div>                                                                        
                             

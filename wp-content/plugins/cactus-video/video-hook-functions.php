@@ -488,9 +488,7 @@ if(!function_exists('videopro_singlevideo_left_meta_html')){
 				<div class="categories cactus-info">
 					<?php echo videopro_show_cat();?>
 				</div>
-				<?php }if(ot_get_option('show_author_single_post','on')!='off'){?>
-				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>" class="vcard author cactus-info font-size-1"><span class="fn"><?php echo sprintf(esc_html__('By %s', '17jbh'), get_the_author());?></span></a>
-				<?php }?>
+				<?php } ?>
 			</div>
 			<?php if (!$show_right_meta && $is_comment_count_available){?>
 			<div class="posted-on metadata-font right">
@@ -1123,7 +1121,6 @@ function videopro_loop_item_thumbnail_filter($html, $id, $img_size, $post_format
 					extract($video_data);
 
 					?>
-						<div class="cactus-note font-size-1"><i class="fa fa-thumbs-up"></i><span><?php echo videopro_get_formatted_string_number($like);?></span></div>
 					<?php
 
 					if($time_video != '00:00' && $time_video != '00' && $time_video != '' ){?>

@@ -745,9 +745,9 @@ if(!function_exists('videopro_alter_comment_form_default_fields')){
 		$aria_req = ( $req ? " required='required' aria-required='true'" : '' );
 
 		unset($fields['comment_field']);
-		$fields['author'] = '<input id="author" name="author" type="text" placeholder="'.($req ? '' : '').esc_html__('Your Name *','17jbh').'" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . '>';
-		$fields['email'] = '<input id="email" placeholder="'.($req ? '' : '').esc_html__('Your Email *','17jbh').'" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . '>';
-		$fields['url'] = '<input id="url" placeholder="' . esc_html__('Your Website','17jbh') . '" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />';
+		$fields['author'] = '<input id="author" name="author" type="text" placeholder="'.($req ? '' : '').esc_html__('姓名','17jbh').'" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . '>';
+		$fields['email'] = '<input id="email" placeholder="'.($req ? '' : '').esc_html__('邮箱','17jbh').'" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . '>';
+		$fields['url'] = '<input id="url" placeholder="' . esc_html__('网站','17jbh') . '" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />';
 		
 		return $fields;
 	}

@@ -90,10 +90,6 @@ $link_post = apply_filters('videopro_loop_item_url', $link_post, $id);
             </div><!--excerpt-->   
             <?php }?>
             <div class="posted-on metadata-font">
-            	<?php
-				if(ot_get_option('enable_archive_author', 'on') != 'off'){?>
-                <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>" class="vcard author cactus-info font-size-1"><span class="fn"><?php echo esc_html( get_the_author() );?></span></a>
-                <?php }?>
                 <?php
 				if(ot_get_option('enable_archive_date', 'on') != 'off'){?>
                 <div class="date-time cactus-info font-size-1"><?php echo videopro_get_datetime($id, $link_post); ?></div>

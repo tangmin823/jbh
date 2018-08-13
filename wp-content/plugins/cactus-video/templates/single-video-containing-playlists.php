@@ -29,9 +29,6 @@
 										</h3><!--Title-->
 																											
 										<div class="posted-on metadata-font">
-											<a href="<?php echo get_author_posts_url( get_the_author_meta('ID', $post->post_author) ); ?>" class="vcard author cactus-info font-size-1">
-												<span class="fn"><?php echo get_userdata($post->post_author)->display_name ;?></span>
-										    </a>
 											<div class="date-time cactus-info font-size-1"><?php echo videopro_get_datetime($post->ID);?></div>
 										</div>                                                                        
 										

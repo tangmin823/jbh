@@ -211,17 +211,12 @@ function videopro_post_nav() {
                               <!--picture-->
                               <?php }?>
                               <div class="content"> 
-                                <div class="action-button heading-font"><span><?php esc_html_e('PREV','17jbh');?></span></div>
+                                <div class="action-button heading-font"><span><?php esc_html_e('上一个视频','17jbh');?></span></div>
                                 <!--Title (no title remove)-->
                                 <h3 class="cactus-post-title entry-title h6"><?php echo get_the_title( $previous->ID ); ?></h3>
                                 <!--Title-->
                                 
-                                <div class="posted-on metadata-font"> 
-<!--                                    --><?php
-//                                    $show_author = ot_get_option('show_author_single_post','on');
-//                                    if($show_author != 'off'){?>
-<!--                                  <a href="--><?php //echo get_author_posts_url($author_id_previous); ?><!--" rel="prev" class="vcard author cactus-info font-size-1"><span class="fn">--><?php //the_author_meta( 'display_name', $author_id_previous ); ?><!--</span></a>-->
-<!--                                    --><?php //}?>
+                                <div class="posted-on metadata-font">
                                   <div class="date-time cactus-info font-size-1">
                                     <?php echo videopro_get_datetime($previous->ID); ?>
                                   </div>
@@ -268,17 +263,12 @@ function videopro_post_nav() {
                               <!--picture-->
                               <?php }?>
                               <div class="content"> 
-                                <div class="action-button heading-font"><span><?php esc_html_e('NEXT','17jbh');?></span></div>
+                                <div class="action-button heading-font"><span><?php esc_html_e('下一个视频','17jbh');?></span></div>
                                 <!--Title (no title remove)-->
                                 <h3 class="cactus-post-title entry-title h6"><?php echo get_the_title( $next->ID ); ?></h3>
                                 <!--Title-->
                                 
-                                <div class="posted-on metadata-font"> 
-<!--                                --><?php
-//                                    $show_author = ot_get_option('show_author_single_post','on');
-//                                    if($show_author != 'off'){?>
-<!--                                  <a href="--><?php //echo get_author_posts_url($author_id_next); ?><!--" rel="next" class="vcard author cactus-info font-size-1"><span class="fn">--><?php //the_author_meta( 'display_name', $author_id_next ); ?><!--</span></a>-->
-<!--                                    --><?php //}?>
+                                <div class="posted-on metadata-font">
                                   <div class="date-time cactus-info font-size-1">
                                     <?php echo videopro_get_datetime($next->ID); ?>
                                   </div>
@@ -1010,11 +1000,7 @@ if(!function_exists('videopro_singlevideo_left_meta')){
 				<div class="categories cactus-info">
 					<?php echo videopro_show_cat();?>
 				</div>
-				<?php }
-				
-				if(ot_get_option('show_author_single_post','on') != 'off'){?>
-<!--				<a href="--><?php //echo get_author_posts_url( get_the_author_meta( 'ID' ) );?><!--" class="vcard author cactus-info font-size-1"><span class="fn">--><?php //echo sprintf(esc_html__('By %s', '17jbh'), get_the_author());?><!--</span></a>-->
-				<?php }?>                                         
+				<?php } ?>
 			</div>
 		</div>
 		<div class="right">
@@ -1083,12 +1069,6 @@ if(!function_exists('videopro_loop_item_thumbnail')){
 			}
 			
 			extract($video_data);
-			
-			if(ot_get_option('single_post_show_likes', 'on') == 'on'){
-			?>
-				<div class="cactus-note font-size-1"><i class="fas fa-thumbs-up"></i><span><?php echo videopro_get_formatted_string_number($like);?></span></div>
-			<?php 
-			}
 
 			if($time_video != '00:00' && $time_video != '00' && $time_video != '' ){?>
 				<div class="cactus-note ct-time font-size-1"><span><?php echo esc_html($time_video);?></span></div>

@@ -375,7 +375,6 @@ if(($using_jwplayer_param == 1 && $video_source == 'youtube' && function_exists(
                                                             </h3><!--Title-->
                                                                                                                                                 
                                                             <div class="posted-on metadata-font">
-<!--                                                                <a href="--><?php //echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?><!--" class="vcard author cactus-info font-size-1"><span class="fn">--><?php //the_author_meta( 'display_name' ); ?><!--</span></a>-->
                                                                 <div class="date-time cactus-info font-size-1"><?php echo videopro_get_datetime(); ?></div>
                                                             </div> 
                                                             

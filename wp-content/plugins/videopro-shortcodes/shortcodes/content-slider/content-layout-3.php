@@ -49,9 +49,6 @@ $link_post = apply_filters('videopro_loop_item_url', get_the_permalink(), $id);
             </h3><!--Title-->
             <?php if($style=='3'){ ?>                                                 
             <div class="posted-on metadata-font">
-                <?php if((isset($atts_sc['show_author']) && $atts_sc['show_author'] !='0') || (!isset($atts_sc['show_author']))){?>
-                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );?>" class="author cactus-info font-size-1"><span><?php echo esc_html( get_the_author() );?></span></a>
-                <?php }?>
                 <?php if((isset($atts_sc['show_datetime']) && $atts_sc['show_datetime'] !='0') || (!isset($atts_sc['show_datetime']))){?>
                 <div class="date-time cactus-info font-size-1"><?php echo videopro_get_datetime($id, $link_post); ?></div>
                 <?php }?>

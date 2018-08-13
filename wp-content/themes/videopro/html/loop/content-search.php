@@ -54,7 +54,6 @@ if(isset($_GET['i']) && $_GET['i'] == 4){
             </div><!--excerpt-->   
             
             <div class="posted-on metadata-font">
-                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );?>" class="vcard author cactus-info font-size-1"><span class="fn"><?php echo esc_html( get_the_author() );?></span></a>
                 <div class="date-time cactus-info font-size-1"><?php echo videopro_get_datetime();?></div>
             </div>
             

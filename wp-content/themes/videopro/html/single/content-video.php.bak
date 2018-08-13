@@ -40,11 +40,10 @@ if($videopro_post_video_layout == 2){
 do_action('videopro_actor_video');
 $video_more_content ='';
 if(function_exists('osp_get')){
-	$video_more_content = osp_get('ct_viEdit
-	deo_settings','video_more_content');
+	$video_more_content = osp_get('ct_video_settings','video_more_content');
 }
 ?>
-<div class="body-content">
+<div class="body-content <?php if($video_more_content!='off'){?> hidden-content<?php }?>">
     <?php the_content();?>
     <?php
 		wp_link_pages( array(
@@ -54,7 +53,7 @@ if(function_exists('osp_get')){
 			'link_after'  => '</span>',
 			) );
 	?>
-	<?php edit_post_link( esc_html__( '编辑', '17jbh' ), '<span class="edit-link">', '</span>' ); ?>
+	<?php edit_post_link( esc_html__( 'Edit', '17jbh' ), '<span class="edit-link">', '</span>' ); ?>
 </div>
 <?php if($video_more_content!='off'){?>
     <div class="overlay-hidden-content"></div>

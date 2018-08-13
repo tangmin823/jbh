@@ -294,8 +294,7 @@ class videopro_Popular_posts extends WP_Widget
 							<h3 class="cactus-post-title entry-title h6 sub-lineheight">
 									<a href="' . esc_url($link_post) . '" target="'. apply_filters('videopro_loop_item_url_target', '_self', $id) . '" title="' . get_the_title() . '">' . get_the_title() . '</a>
 							</h3>
-							<div class="posted-on metadata-font">
-								<a href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ) .'" target="' . apply_filters('videopro_loop_item_url_target', '_self', $id) . '" class="vcard author cactus-info font-size-1"><span class="fn">'.get_the_author().'</span></a>';
+							<div class="posted-on metadata-font">';
                                 
                                 if($order_by == 'latest'){
                                     $html .= '<div class="date-time cactus-info font-size-1">'. videopro_get_datetime($id, $link_post).'</div>';
