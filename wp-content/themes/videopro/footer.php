@@ -151,6 +151,9 @@ $footer_schema = apply_filters('videopro-footer-schema', 'dark-div');
 		 */
 		do_action('videopro_before_end_body');
 		
-		wp_footer(); ?>     
+		wp_footer(); ?>
+    <div style="padding-left: 17px; padding-right: 17px;">
+        <script>cambrian.render('tail')</script>
+    </div>
 </body>
 </html>

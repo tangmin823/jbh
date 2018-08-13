@@ -656,7 +656,8 @@ class Vc_Base {
 	 * @access public
 	 */
 	public function addMetaData() {
-		echo '<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>' . "\n";
+	    echo '';
+//		echo '<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>' . "\n";
 	}
 
 	/**

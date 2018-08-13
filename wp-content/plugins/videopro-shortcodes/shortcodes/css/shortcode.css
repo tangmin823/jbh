@@ -473,8 +473,8 @@
 	.cactus-contents-block.is_border { padding-bottom:40px; border-bottom:1px solid rgba(215,215,215,1.0);}
 	.cactus-contents-block .control-header { margin-bottom:25px;}
 	.cactus-contents-block .control-header:after { display:table; content:''; clear:both;}
-	.cactus-contents-block .control-header .block-title {float:left; margin-top:-8px; margin-bottom:-15px; color:rgba(153,153,153,1.0);}
-	.cactus-contents-block .control-header .elms-right {float:right; margin-bottom:0;}
+	.cactus-contents-block .control-header .block-title {float:left; margin-top:0px; margin-bottom:-15px; color: rgb(153, 104, 152);}
+	.cactus-contents-block .control-header .elms-right {float:right; margin-bottom:0; margin-top: 8px;}
 	.cactus-contents-block .control-header .elms-right + .elms-right { margin-right:10px;}
 	
 	.cactus-contents-block .control-header .prev-next-slider { font-size:0; line-height:0; margin-left:-5px; margin-right:-5px;}

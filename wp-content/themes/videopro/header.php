@@ -19,7 +19,6 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="baidu-site-verification" content="hToiUZQsLR" />
-<link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php //if(ot_get_option('seo_meta_tags', 'on') == 'on' ) videopro_meta_tags();?>
 <?php wp_head(); ?>
@@ -65,7 +64,6 @@ function fanly_post_imgs(){
 </script>
 </head>
 <body <?php body_class(); ?>>
-<script>cambrian.render('head')</script>
 <?php
 $videopro_post_video_layout = videopro_global_video_layout();
 $videopro_layout = videopro_global_layout();
