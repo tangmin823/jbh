@@ -549,9 +549,6 @@ if(!function_exists('videopro_singlevideo_right_meta_html')) {
 
 				if(count($images) > 0){
 				?>
-					<a href="javascript:void(0)" id="video-screenshots-button" class="btn btn-default ct-gradient bt-action metadata-font font-size-1">
-						<i class="fa fa-file-image-o"></i><span><?php echo esc_html__('Screenshots','17jbh');?></span>
-					</a>
 				<?php
 
 					foreach((array)$images as $attachment_id => $attachment){
