@@ -53,14 +53,14 @@ if(is_page_template('page-templates/front-page.php')){
                 <div class="cactus-nav-left">
                     <!--logo-->
                     <div class="cactus-logo navigation-font">
-                    	<?php $logo = 'http://www.17jbh.com/wp-content/uploads/2018/06/logo.png';
+                    	<?php $logo = 'https://www.17jbh.com/wp-content/uploads/2018/06/logo.png';
 //						if(is_page_template('page-templates/front-page.php') && $front_page_logo!=''){
 //							$logo = $front_page_logo;
 //						}
 						 ?>
                         <a href="<?php echo esc_url(home_url('/')); ?>">
 <!--                        	<img src="--><?php //echo esc_url($logo); ?><!--" alt="--><?php //echo esc_attr(get_bloginfo('name')); ?><!--" title="--><?php //echo esc_attr(get_bloginfo('name')); ?><!--" class="cactus-img-logo">-->
-                            <img src="http://www.17jbh.com/wp-content/uploads/2018/06/logo.png" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" class="cactus-img-logo">
+                            <img src="https://www.17jbh.com/wp-content/uploads/2018/06/logo.png" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" class="cactus-img-logo">
 <!--                            --><?php //$logo_image_sticky = ot_get_option('logo_image_sticky','') == '' ? esc_url(get_template_directory_uri()) . '/images/logo.png' : ot_get_option('logo_image_sticky','');
 //							if(is_page_template('page-templates/front-page.php') && $front_page_logo_sticky!=''){
 //								$logo_image_sticky = $front_page_logo_sticky;

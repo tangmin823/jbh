@@ -4004,7 +4004,7 @@
 		var checkHeight = (checkWidth / 16 * 9);
 		
 		$(document).ready(function() {
-			videoads_document_ready();
+			// videoads_document_ready();
         });
 
 	}(jQuery));

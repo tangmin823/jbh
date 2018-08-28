@@ -21,7 +21,7 @@ class cactus_demo_pack_default extends cactus_demo_content{
 		$this->name = 'default';
 		$this->home_page = 'Homepage'; // title of the page which is set to Home Page
 		$this->heading = esc_html__('Entertainment', 'cactus');
-        $this->url = 'http://videopro.cactusthemes.com/entertainment/';
+        $this->url = 'https://videopro.cactusthemes.com/entertainment/';
 	}
 	
 	public function do_import($step = 0, $index = 0, $option_only = 0){

@@ -753,7 +753,7 @@ array (
       'actor_id' => 'a:3:{i:0;s:4:"1237";i:1;s:4:"1227";i:2;s:4:"1223";}',
       'channel_id' => 'a:4:{i:0;s:4:"1295";i:1;s:4:"1291";i:2;s:4:"1285";i:3;s:4:"1289";}',
       'playlist_id' => 'a:4:{i:0;s:4:"1317";i:1;s:4:"1314";i:2;s:4:"1311";i:3;s:4:"1309";}',
-      '_video_thumbnail' => 'http://videopro.cactusthemes.com/entertainment/wp-content/uploads/2016/07/the-amazing-race-season-28-previ.jpg',
+      '_video_thumbnail' => 'https://videopro.cactusthemes.com/entertainment/wp-content/uploads/2016/07/the-amazing-race-season-28-previ.jpg',
       'enable_live_video' => 'off',
     ),
     'title' => 'The Amazing Race Season 28 Preview',

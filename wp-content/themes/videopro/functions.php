@@ -277,7 +277,7 @@ function videopro_get_google_fonts_url ($font_names) {
 
     $font_url = '';
 
-    $font_url = add_query_arg( 'family', urlencode(implode('|', $font_names)) , "//fonts.googleapis.com/css" );
+//    $font_url = add_query_arg( 'family', urlencode(implode('|', $font_names)) , "//fonts.googleapis.com/css" );
     return $font_url;
 }
 
@@ -448,8 +448,6 @@ function videopro_remove_author_pages_link( $author_url ) {
 	return 'javascript:void(0)';
 }
 
-
-
 if(!function_exists('videopro_get_custom_css')){
 	function videopro_get_custom_css(){
 		// Retina Logo
@@ -463,12 +461,12 @@ if(!function_exists('videopro_get_custom_css')){
 			$css .=
 				'@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
 					/* Retina Logo */
-					.primary-header .cactus-logo.navigation-font a{background:url(http://www.17jbh.com/wp-content/uploads/2018/06/logo.png) no-repeat center; background-size:contain;}
+					.primary-header .cactus-logo.navigation-font a{background:url(https://www.17jbh.com/wp-content/uploads/2018/06/logo.png) no-repeat center; background-size:contain;}
 					.primary-header .cactus-logo.navigation-font a img{ opacity:0; visibility:hidden}
 				}';
 //		}
 
-//		$css .= 'img.gform_ajax_spinner{background:url(' . apply_filters('http://www.17jbh.com/wp-content/uploads/2018/06/logo.png') . ');}';
+//		$css .= 'img.gform_ajax_spinner{background:url(' . apply_filters('https://www.17jbh.com/wp-content/uploads/2018/06/logo.png') . ');}';
 //
 //		require get_template_directory() . '/css/custom.css.php';
 //		$css .= videopro_custom_css();
@@ -1195,6 +1193,17 @@ function videopro_ajax_get_latest_post() {
 add_action( 'wp_ajax_get_latest_post', 'videopro_ajax_get_latest_post' );
 add_action( 'wp_ajax_nopriv_get_latest_post', 'videopro_ajax_get_latest_post' );
 
+remove_action( 'wp_head', 'feed_links_extra', 3 ); //去除评论feed
+remove_action( 'wp_head', 'feed_links', 2 ); //去除文章feed
+remove_action( 'wp_head', 'rsd_link' ); //针对Blog的远程离线编辑器接口
+remove_action( 'wp_head', 'wlwmanifest_link' ); //Windows Live Writer接口
+remove_action( 'wp_head', 'index_rel_link' ); //移除当前页面的索引
+remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); //移除后面文章的url
+remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); //移除最开始文章的url
+remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );//自动生成的短链接
+remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); ///移除相邻文章的url
+remove_action( 'wp_head', 'wp_generator' ); // 移除版本号
+
 function is_video_listing_template($page_name) {
     $page = get_page_by_path($page_name);
     $page_id = $page->ID;
@@ -1214,3 +1223,18 @@ function is_video_listing_template($page_name) {
         return false;
     }
 }
+//
+////转换http为https
+//function change_ssl(){
+//    if( is_ssl() ){
+//        function change_ssl_main ($content){
+//            $siteurl = get_option('siteurl');
+//            $upload_dir = wp_upload_dir();
+//            $content = str_replace( 'http:'.strstr($siteurl, '//'), strstr($siteurl, '//'), $content);
+//			$content = str_replace( 'http:'.strstr($upload_dir['baseurl'], '//'), strstr($upload_dir['baseurl'], '//'), $content);
+//			return $content;
+//		}
+//        ob_start(“change_ssl_main”);
+//    }
+//}
+//add_filter('get_header', 'change_ssl');
