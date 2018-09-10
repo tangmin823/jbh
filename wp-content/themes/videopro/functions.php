@@ -298,9 +298,9 @@ add_action( 'wp_enqueue_scripts', 'videopro_rtl_customCSS', 99 );
  * Enqueue scripts and styles.
  */
 function videopro_scripts() {
-	wp_enqueue_style( 'font-awesome-2', get_template_directory_uri() . '/css/font-awesome/css/font-awesome.min.css', array(), '5.0.6');
+	wp_enqueue_style( 'font-awesome-2', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css', array(), '5.0.6');
 	wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css');
-	wp_enqueue_style( 'malihu-scroll', get_template_directory_uri() . '/css/jquery.mCustomScrollbar.min.css');
+	wp_enqueue_style( 'malihu-scroll', 'https://cdn.bootcss.com/malihu-custom-scrollbar-plugin/3.1.5' . '/jquery.mCustomScrollbar.min.css');
 	wp_enqueue_style( 'videopro-style', get_stylesheet_uri() );
 
 	if(ot_get_option('pre_loading', -1) != -1){
@@ -362,9 +362,9 @@ function videopro_scripts() {
 	}
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap-lib.js', array('jquery'), '3.1.1', true );
-	wp_enqueue_script( 'jquery-migrate', get_template_directory_uri() . '/js/jquery-migrate-1.2.1.min.js', array('jquery'), '1.2.1', true );
+	wp_enqueue_script( 'jquery-migrate', 'https://cdn.bootcss.com/jquery-migrate/1.4.1' . '/jquery-migrate.min.js', array('jquery'), '1.4.1', true );
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.1.0', true );
-	wp_enqueue_script( 'malihu-scroll', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', array('jquery'), '3.1.12', true );
+	wp_enqueue_script( 'malihu-scroll', 'https://cdn.bootcss.com/malihu-custom-scrollbar-plugin/3.1.5' . '/jquery.mCustomScrollbar.concat.min.js', array('jquery'), '3.1.5', true );
 	wp_enqueue_script( 'js-cookie', get_template_directory_uri() . '/js/js.cookie.js', array('jquery'), '2.1.1', true );
 	wp_enqueue_script( 'js-isotope', get_template_directory_uri() . '/js/isotope.js', array('jquery'), '3.0.1', true );
 
@@ -1223,18 +1223,12 @@ function is_video_listing_template($page_name) {
         return false;
     }
 }
-//
-////转换http为https
-//function change_ssl(){
-//    if( is_ssl() ){
-//        function change_ssl_main ($content){
-//            $siteurl = get_option('siteurl');
-//            $upload_dir = wp_upload_dir();
-//            $content = str_replace( 'http:'.strstr($siteurl, '//'), strstr($siteurl, '//'), $content);
-//			$content = str_replace( 'http:'.strstr($upload_dir['baseurl'], '//'), strstr($upload_dir['baseurl'], '//'), $content);
-//			return $content;
-//		}
-//        ob_start(“change_ssl_main”);
-//    }
-//}
-//add_filter('get_header', 'change_ssl');
+
+function coolwp_remove_open_sans_from_wp_core()
+{
+    wp_deregister_style('open-sans');
+    wp_register_style('open-sans', false);
+    wp_enqueue_style('open-sans', '');
+}
+
+add_action('init', 'coolwp_remove_open_sans_from_wp_core');

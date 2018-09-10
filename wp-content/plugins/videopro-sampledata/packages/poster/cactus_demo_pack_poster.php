@@ -24,7 +24,7 @@ class cactus_demo_pack_poster extends cactus_demo_content {
 		$this->home_page = 'Homepage'; // title of the page which is set to Home Page
 		$this->heading = esc_html__('Poster Size', 'cactus');
 		$this->description = esc_html__('Make sure you have installed and activated "VideoPro Child Theme - Poster Size" first', 'cactus');
-        $this->url = 'http://videopro.cactusthemes.com/poster/';
+        $this->url = 'https://videopro.cactusthemes.com/poster/';
 	}
 	
 	public function do_import($step = 0, $index = 0, $option_only = 0){

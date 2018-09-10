@@ -22,7 +22,7 @@ class cactus_demo_pack_cooking extends cactus_demo_content{
 		$this->home_page = 'Home Cooking'; // title of the page which is set to Home Page
 		$this->heading = esc_html__('Cooking', 'cactus');
         $this->description = esc_html__('To have light schema in footer, please use "VideoPro Child Theme - Light Footer" (included in the package)', 'cactus');
-        $this->url = 'http://videopro.cactusthemes.com/cooking/';
+        $this->url = 'https://videopro.cactusthemes.com/cooking/';
 	}
 	
 	public function do_import($step = 0, $index = 0, $option_only = 0){

@@ -262,7 +262,7 @@ class CactusThemeShortcodes{
 		wp_enqueue_script( 'ct-priority-nav',plugins_url('/videopro-shortcodes/shortcodes/js/priority-nav/priority-nav.min.js') , array(), '20160305', true );
 		wp_enqueue_script( 'ct-shortcode-js',plugins_url('/videopro-shortcodes/shortcodes/js/shortcode.js') , array(), '20161405', true );
 		wp_enqueue_script( 'videopro-lightbox-js',plugins_url('/videopro-shortcodes/shortcodes/library/lightbox/lightbox.js') , array(), '20161405', true );
-		wp_enqueue_script( 'jquery-touchSwipe',plugins_url('/videopro-shortcodes/shortcodes/library/touchswipe/jquery.touchSwipe.min.js') , array(), '', true );
+		wp_enqueue_script( 'jquery-touchSwipe','https://cdn.bootcss.com/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js' , array(), '', true );
 
 		/**
 		 * register scripts

@@ -354,8 +354,8 @@ array (
       'header_schema' => 'dark',
       'main_navi_layout' => 'separeted',
       'main_navi_schema' => 'dark',
-      'front_page_logo' => 'http://videopro.cactusthemes.com/v2/wp-content/uploads/2016/06/Videopro-logo-game-1X-1.png',
-      'front_page_bg' => 'a:6:{s:16:"background-color";s:7:"#d8d8d8";s:17:"background-repeat";s:9:"no-repeat";s:21:"background-attachment";s:5:"fixed";s:19:"background-position";s:13:"center center";s:15:"background-size";s:0:"";s:16:"background-image";s:89:"http://videopro.cactusthemes.com/v2/wp-content/uploads/2016/06/game-background-images.jpg";}',
+      'front_page_logo' => 'https://videopro.cactusthemes.com/v2/wp-content/uploads/2016/06/Videopro-logo-game-1X-1.png',
+      'front_page_bg' => 'a:6:{s:16:"background-color";s:7:"#d8d8d8";s:17:"background-repeat";s:9:"no-repeat";s:21:"background-attachment";s:5:"fixed";s:19:"background-position";s:13:"center center";s:15:"background-size";s:0:"";s:16:"background-image";s:89:"https://videopro.cactusthemes.com/v2/wp-content/uploads/2016/06/game-background-images.jpg";}',
       'factory_shortcodes_assets' => 'a:0:{}',
       '_wpb_post_custom_css' => '/*main color 1*/
 .bg-m-color-1, .btn-default.bt-style-1:visited:not(:hover), button.bt-style-1:visited:not(:hover), input[type=button].bt-style-1:visited:not(:hover), input[type=submit].bt-style-1:visited:not(:hover), .btn-default.subscribe, .cactus-nav-style-3 .cactus-only-main-menu .cactus-main-menu > ul > li:hover > a:after, .cactus-nav-style-5 .cactus-open-left-sidebar.right-logo.cactus-main-menu > ul > li > a.active > span, .ct-sub-w-title, .slider-toolbar-carousel .cactus-listing-config.style-2 .cactus-post-item.active .entry-content:before, .cactus-post-format-playlist .cactus-post-item.active:after, .channel-menu .channel-menu-item.active a:after, .easy-tab .tabs > li.active > a:after, .body-content .vc_tta.vc_general .vc_tta-tab.vc_active:after, .submitModal .textwidget .wpcf7 input[type="submit"]:not(:hover), .comming-soon-wrapper .wpcf7-form input[type="submit"]:not(:hover), #body-wrap .comming-soon-wrapper .gform_wrapper .gform_footer input.button:not(:hover), #body-wrap .comming-soon-wrapper .gform_wrapper .gform_footer input[type=submit]:not(:hover), .ct-shortcode-sliderv3.sliderv10 .slick-dots > li > button:hover, .ct-shortcode-sliderv3.sliderv10 .slick-dots > li.slick-active > button, .tab-control a.active:after, .ct-shortcode-sliderv3.sliderv8 .cactus-post-item.active:after, .btn-default.bt-style-1:not(:hover), button.bt-style-1:not(:hover), input[type=button].bt-style-1:not(:hover), input[type=submit].bt-style-1:not(:hover), .btn-default.bt-style-1:visited:not(:hover), button.bt-style-1:visited:not(:hover), input[type=button].bt-style-1:visited:not(:hover), input[type=submit].bt-style-1:visited:not(:hover), .cactus-nav-style-3 .cactus-only-main-menu .cactus-main-menu > ul > li.current-menu-ancestor > a:after, .cactus-nav-style-3 .cactus-only-main-menu .cactus-main-menu > ul > li.current-menu-item > a:after, .cactus-nav-style-3 .cactus-only-main-menu .cactus-main-menu > ul > li:hover > a:after {
@@ -374,7 +374,7 @@ array (
       '_cs_replacements' => 'a:1:{s:13:"right-sidebar";s:4:"cs-1";}',
       '_wpb_shortcodes_custom_css' => '.vc_custom_1466563983427{margin-top: 40px !important;}',
       'main_navi_width' => 'full',
-      'front_page_logo_retina' => 'http://videopro.cactusthemes.com/v2/wp-content/uploads/2016/06/Videopro-logo-game-2X.png',
+      'front_page_logo_retina' => 'https://videopro.cactusthemes.com/v2/wp-content/uploads/2016/06/Videopro-logo-game-2X.png',
     ),
     'title' => 'Home Page Game',
     'content' => 'pages/homepage-game-version.txt',

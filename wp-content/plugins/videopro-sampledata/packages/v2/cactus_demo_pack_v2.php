@@ -24,7 +24,7 @@ class cactus_demo_pack_v2 extends cactus_demo_content {
 		// $this->home_page = 'Homepage'; // title of the page which is set to Home Page
 		$this->heading = esc_html__('V2 - Membership Features', 'cactus');
 		$this->description = wp_kses('<h3>Requirements</h3><ul><li>WPMU Membership 2 plugin</li><li>Import membership2-export.json file for WPMU Membership 2 settings</li><li>Widget Logic plugin</li><li>Re-save permalinks settings after installing</li></ul>', array('h3'=>array(),'ul'=>array(),'li'=>array()));
-        $this->url = 'http://videopro.cactusthemes.com/v2/';
+        $this->url = 'https://videopro.cactusthemes.com/v2/';
 	}
 	
 	public function do_import($step = 0, $index = 0, $option_only = 0){

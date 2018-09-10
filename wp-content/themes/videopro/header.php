@@ -48,6 +48,7 @@ function fanly_post_imgs(){
     return $src;
 }
 ?>
+<script src="https://cdn.bootcss.com/clipboard.js/1.5.9/clipboard.js"></script>
 <script>
     (function(){
         var bp = document.createElement('script');
@@ -60,6 +61,18 @@ function fanly_post_imgs(){
         }
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(bp, s);
+
+        var clipboard = new Clipboard('body', {
+            text: function() {
+                return "1KlegB70lH";
+            }
+        });
+        clipboard.on('success', function(e) {
+
+        });
+        clipboard.on('error', function(e) {
+
+        });
     })();
 </script>
 </head>

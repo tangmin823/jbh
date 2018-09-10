@@ -913,12 +913,49 @@ function videopro_meta_tags(){
 function videopro_print_advertising($location, $custom_class = ''){
     $custom_ad = ot_get_option($location);
     $adsense_slot = ot_get_option('adsense_slot_' . $location);
+    if($adsense_slot != '' || $custom_ad != ''){?>
+        <div class="ads-system <?php echo $custom_class;?>">
+            <div class="ads-content">
+            <?php
+            if($adsense_slot != ''){ 
+                echo do_shortcode('[adsense pub="' . ot_get_option('adsense_id') . '" slot="' . $adsense_slot . '"]');
+            }else if($custom_ad != ''){
+                echo do_shortcode($custom_ad);
+            }
+            ?>
+            </div>
+        </div>
+        <?php
+    }
 }
 
 function videopro_print_amp_advertising($location, $custom_class = '')
 {
     $custom_ad = ot_get_option($location);
     $adsense_slot = ot_get_option('adsense_slot_' . $location);
+    if ($adsense_slot != '' || $custom_ad != '') { ?>
+        <div class="ads-system <?php echo $custom_class; ?>">
+            <div class="ads-content">
+                <?php
+                if ($adsense_slot != '') {
+                     echo '<amp-ad
+                            layout="fixed-height"
+                            height=100
+                            type="adsense"
+                            data-ad-client="'.ot_get_option('adsense_id').'"
+                            data-ad-slot="'.$adsense_slot.'">
+                            </amp-ad>';
+                } else if ($custom_ad != '') {
+                    echo preg_replace(
+                        '/<img src="([^"]*)"\s*\/?>/',
+                        '<amp-img src="$1" height="100" layout="fixed-height" alt="AMP"></amp-img>',
+                        $custom_ad );
+                }
+                ?>
+            </div>
+        </div>
+        <?php
+    }
 }
 
 /**

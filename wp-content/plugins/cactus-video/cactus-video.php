@@ -742,7 +742,7 @@ class Cactus_video {
           $settings['settings'][] = array(
             'id'          => 'membership_upload_videos_form',
             'label'       => esc_html__( 'Upload Videos In Channel Form (Contact Form 7)', '17jbh' ),
-            'desc'        => sprintf(esc_html__( 'ID of Contact Form 7 to use for Upload Videos Form In Channel. See %s to configure the form', '17jbh' ), '<a href=" http://videopro.cactusthemes.com/doc/docs/videopro-2-0-features/front-end-user-actions/front-end-upload-videos/upload-videos-in-channel/" target="_blank">FAQ</a>'),
+            'desc'        => sprintf(esc_html__( 'ID of Contact Form 7 to use for Upload Videos Form In Channel. See %s to configure the form', '17jbh' ), '<a href=" https://videopro.cactusthemes.com/doc/docs/videopro-2-0-features/front-end-user-actions/front-end-upload-videos/upload-videos-in-channel/" target="_blank">FAQ</a>'),
             'std'         => '',
             'type'        => 'text',
             'section'     => 'membership',
@@ -752,7 +752,7 @@ class Cactus_video {
           $settings['settings'][] = array(
             'id'          => 'membership_upload_videos_form_gf',
             'label'       => esc_html__( 'Upload Videos In Channel Form (Gravity Form)', '17jbh' ),
-            'desc'        => sprintf(esc_html__( 'ID of Gravity Form to use for Upload Videos Form In Channel. See %s to configure the form', '17jbh' ), '<a href=" http://videopro.cactusthemes.com/doc/docs/videopro-2-0-features/front-end-user-actions/front-end-upload-videos/upload-videos-in-channel/" target="_blank">FAQ</a>'),
+            'desc'        => sprintf(esc_html__( 'ID of Gravity Form to use for Upload Videos Form In Channel. See %s to configure the form', '17jbh' ), '<a href=" https://videopro.cactusthemes.com/doc/docs/videopro-2-0-features/front-end-user-actions/front-end-upload-videos/upload-videos-in-channel/" target="_blank">FAQ</a>'),
             'std'         => '',
             'type'        => 'text',
             'section'     => 'membership',
@@ -762,7 +762,7 @@ class Cactus_video {
           $settings['settings'][] = array(
             'id'          => 'membership_upload_videos_playlist_form',
             'label'       => esc_html__( 'Upload Videos In Playlist Form (Contact Form 7)', '17jbh' ),
-            'desc'        => sprintf(esc_html__( 'ID of Contact Form 7 to use for Upload Videos Form In Playlist. See %s to configure the form', '17jbh' ), '<a href=" http://videopro.cactusthemes.com/doc/docs/videopro-2-0-features/front-end-user-actions/front-end-upload-videos/upload-videos-in-playlist/" target="_blank">FAQ</a>'),
+            'desc'        => sprintf(esc_html__( 'ID of Contact Form 7 to use for Upload Videos Form In Playlist. See %s to configure the form', '17jbh' ), '<a href=" https://videopro.cactusthemes.com/doc/docs/videopro-2-0-features/front-end-user-actions/front-end-upload-videos/upload-videos-in-playlist/" target="_blank">FAQ</a>'),
             'std'         => '',
             'type'        => 'text',
             'section'     => 'membership',
@@ -772,7 +772,7 @@ class Cactus_video {
           $settings['settings'][] = array(
             'id'          => 'membership_upload_videos_playlist_form_gf',
             'label'       => esc_html__( 'Upload Videos In Playlist Form (Gravity Form)', '17jbh' ),
-            'desc'        => sprintf(esc_html__( 'ID of Gravity Form to use for Upload Videos Form In Playlist. See %s to configure the form', '17jbh' ), '<a href=" http://videopro.cactusthemes.com/doc/docs/videopro-2-0-features/front-end-user-actions/front-end-upload-videos/upload-videos-in-playlist/" target="_blank">FAQ</a>'),
+            'desc'        => sprintf(esc_html__( 'ID of Gravity Form to use for Upload Videos Form In Playlist. See %s to configure the form', '17jbh' ), '<a href=" https://videopro.cactusthemes.com/doc/docs/videopro-2-0-features/front-end-user-actions/front-end-upload-videos/upload-videos-in-playlist/" target="_blank">FAQ</a>'),
             'std'         => '',
             'type'        => 'text',
             'section'     => 'membership',

@@ -199,14 +199,14 @@ array (
                 'order' => '97',
                 'title' => 'Series Video V1',
                 'type' => 'custom',
-                'url' => 'http://videopro.cactusthemes.com/v2/cgi-animated-short-film-hd-quantum-jump-short-film-by-hayk-sahakyants/?series=movie',
+                'url' => 'https://videopro.cactusthemes.com/v2/cgi-animated-short-film-hd-quantum-jump-short-film-by-hayk-sahakyants/?series=movie',
               ),
               'i-2318' => 
               array (
                 'order' => '98',
                 'title' => 'Series Video V2',
                 'type' => 'custom',
-                'url' => 'http://videopro.cactusthemes.com/v2/run-inspirational-running-video-hd/?series=sport',
+                'url' => 'https://videopro.cactusthemes.com/v2/run-inspirational-running-video-hd/?series=sport',
               ),
               'i-2830' => 
               array (
@@ -446,7 +446,7 @@ array (
                 'order' => '103',
                 'title' => 'Playlist View',
                 'type' => 'custom',
-                'url' => 'http://videopro.cactusthemes.com/v2/cgi-animated-short-film-hd-quantum-jump-short-film-by-hayk-sahakyants/?list=794',
+                'url' => 'https://videopro.cactusthemes.com/v2/cgi-animated-short-film-hd-quantum-jump-short-film-by-hayk-sahakyants/?list=794',
               ),
             ),
           ),
@@ -728,7 +728,7 @@ array (
             'order' => '112',
             'title' => 'Author Page',
             'type' => 'custom',
-            'url' => 'http://videopro.cactusthemes.com/v2/uploader/hoaintt/',
+            'url' => 'https://videopro.cactusthemes.com/v2/uploader/hoaintt/',
           ),
           'i-2487' => 
           array (
@@ -743,14 +743,14 @@ array (
             'order' => '116',
             'title' => 'Search',
             'type' => 'custom',
-            'url' => 'http://videopro.cactusthemes.com/v2/?s=music',
+            'url' => 'https://videopro.cactusthemes.com/v2/?s=music',
           ),
           'i-2489' => 
           array (
             'order' => '117',
             'title' => 'Page Not Found',
             'type' => 'custom',
-            'url' => 'http://videopro.cactusthemes.com/v2/404',
+            'url' => 'https://videopro.cactusthemes.com/v2/404',
           ),
           'i-2579' => 
           array (

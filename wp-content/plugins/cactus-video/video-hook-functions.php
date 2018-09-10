@@ -906,20 +906,7 @@ if(!function_exists('videopro_content_video_header_filter')){
 			}
 			$ads_top_ct = ot_get_option('ads_top_ct');
 			$adsense_slot_ads_top_ct = ot_get_option('adsense_slot_ads_top_ct');
-			if($adsense_slot_ads_top_ct != '' || $ads_top_ct != ''){?>
-				<div class="ads-system">
-					<div class="ads-content">
-					<?php
-					if($adsense_slot_ads_top_ct != ''){
-						echo do_shortcode('[adsense pub="' . ot_get_option('adsense_id') . '" slot="' . $adsense_slot_ads_top_ct . '"]');
-					}else if($ads_top_ct != ''){
-						echo do_shortcode($ads_top_ct);
-					}
-					?>
-					</div>
-				</div>
-				<?php
-			}
+
 			?>
 			<div class="style-post">
                 <?php do_action('videopro-before-player-wrapper');?>
@@ -952,20 +939,6 @@ if(!function_exists('videopro_content_video_header_filter')){
             <?php
 			$ads_single_1 = ot_get_option('ads_single_1');
 			$adsense_slot_ads_single_1 = ot_get_option('adsense_slot_ads_single_1');
-			if($adsense_slot_ads_single_1 != '' || $ads_single_1 != ''){?>
-				<div class="ads-system">
-					<div class="ads-content">
-					<?php
-					if($adsense_slot_ads_single_1 != ''){
-						echo do_shortcode('[adsense pub="' . ot_get_option('adsense_id') . '" slot="' . $adsense_slot_ads_single_1 . '"]');
-					}else if($ads_single_1 != ''){
-						echo do_shortcode($ads_single_1);
-					}
-					?>
-					</div>
-				</div>
-				<?php
-			}
 			?>
 			<?php do_action('videopro_video_series', $video_id );?>
 		</div>

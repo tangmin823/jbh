@@ -59,7 +59,7 @@ function videopro_welcome_tabs() {
 }
 function videopro_welcome_tab_content( $tab ){
 	if($tab == 'document'){ ?>
-    	<p>You could view <a class="button button-primary button-large" href="http://videopro.cactusthemes.com/doc/" target="_blank">Full Document</a> in new window</p
+    	<p>You could view <a class="button button-primary button-large" href="https://videopro.cactusthemes.com/doc/" target="_blank">Full Document</a> in new window</p
     ><?php
 	} elseif($tab == 'sample'){
     	if(!class_exists('cactus_demo_importer')){
@@ -80,7 +80,7 @@ function videopro_welcome_tab_content( $tab ){
                     <h3><?php echo esc_html__('Full Document','17jbh'); ?></h3>
                     <p><?php echo esc_html__('See the full user guide for all VideoPro functions','17jbh'); ?></p>
                 </a>
-                <a class="cactus-welcome-item" href="http://videopro.cactusthemes.com/doc/quickstart.html" target="_blank">
+                <a class="cactus-welcome-item" href="https://videopro.cactusthemes.com/doc/quickstart.html" target="_blank">
                     <i class="fas fa-rocket"></i>
                     <h3><?php echo esc_html__('Quick Start','17jbh'); ?></h3>
                     <p><?php echo esc_html__('Simple guide to set up and start running with Theme in 5 minutes!','17jbh'); ?></p>
@@ -185,8 +185,8 @@ includes Cactus-Video 2.2.1; VideoPro-Shortcodes 1.3.3
 includes Cactus-Video 2.2; VideoPro-Shortcodes 1.3.2; Visual Composer 5.2.1
 <ul>
 	<li><span class="new">#Add:</span> Video & Post Page Template</li>
-	<li><span class="new">#Add:</span> support Google AMP for Single Post. Check <a href="http://videopro.cactusthemes.com/doc/docs/videopro-google-amp-compatibility/">Doc</a></li>
-	<li><span class="new">#Add:</span> support Facebook Instant Articles for Single Post. Check <a href="http://videopro.cactusthemes.com/doc/docs/videopro-2-0-features/facebook-instant-article-support/">Doc</a></li>
+	<li><span class="new">#Add:</span> support Google AMP for Single Post. Check <a href="https://videopro.cactusthemes.com/doc/docs/videopro-google-amp-compatibility/">Doc</a></li>
+	<li><span class="new">#Add:</span> support Facebook Instant Articles for Single Post. Check <a href="https://videopro.cactusthemes.com/doc/docs/videopro-2-0-features/facebook-instant-article-support/">Doc</a></li>
 	<li><span class="new">#Add:</span> option to redirect users to the new post after submitting</li>
 	<li><span class="improved">#Update:</span> only load video screenshots when mouse hovers on, improve loading performance</li>
 	<li><span class="fixed">#Fix:</span> conflict with Advanced Custom Fields Pro</li>
@@ -441,7 +441,7 @@ includes Cactus-Video 2.0.3; VideoPro-Shortcodes 1.2.0.3; Visual Composer 5.0.1
                             <li>#Add: support BuddyPress</li>
                             </ul>
                             </li>
-                            <li>Full release logs: <a href="http://videopro.cactusthemes.com/release_log.html" target="_blank">Release Logs</a></li>
+                            <li>Full release logs: <a href="https://videopro.cactusthemes.com/release_log.html" target="_blank">Release Logs</a></li>
                         </ul>
                 </div>
             </div>
