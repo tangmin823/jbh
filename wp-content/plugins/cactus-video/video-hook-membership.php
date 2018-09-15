@@ -267,7 +267,7 @@ function videopro_loop_item_add_remove_button(){
                     echo '<a href="' . Cactus_video::get_edit_video_url($post_id, $the_link) . '" class="btn-edit-video" data-title="' . esc_html__('Edit This Video', '17jbh') . '" data-video="' . $post_id . '">' . videopro_edit_button_icon(false) . '</a>';
                 }
                 
-                echo '<a href="#" class="btn-remove-post" data-title="' . esc_attr(get_the_title($post_id)) . '" data-id="' . esc_attr($post_id) . '" data-type="'.esc_attr(get_post_type($post_id)).'"><i class="fas fa-trash-alt"></i></a><img class="ajax-loader" src="' . esc_url(get_template_directory_uri()) . '/images/ajax-loader.gif" alt="' . esc_html__('Sending ...', '17jbh') . '" style="display:none"></div>';
+                echo '<a href="#" class="btn-remove-post" data-title="' . esc_attr(get_the_title($post_id)) . '" data-id="' . esc_attr($post_id) . '" data-type="'.esc_attr(get_post_type($post_id)).'"><i class="fa fa-trash-alt"></i></a><img class="ajax-loader" src="' . esc_url(get_template_directory_uri()) . '/images/ajax-loader.gif" alt="' . esc_html__('Sending ...', '17jbh') . '" style="display:none"></div>';
             }
         }
     }

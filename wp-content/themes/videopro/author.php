@@ -20,7 +20,7 @@ $videopro_layout = videopro_global_layout();
         <div class="cactus-container <?php if($videopro_layout == 'wide'){ echo 'ct-default';}?>">                        	
             <div class="cactus-row">
             	<?php if($videopro_layout == 'boxed' && ($videopro_sidebar=='both')){?>
-                    <div class="open-sidebar-small open-box-menu"><i class="fas fa-bars"></i></div>
+                    <div class="open-sidebar-small open-box-menu"><i class="fa fa-bars"></i></div>
                 <?php }?>
                 <?php if($sidebar != 'full'){ get_sidebar('left'); } ?>
                 <div class="main-content-col">
@@ -60,7 +60,7 @@ $videopro_layout = videopro_global_layout();
 								  if($email = $userdata->user_email && ot_get_option('author_page_email_contact','on') == 'on'){ 
                                     $email = $userdata->user_email;
                                   ?>
-									  <li class="email"><a rel="nofollow" href="mailto:<?php echo esc_attr($email); ?>" title="<?php esc_html_e('Email', '17jbh');?>"><i class="fas fa-envelope"></i></a></li>
+									  <li class="email"><a rel="nofollow" href="mailto:<?php echo esc_attr($email); ?>" title="<?php esc_html_e('Email', '17jbh');?>"><i class="fa fa-envelope"></i></a></li>
 								  <?php }
 
 								  ?>

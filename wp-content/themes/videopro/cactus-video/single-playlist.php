@@ -19,7 +19,7 @@ videopro_global_sidebar_style($sidebar_style);
         <div class="cactus-container <?php if($videopro_layout == 'wide'){ echo 'ct-default';}?>">                        	
             <div class="cactus-row">
 				<?php if($videopro_layout == 'boxed'&& $sidebar == 'both'){?>
-                    <div class="open-sidebar-small open-box-menu"><i class="fas fa-bars"></i></div>
+                    <div class="open-sidebar-small open-box-menu"><i class="fa fa-bars"></i></div>
                 <?php }?>
                 <?php if($sidebar!='full' && $sidebar!='right'){ get_sidebar('left'); } ?>
                 <?php if(is_active_sidebar('content-top-sidebar')){
@@ -115,7 +115,7 @@ videopro_global_sidebar_style($sidebar_style);
 													  <div class="navi-channel">
 																											
 														  <div class="navi pull-left">
-															  <a href="<?php echo add_query_arg( array('list' => $id_cr_pos), get_the_permalink() );?>" class="btn btn-default"><i class="fas fa-play-circle"></i> <?php esc_html_e('Play All Videos','17jbh');?></a>
+															  <a href="<?php echo add_query_arg( array('list' => $id_cr_pos), get_the_permalink() );?>" class="btn btn-default"><i class="fa fa-play-circle"></i> <?php esc_html_e('Play All Videos','17jbh');?></a>
 														  </div>
 														  
 														  <div class="subs pull-right">                                            	

@@ -91,7 +91,7 @@ if ( post_password_required() ) {
                     <div class="wp-pagenavi">
                         <a id="load-comment-<?php echo esc_attr($post->ID); ?>" href="javascript:;" class="loadmore-comment load-more">
                         	<div class="load-title"><?php esc_html_e('More Comments','17jbh'); ?></div>
-                            <i class="fas fa-refresh hide" id="load-spin"></i>
+                            <i class="fa fa-refresh hide" id="load-spin"></i>
                         </a>
                     </div>
                 </nav>	

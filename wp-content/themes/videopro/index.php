@@ -16,7 +16,7 @@ $videopro_layout = videopro_global_layout();
         <div class="cactus-container <?php if($videopro_layout=='wide'){ echo 'ct-default';}?>">                        	
             <div class="cactus-row">
             	<?php if($videopro_layout=='boxed'&& $videopro_sidebar=='both'){?>
-                    <div class="open-sidebar-small open-box-menu"><i class="fas fa-bars"></i></div>
+                    <div class="open-sidebar-small open-box-menu"><i class="fa fa-bars"></i></div>
                 <?php }?>
                 <?php if($videopro_sidebar!='full' && $videopro_sidebar!='right'){ get_sidebar('left'); } ?>
                 <div class="main-content-col">

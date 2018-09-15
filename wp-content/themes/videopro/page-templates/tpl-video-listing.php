@@ -24,7 +24,7 @@ $videopro_blog_layout = videopro_global_blog_layout();
             <div class="cactus-container <?php if($layout=='wide'){ echo 'ct-default';}?>">
                 <div class="cactus-row">
                     <?php if($layout=='boxed'&& $sidebar=='both'){?>
-                        <div class="open-sidebar-small open-box-menu"><i class="fas fa-bars"></i></div>
+                        <div class="open-sidebar-small open-box-menu"><i class="fa fa-bars"></i></div>
                     <?php }?>
                     <?php if($sidebar!='full' && $sidebar!='right'){ get_sidebar('left'); } ?>
                     <div class="main-content-col">
@@ -129,7 +129,7 @@ $videopro_blog_layout = videopro_global_blog_layout();
                                                         echo esc_html__('Order By: &nbsp; Title','17jbh');
                                                     }else{
                                                         echo esc_html__('Order By','17jbh');
-                                                    }?><i class="fas fa-angle-down"></i>
+                                                    }?><i class="fa fa-angle-down"></i>
                                                     <ul>
                                                         <li><a href="<?php echo esc_url(add_query_arg( array('orderby' => 'date'), $pageURL )); ?>" title=""><?php echo esc_html__('Published date','17jbh'); ?></a></li>
                                                         <?php

@@ -63,7 +63,7 @@ class Videopro_Widget_Categories extends WP_Widget {
                     <h4 class="channel-title h6">
                         <a href="<?php echo esc_url($cat_url);?>" title="<?php echo esc_attr( $category->cat_name );?>
 <!--                            --><?php //if($layout!='thumb' && $cat_icon!=''){?>
-<!--                                <i class="fas --><?php //echo esc_attr($cat_icon);?><!--"></i>-->
+<!--                                <i class="fa --><?php //echo esc_attr($cat_icon);?><!--"></i>-->
 <!--                            --><?php //} ?>
                             <?php echo esc_html( $category->cat_name );?>
                         </a>

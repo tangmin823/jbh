@@ -114,7 +114,7 @@ videopro_global_sidebar_style($videopro_sidebar_style);
             <div class="cactus-container <?php if($videopro_layout=='wide'){ echo 'ct-default';}?>">                        	
                 <div class="cactus-row">
                     <?php if($videopro_layout == 'boxed' && ($videopro_sidebar == 'both')){?>
-                        <div class="open-sidebar-small open-box-menu"><i class="fas fa-bars"></i></div>
+                        <div class="open-sidebar-small open-box-menu"><i class="fa fa-bars"></i></div>
                     <?php }?>
                     <?php if($videopro_sidebar == 'left' || $videopro_sidebar == 'both'){ get_sidebar('left'); } ?>
                     
@@ -193,11 +193,11 @@ videopro_global_sidebar_style($videopro_sidebar_style);
                                                                 $accounts = '';
                                                                 
                                                                 if($user->user_url != ''){
-                                                                    $accounts .= '<li class="website"><a rel="nofollow" href="' . esc_url($user->user_url) . '" title="' . esc_html__('Website', '17jbh') . '"><i class="fas fa-globe"></i></a></li>';
+                                                                    $accounts .= '<li class="website"><a rel="nofollow" href="' . esc_url($user->user_url) . '" title="' . esc_html__('Website', '17jbh') . '"><i class="fa fa-globe"></i></a></li>';
                                                                 }
                                                                 
                                                                 if($email = get_the_author_meta('author_email',$user->ID) && ot_get_option('author_page_email_contact','on') == 'on'){
-                                                                    $accounts .= '<li class="email"><a rel="nofollow" href="mailto:' . esc_attr($email) . '" title="' . esc_html__('Email', '17jbh') . '"><i class="fas fa-envelope-o"></i></a></li>';
+                                                                    $accounts .= '<li class="email"><a rel="nofollow" href="mailto:' . esc_attr($email) . '" title="' . esc_html__('Email', '17jbh') . '"><i class="fa fa-envelope-o"></i></a></li>';
                                                                 }
                                                                   
                                                                 if(ot_get_option('author_page_social_accounts','on') == 'on'){

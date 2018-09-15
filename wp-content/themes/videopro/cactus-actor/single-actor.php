@@ -16,7 +16,7 @@ $videopro_layout = videopro_global_layout();
         <div class="cactus-container <?php if($videopro_layout== 'wide'){ echo 'ct-default';}?>">                        	
             <div class="cactus-row">
             	<?php if($videopro_layout == 'boxed'){?>
-                    <div class="open-sidebar-small open-box-menu"><i class="fas fa-bars"></i></div>
+                    <div class="open-sidebar-small open-box-menu"><i class="fa fa-bars"></i></div>
                 <?php }?>
                 <?php if($sidebar!='full'){ get_sidebar('left'); } ?>
                 <div class="main-content-col">
@@ -52,7 +52,7 @@ $videopro_layout = videopro_global_layout();
                                   <?php
 								  
                                   if($website = get_post_meta(get_the_ID(),'website',true)){ ?>
-									  <li class="website"><a rel="nofollow" href="<?php echo esc_url($website); ?>" title="<?php esc_html_e('Website', '17jbh');?>"><i class="fas fa-globe"></i></a></li>
+									  <li class="website"><a rel="nofollow" href="<?php echo esc_url($website); ?>" title="<?php esc_html_e('Website', '17jbh');?>"><i class="fa fa-globe"></i></a></li>
 								  <?php }
                                   
                                   if($imdb = get_post_meta(get_the_ID(),'imdb',true)){ ?>

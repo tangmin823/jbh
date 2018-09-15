@@ -47,7 +47,7 @@
 	$isTop10PluginInstalled = function_exists('get_tptn_post_count_only') ? 1 : 0;
 	$view_channel     = ($isTop10PluginInstalled ?  get_tptn_post_count_only( $cr_id_cn) : 0); 
     ?>                                       	
-    <div><i class="fas fa-play-circle"></i><span><?php echo esc_html($n_video); esc_html_e(' videos','17jbh'); ?></span></div>
-    <div><i class="fas fa-users"></i><span><?php echo esc_html($subscribe_counter); esc_html_e(' subscribers ','17jbh'); ?></span></div>
-    <div><i class="fas fa-eye"></i><span><?php echo esc_html($view_channel); esc_html_e(' views','17jbh'); ?></span></div>
+    <div><i class="fa fa-play-circle"></i><span><?php echo esc_html($n_video); esc_html_e(' videos','17jbh'); ?></span></div>
+    <div><i class="fa fa-users"></i><span><?php echo esc_html($subscribe_counter); esc_html_e(' subscribers ','17jbh'); ?></span></div>
+    <div><i class="fa fa-eye"></i><span><?php echo esc_html($view_channel); esc_html_e(' views','17jbh'); ?></span></div>
 </div>

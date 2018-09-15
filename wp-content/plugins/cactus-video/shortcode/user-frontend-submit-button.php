@@ -14,7 +14,7 @@ function parse_v_submit_button($atts, $content){
 	$context = isset($atts['context']) ? $atts['context'] : '';
 	
 	if($context == 'mobile'){
-		$button_content = '<i class="fas fa-upload"></i>';
+		$button_content = '<i class="fa fa-upload"></i>';
 	} else {
 		$button_content = '<span>' . esc_html($content) . '</span>';
 	}

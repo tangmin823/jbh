@@ -31,7 +31,7 @@
                     echo esc_html__('Order By','17jbh');
                     break;
             }
-			?><i class="fas fa-angle-down"></i>
+			?><i class="fa fa-angle-down"></i>
 			<ul>
 					<li><a href="<?php echo esc_url(add_query_arg( array('sortby' => 'date'), $pageURL )); ?>" title=""><?php echo esc_html__('Published date','17jbh'); ?></a></li>
 				<?php 
