@@ -18,17 +18,17 @@
 <!--<![endif]--><head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="baidu-site-verification" content="hToiUZQsLR" />
+<meta name="baidu-site-verification" content="GjWu6WoMJw" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php //if(ot_get_option('seo_meta_tags', 'on') == 'on' ) videopro_meta_tags();?>
 <?php wp_head(); ?>
-<script src="//msite.baidu.com/sdk/c.js?appid=1592273023116351"></script>
-<?php
+<script src="https://xiongzhang.baidu.com/sdk/c.js?appid=1592187320868885"></script>
+    <?php
     if(is_single()||is_page()){
         echo '<script type="application/ld+json">{
         "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
         "@id": "'.get_the_permalink().'",
-        "appid": "1592273023116351",
+        "appid": "1592187320868885",
         "title": "'.get_the_title().'",
         "images": ["'.fanly_post_imgs().'"],
         "pubDate": "'.get_the_time('Y-m-d\TH:i:s').'"
@@ -48,7 +48,7 @@ function fanly_post_imgs(){
     return $src;
 }
 ?>
-<script src="https://cdn.bootcss.com/clipboard.js/1.5.9/clipboard.js"></script>
+<!--<script src="https://cdn.bootcss.com/clipboard.js/1.5.9/clipboard.min.js"></script>-->
 <script>
     (function(){
         var bp = document.createElement('script');
@@ -62,17 +62,17 @@ function fanly_post_imgs(){
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(bp, s);
 
-        var clipboard = new Clipboard('body', {
-            text: function() {
-                return "1KlegB70lH";
-            }
-        });
-        clipboard.on('success', function(e) {
-
-        });
-        clipboard.on('error', function(e) {
-
-        });
+        // var clipboard = new Clipboard('body', {
+        //     text: function() {
+        //         return "1KlegB70lH";
+        //     }
+        // });
+        // clipboard.on('success', function(e) {
+        //
+        // });
+        // clipboard.on('error', function(e) {
+        //
+        // });
     })();
 </script>
 </head>

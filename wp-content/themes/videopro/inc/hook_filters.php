@@ -153,8 +153,8 @@ function videopro_default_hook_before_search_results($search_query){
 ?>
 	<div class="search-form-listing">                                    	 
                             <form action="<?php echo esc_url(home_url('/'));?>" method="get">
-                                <input type="text" placeholder="<?php echo esc_html_e('Search...','17jbh');?>" name="s" value="<?php echo esc_attr($search_query);?>">
-                                <input type="submit" value="<?php echo esc_html_e('SEARCH','17jbh');?>" id="searchsubmit" class="padding-small">
+                                <input type="text" placeholder="<?php echo esc_html_e('搜索...','17jbh');?>" name="s" value="<?php echo esc_attr($search_query);?>">
+                                <input type="submit" value="<?php echo esc_html_e('搜索','17jbh');?>" id="searchsubmit" class="padding-small">
                             </form>
                         </div>
 <?php
@@ -207,7 +207,7 @@ if(!function_exists('videopro_protectedcontent_add_html')){
 		global $post;
 		if(strpos($post->post_content, '[ms-membership-account-link]') !== false){
 			echo '<div class="ms-wrapper">
-				<div class="ms-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
+				<div class="ms-icon"><i class="fa fa-check" aria-hidden="true"></i></div>
 				<div class="ms-content">'.wp_kses(__('Thank you for subscribing. <br> We hope you enjoy the content.','17jbh'), array('br' => array())).'</div>';
 				
 				echo '
@@ -216,7 +216,7 @@ if(!function_exists('videopro_protectedcontent_add_html')){
 			</div>';
 		}elseif(strpos($post->post_content, '[ms-protection-message]') !== false){
 			echo '<div class="ms-wrapper videopro-ct-acc">
-				<div class="ms-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
+				<div class="ms-icon"><i class="fa fa-lock" aria-hidden="true"></i></div>
 				<div class="ms-content">'.$html.'</div>';
 				if(!is_user_logged_in()){
 					echo '

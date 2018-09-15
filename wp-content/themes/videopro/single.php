@@ -43,7 +43,7 @@ $videopro_post_layout = videopro_global_post_layout();
 				}
 
 				if($videopro_layout == 'boxed' && $videopro_sidebar == 'both'){ ?>
-                    <div class="open-sidebar-small open-box-menu"><i class="fas fa-bars"></i></div>
+                    <div class="open-sidebar-small open-box-menu"><i class="fa fa-bars"></i></div>
                 <?php }
 
 				if($videopro_sidebar!='full' && $videopro_sidebar!='right'){ get_sidebar('left'); } ?>

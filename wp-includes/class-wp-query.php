@@ -2706,6 +2706,11 @@ class WP_Query {
 			$clauses = (array) apply_filters_ref_array( 'posts_clauses_request', array( compact( $pieces ), &$this ) );
 
 			$where = isset( $clauses[ 'where' ] ) ? $clauses[ 'where' ] : '';
+
+//            if (current_user_can('administrator')) {
+//                print_r($where);
+//            }
+            $where = str_replace('IN (31)', 'IN (31, 44, 47)', $where);
 			$groupby = isset( $clauses[ 'groupby' ] ) ? $clauses[ 'groupby' ] : '';
 			$join = isset( $clauses[ 'join' ] ) ? $clauses[ 'join' ] : '';
 			$orderby = isset( $clauses[ 'orderby' ] ) ? $clauses[ 'orderby' ] : '';

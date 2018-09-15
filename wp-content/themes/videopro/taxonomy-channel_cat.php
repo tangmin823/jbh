@@ -22,7 +22,7 @@ if($videopro_sidebar == '')
         <div class="cactus-container <?php if($videopro_layout == 'wide'){ echo 'ct-default';}?>">                        	
             <div class="cactus-row">
             	<?php if($videopro_layout=='boxed'&& $videopro_sidebar=='both'){?>
-                    <div class="open-sidebar-small open-box-menu"><i class="fas fa-bars"></i></div>
+                    <div class="open-sidebar-small open-box-menu"><i class="fa fa-bars"></i></div>
                 <?php }?>
                 <?php if($videopro_sidebar!='full' && $videopro_sidebar!='right'){ get_sidebar('left'); } ?>
                 <div class="main-content-col">
@@ -75,7 +75,7 @@ if($videopro_sidebar == '')
 										echo esc_html__('Order By: &nbsp; Subscribers','17jbh');
 									}else{
 										echo esc_html__('Order By: &nbsp; Latest','17jbh'); 
-									}?><i class="fas fa-angle-down"></i>
+									}?><i class="fa fa-angle-down"></i>
 									<ul>
 											<li><a href="<?php echo esc_url(add_query_arg( array('orderby' => ''), $pageURL )); ?>" title=""><?php echo esc_html__('Latest','17jbh'); ?></a></li>
 											<li><a href="<?php echo esc_url(add_query_arg( array('orderby' => 'subscribers'), $pageURL )); ?>" title=""><?php echo esc_html__('Subscribers','17jbh'); ?></a></li>

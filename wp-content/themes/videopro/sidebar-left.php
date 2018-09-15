@@ -10,7 +10,7 @@ $videopro_sidebar_style = videopro_global_sidebar_style();
 <!--Sidebar-->
 <div class="cactus-sidebar <?php echo esc_attr($videopro_sidebar_style);?>">
 		<?php if($videopro_layout == 'wide'){?>
-            <div class="open-sidebar-small open-box-menu"><i class="fas fa-bars"></i></div>
+            <div class="open-sidebar-small open-box-menu"><i class="fa fa-bars"></i></div>
         <?php }?>
         <div class="cactus-sidebar-content">
 		<?php 

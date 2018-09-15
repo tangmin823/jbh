@@ -76,23 +76,23 @@ function videopro_welcome_tab_content( $tab ){
 			<h2 class="cactus-welcome-title"><?php esc_html_e('Welcome to VideoPro - The Ultimate Video Solution for WordPress','17jbh');?></h2>
             <div class="cactus-welcome-inner">
                 <a class="cactus-welcome-item" href="?page=videopro-welcome&tab=document">
-                	<i class="fas fa-book"></i>
+                	<i class="fa fa-book"></i>
                     <h3><?php echo esc_html__('Full Document','17jbh'); ?></h3>
                     <p><?php echo esc_html__('See the full user guide for all VideoPro functions','17jbh'); ?></p>
                 </a>
                 <a class="cactus-welcome-item" href="https://videopro.cactusthemes.com/doc/quickstart.html" target="_blank">
-                    <i class="fas fa-rocket"></i>
+                    <i class="fa fa-rocket"></i>
                     <h3><?php echo esc_html__('Quick Start','17jbh'); ?></h3>
                     <p><?php echo esc_html__('Simple guide to set up and start running with Theme in 5 minutes!','17jbh'); ?></p>
                 </a>
                 <br />
                 <a class="cactus-welcome-item" href="?page=videopro-welcome&tab=sample">
-                	<i class="fas fa-download"></i>
+                	<i class="fa fa-download"></i>
                     <h3><?php echo esc_html__('Sample Data','17jbh'); ?></h3>
                     <p><?php echo esc_html__('Import sample data to have homepage like our live DEMO','17jbh'); ?></p>
                 </a>
                 <a class="cactus-welcome-item" href="?page=videopro-welcome&tab=support">
-                	<i class="fas fa-user"></i>
+                	<i class="fa fa-user"></i>
                     <h3><?php echo esc_html__('Support','17jbh'); ?></h3>
                     <p><?php echo esc_html__('Need support using the theme? We are here for you.','17jbh'); ?></p>
                 </a>

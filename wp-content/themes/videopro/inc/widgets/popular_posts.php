@@ -159,8 +159,8 @@ class videopro_Popular_posts extends WP_Widget
 				<div class="carousel-heading">                
                 	<div class="font-size-3 heading-font">
                     	'.$title.'
-                        <div class="prev-slide"><i class="fas fa-angle-left"></i></div> 
-                        <div class="next-slide"><i class="fas fa-angle-right"></i></div>                                           
+                        <div class="prev-slide"><i class="fa fa-angle-left"></i></div> 
+                        <div class="next-slide"><i class="fa fa-angle-right"></i></div>                                           
                     </div>
                 </div>
 				';
@@ -201,7 +201,7 @@ class videopro_Popular_posts extends WP_Widget
 													</a>';
 													if(videopro_post_rating($id) != ''){ $html .= videopro_post_rating($id);}
 													if($like != ''){
-														$html .='<div class="cactus-note font-size-1"><i class="fas fa-thumbs-up"></i><span>' . videopro_get_formatted_string_number($like) . '</span></div>';
+														$html .='<div class="cactus-note font-size-1"><i class="fa fa-thumbs-up"></i><span>' . videopro_get_formatted_string_number($like) . '</span></div>';
 													}
 													if($time_video!='00:00' && $time_video!='00' && $time_video!='' ){
 														$html .= 	'<div class="cactus-note ct-time font-size-1"><span>'. esc_html($time_video) . '</span></div>';

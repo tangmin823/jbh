@@ -45,14 +45,14 @@
         $pv_link = videopro_add_query_vars($pv_link);
 
         ?>
-        <a href="<?php  echo esc_url($pv_link).'amp';?>" class="btn btn-default video-tb font-size-1 cactus-new prev-video"><i class="fas fa-chevron-left"></i><span><?php echo esc_html__( '上一个视频', '17jbh' )?></span></a>
+        <a href="<?php  echo esc_url($pv_link).'amp';?>" class="btn btn-default video-tb font-size-1 cactus-new prev-video"><i class="fa fa-chevron-left"></i><span><?php echo esc_html__( '上一个视频', '17jbh' )?></span></a>
         <?php
     }
     if(!empty($n)){
         $nv_link = get_permalink($n->ID);
         $nv_link = videopro_add_query_vars($nv_link);
         ?>
-        <a href="<?php echo esc_url($nv_link).'amp'; ?>" class="btn btn-default video-tb font-size-1 cactus-old next-video"><span><?php echo esc_html__( '下一个视频', '17jbh' )?></span><i class="fas fa-chevron-right"></i></a>
+        <a href="<?php echo esc_url($nv_link).'amp'; ?>" class="btn btn-default video-tb font-size-1 cactus-old next-video"><span><?php echo esc_html__( '下一个视频', '17jbh' )?></span><i class="fa fa-chevron-right"></i></a>
         <?php
     }
 

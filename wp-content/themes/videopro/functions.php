@@ -298,18 +298,19 @@ add_action( 'wp_enqueue_scripts', 'videopro_rtl_customCSS', 99 );
  * Enqueue scripts and styles.
  */
 function videopro_scripts() {
-	wp_enqueue_style( 'font-awesome-2', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css', array(), '5.0.6');
+	wp_enqueue_style( 'font-awesome-2', 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css');
+//	wp_enqueue_style( 'font-awesome-2', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
 	wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css');
-	wp_enqueue_style( 'malihu-scroll', 'https://cdn.bootcss.com/malihu-custom-scrollbar-plugin/3.1.5' . '/jquery.mCustomScrollbar.min.css');
+//	wp_enqueue_style( 'malihu-scroll', 'https://cdn.bootcss.com/malihu-custom-scrollbar-plugin/3.1.5' . '/jquery.mCustomScrollbar.min.css');
 	wp_enqueue_style( 'videopro-style', get_stylesheet_uri() );
 
 	if(ot_get_option('pre_loading', -1) != -1){
 		wp_enqueue_style('videopro-pre-loaders', get_parent_theme_file_uri('/css/loaders.min.css'));
     }
 
-    if(videopro_is_membership_pages()){
-        wp_enqueue_style( 'videopro-membership', get_template_directory_uri() . '/css/membership.css');
-    }
+//    if(videopro_is_membership_pages()){
+//        wp_enqueue_style( 'videopro-membership', get_template_directory_uri() . '/css/membership.css');
+//    }
 
     if(ot_get_option('body_schema', 'light') == 'dark'){
         wp_enqueue_style( 'videopro-dark-style', get_template_directory_uri() . '/css/dark.css', array('videopro-style'));
@@ -362,10 +363,10 @@ function videopro_scripts() {
 	}
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap-lib.js', array('jquery'), '3.1.1', true );
-	wp_enqueue_script( 'jquery-migrate', 'https://cdn.bootcss.com/jquery-migrate/1.4.1' . '/jquery-migrate.min.js', array('jquery'), '1.4.1', true );
+//	wp_enqueue_script( 'jquery-migrate', 'https://cdn.bootcss.com/jquery-migrate/1.4.1' . '/jquery-migrate.min.js', array('jquery'), '1.4.1', true );
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.1.0', true );
-	wp_enqueue_script( 'malihu-scroll', 'https://cdn.bootcss.com/malihu-custom-scrollbar-plugin/3.1.5' . '/jquery.mCustomScrollbar.concat.min.js', array('jquery'), '3.1.5', true );
-	wp_enqueue_script( 'js-cookie', get_template_directory_uri() . '/js/js.cookie.js', array('jquery'), '2.1.1', true );
+    wp_enqueue_script( 'malihu-scroll', 'https://cdn.bootcss.com/malihu-custom-scrollbar-plugin/3.1.5' . '/jquery.mCustomScrollbar.concat.min.js', array('jquery'), '3.1.5', true );
+    wp_enqueue_script( 'js-cookie', get_template_directory_uri() . '/js/js.cookie.js', array('jquery'), '2.1.1', true );
 	wp_enqueue_script( 'js-isotope', get_template_directory_uri() . '/js/isotope.js', array('jquery'), '3.0.1', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -1193,16 +1194,16 @@ function videopro_ajax_get_latest_post() {
 add_action( 'wp_ajax_get_latest_post', 'videopro_ajax_get_latest_post' );
 add_action( 'wp_ajax_nopriv_get_latest_post', 'videopro_ajax_get_latest_post' );
 
-remove_action( 'wp_head', 'feed_links_extra', 3 ); //去除评论feed
-remove_action( 'wp_head', 'feed_links', 2 ); //去除文章feed
-remove_action( 'wp_head', 'rsd_link' ); //针对Blog的远程离线编辑器接口
-remove_action( 'wp_head', 'wlwmanifest_link' ); //Windows Live Writer接口
-remove_action( 'wp_head', 'index_rel_link' ); //移除当前页面的索引
-remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); //移除后面文章的url
-remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); //移除最开始文章的url
-remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );//自动生成的短链接
-remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); ///移除相邻文章的url
-remove_action( 'wp_head', 'wp_generator' ); // 移除版本号
+//remove_action( 'wp_head', 'feed_links_extra', 3 ); //去除评论feed
+//remove_action( 'wp_head', 'feed_links', 2 ); //去除文章feed
+//remove_action( 'wp_head', 'rsd_link' ); //针对Blog的远程离线编辑器接口
+//remove_action( 'wp_head', 'wlwmanifest_link' ); //Windows Live Writer接口
+//remove_action( 'wp_head', 'index_rel_link' ); //移除当前页面的索引
+//remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); //移除后面文章的url
+//remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); //移除最开始文章的url
+//remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );//自动生成的短链接
+//remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); ///移除相邻文章的url
+//remove_action( 'wp_head', 'wp_generator' ); // 移除版本号
 
 function is_video_listing_template($page_name) {
     $page = get_page_by_path($page_name);
@@ -1232,3 +1233,10 @@ function coolwp_remove_open_sans_from_wp_core()
 }
 
 add_action('init', 'coolwp_remove_open_sans_from_wp_core');
+
+add_action('login_enqueue_scripts', 'login_protection');
+function login_protection() {
+    if ($_GET['wlq'] != 'jbh') {
+        header('Location: https://www.17jbh.com');
+    }
+}

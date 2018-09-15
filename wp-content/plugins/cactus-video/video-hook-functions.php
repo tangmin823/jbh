@@ -268,36 +268,6 @@ if(!function_exists('videopro_toolbar_html')){
                     <?php }?>
                 </div>
             </div>
-            <?php if($show_sharing != 'off'){?>
-                <!--Social Share-->
-                <div class="social-share-tool-bar-group dark-bg-color-1 dark-div">
-                    <div class="group-social-content">
-                        <?php videopro_print_social_share();?>
-                        <?php
-                        $enable_embed = osp_get('ct_video_settings', 'video_embed_code');
-                        $post_video_layout = videopro_global_video_layout();
-                        $embed_link = Cactus_video::get_embed_url($post_id);
-                        if ($enable_embed == 'on') { ?>
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
-                            <script>
-                                jQuery(document).ready(function($) {
-                                    var embed_code = '<iframe width="854" height="480" src="<?php echo $embed_link; ?>" frameborder="0" allowfullscreen></iframe>'
-                                    $("#embed_code").val(embed_code);
-                                });
-                                new Clipboard('.copy-embed-code');
-                            </script>
-                        <?php
-                        if ($post_video_layout =='1') { ?>
-                            <button class="btn copy-embed-code" data-clipboard-target="#embed_code" style="margin: 10px 0;padding: 5px 8px;height: 30px;"><?php esc_html_e('Copy Embed Code', '17jbh');?></button>
-                            <div class="clear"></div>
-                            <input id="embed_code" type="text" spellcheck="false" style="height: 32px;padding: 5px; width: 55%; display: inline-block">
-                        <?php } else { ?>
-                            <button class="btn copy-embed-code" data-clipboard-target="#embed_code" style="margin: 10px 0;padding: 5px 8px;height: 30px;"><?php esc_html_e('Copy Embed Code', '17jbh');?></button>
-                        <input id="embed_code" type="text" spellcheck="false" style="height: 32px;padding: 5px">
-                        <?php }  } ?>
-                    </div>
-                </div><!--Social Share-->
-            <?php }?>
 			<?php
             if($show_more != 'off' && !empty($ct_query_more)){
 				$post_video_layout = videopro_global_video_layout();

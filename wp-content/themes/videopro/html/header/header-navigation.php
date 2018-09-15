@@ -86,12 +86,12 @@ if(is_page_template('page-templates/front-page.php')){
 							?>
 							<div class="cactus-main-menu cactus-open-search-mobile navigation-font">
 								<ul>
-								  <li><a href="javascript:;"><i class="fas fa-search"></i></a></li>
+								  <li><a href="javascript:;"><i class="fa fa-search"></i></a></li>
 								</ul>
 							</div>
 							<form action="<?php echo esc_url(home_url('/'));?>" method="get">								
-								<input type="text" placeholder="<?php echo esc_html_e('搜索视频','17jbh');?>" name="s" value="<?php echo esc_attr(get_search_query());?>">
-                                <i class="fas fa-search" aria-hidden="true"></i>
+								<input type="text" placeholder="<?php echo esc_html_e('搜索','17jbh');?>" name="s" value="<?php echo esc_attr(get_search_query());?>">
+                                <i class="fa fa-search" aria-hidden="true"></i>
 								<input type="submit" value="<?php echo esc_html_e('SEARCH','17jbh');?>"  id="searchsubmit" class="padding-small">                                
 							</form>
                         <?php }?>
@@ -106,7 +106,7 @@ if(is_page_template('page-templates/front-page.php')){
                 <div class="cactus-nav-right">
                     <div class="cactus-main-menu cactus-open-menu-mobile navigation-font">
                         <ul>
-                          <li><a href="javascript:;"><i class="fas fa-bars"></i><?php echo esc_html__('MENU', '17jbh');?></a></li>
+                          <li><a href="javascript:;"><i class="fa fa-bars"></i><?php echo esc_html__('MENU', '17jbh');?></a></li>
                         </ul>
                     </div>
                     <?php
@@ -135,7 +135,7 @@ if(is_page_template('page-templates/front-page.php')){
                         <ul>                	                 
                             <li>   
                                 <?php if ( !is_user_logged_in() ) { ?>                                      
-                                    <a href="<?php echo esc_url($mebership_login_link);?>"><i class="fas fa-user"></i>&nbsp;<?php if($mebership_login_text!=''){ echo esc_html($mebership_login_text);}else{esc_html_e('Login','17jbh');}?></a>
+                                    <a href="<?php echo esc_url($mebership_login_link);?>"><i class="fa fa-user"></i>&nbsp;<?php if($mebership_login_text!=''){ echo esc_html($mebership_login_text);}else{esc_html_e('Login','17jbh');}?></a>
                                     <?php
                                     if($membership_register_link == 'on'){?>
                                     <ul>
@@ -164,7 +164,7 @@ if(is_page_template('page-templates/front-page.php')){
                                         if ($is_user_set_avatar) {
                                             echo $user_avatar;
                                         } else { ?>
-                                            <i class="fas fa-user"></i>&nbsp;
+                                            <i class="fa fa-user"></i>&nbsp;
                                         <?php } ?>
                                         <?php echo esc_html($name);?>
                                     </a>

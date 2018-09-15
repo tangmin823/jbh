@@ -154,7 +154,7 @@ function videopro_paging_nav_ajax($content_div = '#main', $template = 'content',
 		<div class="wp-pagenavi">
 			<a href="javascript:void(0)" data-target="<?php echo esc_attr($content_div);?>" data-template="<?php echo esc_attr($template); ?>" id="navigation-ajax" class="load-more btn btn-default font-1">
 				<div class="load-title"><?php if($text_bt){ echo esc_html($text_bt); }else{ echo esc_html__('点击查看更多视频','17jbh');} ?></div>
-				<i class="fas fa-refresh hide" id="load-spin"></i>
+				<i class="fa fa-refresh hide" id="load-spin"></i>
 			</a>
 		</div>
 	</nav>
@@ -740,7 +740,7 @@ if(!function_exists('videopro_breadcrumbs')){
 		$show_on_home   = 1; // 1 - show breadcrumbs on the homepage, 0 - don't show
 		$show_home_link = 1; // 1 - show the 'Home' link, 0 - don't show
 		$show_title     = 1; // 1 - show the title for the links, 0 - don't show
-		$delimiter      = '<i class="fas fa-angle-right" aria-hidden="true"></i>'; // delimiter between crumbs
+		$delimiter      = '<i class="fa fa-angle-right" aria-hidden="true"></i>'; // delimiter between crumbs
 		
 		$before         = '<span class="current">'; // tag before the current crumb
 		$after          = '</span>'.$auto_next_html; // tag after the current crumb
@@ -768,7 +768,7 @@ if(!function_exists('videopro_breadcrumbs')){
 			
 		} elseif (function_exists("is_woocommerce") && is_woocommerce() && is_product()) {
             $args = array(
-                'delimiter' => '<i class="fas fa-angle-right" aria-hidden="true"></i>',
+                'delimiter' => '<i class="fa fa-angle-right" aria-hidden="true"></i>',
                 'wrap_before' => '<div class="breadcrumb-wrap">',
                 'wrap_after' => '</div>',
                 'home' => esc_html__('Home', '17jbh')
@@ -1293,7 +1293,7 @@ function videopro_switcher_toolbar($layout){
  * print out Edit button icon
  */
 function videopro_edit_button_icon($echo = true){
-    $html = '<i class="fas fa-edit"></i>';
+    $html = '<i class="fa fa-edit"></i>';
     
     if($echo)
         echo $html;

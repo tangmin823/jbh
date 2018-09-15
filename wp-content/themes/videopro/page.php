@@ -31,7 +31,7 @@ videopro_global_sidebar_style($videopro_sidebar_style);
             <div class="cactus-container <?php if($videopro_layout == 'wide'){ echo 'ct-default';}?>">                        	
                 <div class="cactus-row">
                     <?php if($videopro_layout == 'boxed' && ($videopro_sidebar == 'both')){?>
-                        <div class="open-sidebar-small open-box-menu"><i class="fas fa-bars"></i></div>
+                        <div class="open-sidebar-small open-box-menu"><i class="fa fa-bars"></i></div>
                     <?php }?>
                     <?php if($videopro_sidebar == 'left' || $videopro_sidebar == 'both'){ get_sidebar('left'); } ?>
                     

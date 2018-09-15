@@ -21,7 +21,7 @@
 // ** MySQL 设置 - 具体信息来自您正在使用的主机 ** //
 /** WordPress数据库的名称 */
 define('WP_CACHE', true);
-define( 'WPCACHEHOME', '/var/www/html/hongbei/wp-content/plugins/wp-super-cache/' );
+define( 'WPCACHEHOME', '/var/www/html/jbh/wp-content/plugins/wp-super-cache/' );
 define('DB_NAME', 'jbh');
 
 /** MySQL数据库用户名 */
@@ -31,7 +31,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', '823823Wolf!');
 
 /** MySQL主机 */
-define('DB_HOST', '106.15.181.211');
+define('DB_HOST', 'rm-uf6uw8clyoiu5h38s.mysql.rds.aliyuncs.com');
 
 /** 创建数据表时默认的文字编码 */
 define('DB_CHARSET', 'utf8');
@@ -100,3 +100,9 @@ if ( !defined('ABSPATH') )
 
 /** 设置WordPress变量和包含文件。 */
 require_once(ABSPATH . 'wp-settings.php');
+
+define('FORCE_SSL_LOGIN', true);
+define('FORCE_SSL_ADMIN', true);
+$_SERVER['HTTPS'] = 'ON';
+define( 'CONCATENATE_SCRIPTS', false );
+//define('SAVEQUERIES', true);

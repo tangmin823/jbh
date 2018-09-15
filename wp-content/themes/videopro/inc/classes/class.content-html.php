@@ -22,7 +22,7 @@ if(!class_exists('videopro_ContentHtml')){
 									}
 							$html .= '<img src="'.$thumbnail[0].'" width="'.$thumbnail[1].'" height="'.$thumbnail[2].'" alt="'.the_title_attribute('echo=0').'" title="'.the_title_attribute('echo=0').'">';
 							if($themes_pur!='0' && get_post_format( get_the_ID() ) != ''){	
-						$html .= '<div class="link-overlay fas fa-play "></div>';}
+						$html .= '<div class="link-overlay fa fa-play "></div>';}
 						$html .= '</a>';
 						if($show_rate!='hide_r'){
 						$html .= videopro_post_rating(get_the_ID());
@@ -89,7 +89,7 @@ if(!class_exists('videopro_ContentHtml')){
 						$html .= videopro_thumbnail(array(277,156));
 						if($themes_pur!='0'){	
 							if($format=='' || $format =='standard' || $format =='gallery'){
-								$html .= '<div class="link-overlay fas fa-search"></div>';
+								$html .= '<div class="link-overlay fa fa-search"></div>';
 							}else {
 								$html .= '<div class="ct-icon-video"></div>';
 							}					
@@ -112,7 +112,7 @@ if(!class_exists('videopro_ContentHtml')){
 						  }
 					  }
 					  
-					  if($like != ''){ $html .= '<div class="cactus-note font-size-1"><i class="fas fa-thumbs-up"></i><span>'. $like .'</span></div>';}
+					  if($like != ''){ $html .= '<div class="cactus-note font-size-1"><i class="fa fa-thumbs-up"></i><span>'. $like .'</span></div>';}
 
 				  $html .= '
 				  </div>';

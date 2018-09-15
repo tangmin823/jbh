@@ -718,10 +718,9 @@ class MashMenu{
 
 		$options = get_option('mashmenu_options');
 
-		if($options['load_fontawesome'] == 'on'){
-			wp_enqueue_style('font-awesome',$this->baseURL.'css/font-awesome.min.css');
-		}
-		wp_enqueue_style('mashmenu-css',$this->baseURL.'css/mashmenu.css');
+//		if($options['load_fontawesome'] == 'on'){
+//			wp_enqueue_style('font-awesome',$this->baseURL.'css/font-awesome.min.css');
+//		}
 		wp_localize_script( 'mashmenu-js', 'mashmenu', array( 'ajax_url' => admin_url( 'admin-ajax.php' ),'ajax_loader'=>'on','ajax_enabled'=>($options['ajax_loading'] == "on" ? 1 : 0)) );
 	}
 

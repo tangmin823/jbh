@@ -683,7 +683,7 @@ if(!is_admin()){
 		}
 		if($sub_label!=''){ $sub_label= '<i class="ct-sub-w-title">'.$sub_label.'</i>';}
 		if($icon_class!=''){
-			$params[0]['before_title'] = $params[0]['before_title'].'<i class="fas '.$icon_class.'"></i> <span>';
+			$params[0]['before_title'] = $params[0]['before_title'].'<i class="fa '.$icon_class.'"></i> <span>';
 			$params[0]['after_title'] = $sub_label.'</span>'.$params[0]['after_title'];
 		}elseif($icon_class=='' && $sub_label!=''){
 			$params[0]['before_title'] = $params[0]['before_title'].'<span>';

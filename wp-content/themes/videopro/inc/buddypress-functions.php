@@ -176,7 +176,7 @@ add_action( 'bp_setup_nav', 'videopro_setup_subnav', 302 );
 function videopro_buddypress_setup_nav() {    
 	  global $bp;
       bp_core_new_nav_item( array( 
-            'name' => apply_filters('videopro_buddypress_videos_nav_text', '<i class="fas fa-play"></i> ' . esc_html__( 'Videos', '17jbh' )),
+            'name' => apply_filters('videopro_buddypress_videos_nav_text', '<i class="fa fa-play"></i> ' . esc_html__( 'Videos', '17jbh' )),
             'slug' => 'videos', 
             'position' => ot_get_option('bp_videos_nav_pos', 10),
             'screen_function' => 'videopro_buddypress_videos_screen',
@@ -957,14 +957,14 @@ function videopro_buddypress_notification_bubble( $context ){
 			$query_loop = buddypress()->notifications->query_loop;
 			?>
 			<div class="notification-bell">
-				<i class="fas fa-bell" aria-hidden="true"></i>
+				<i class="fa fa-bell" aria-hidden="true"></i>
 				<div class="number-notification active"><?php echo $query_loop->total_notification_count;?></div>
 			</div>
 			<?php
 		} else {
 			?>
 			<div class="notification-bell">
-				<i class="fas fa-bell" aria-hidden="true"></i>
+				<i class="fa fa-bell" aria-hidden="true"></i>
 				<div class="number-notification">0</div>
 			</div>
 			<?php
@@ -1051,7 +1051,7 @@ function videopro_buddpress_notification_board(){
 						 <span><?php esc_html_e('Your Notifications', '17jbh');?></span>
 				</div>
 				<div class="content empty">
-					<i class="fas fa-bell fa-5x" aria-hidden="true"></i>
+					<i class="fa fa-bell fa-5x" aria-hidden="true"></i>
 					<p><?php esc_html_e('Empty Empty World...', '17jbh');?></p>
 				</div>
 			</div>

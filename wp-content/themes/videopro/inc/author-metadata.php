@@ -25,7 +25,7 @@ function videopro_show_extra_profile_fields( $user ) { ?>
 						<td><input type="text" name="cactus_account[%1$s][title]" id="title" value="%2$s" class="" /></td>
 						<td><input type="text" name="cactus_account[%1$s][icon]" id="icon" value="%3$s" class="regular-text" /></td>
 						<td><input type="text" name="cactus_account[%1$s][url]" id="url" value="%4$s" class="regular-text" /></td>
-						<td valign="top"><button class="custom-acc-remove button"><i class="fas fa-times"></i> Remove</button></td>
+						<td valign="top"><button class="custom-acc-remove button"><i class="fa fa-times"></i> Remove</button></td>
 					</tr>
 			', $c, $track['title'], $track['icon'], $track['url'] );
 					$c = $c +1;
@@ -40,7 +40,7 @@ function videopro_show_extra_profile_fields( $user ) { ?>
 		<?php } ?>
 	</table>
     
-    <button class="cactua_add_account button button-large"><i class="fas fa-plus"></i> <?php esc_html_e('Add Custom Account','17jbh'); ?></button>
+    <button class="cactua_add_account button button-large"><i class="fa fa-plus"></i> <?php esc_html_e('Add Custom Account','17jbh'); ?></button>
 <?php }
 add_action( 'personal_options_update', 'videopro_save_extra_profile_fields' );
 add_action( 'edit_user_profile_update', 'videopro_save_extra_profile_fields' );

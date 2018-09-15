@@ -37,7 +37,7 @@ $footer_schema = apply_filters('videopro-footer-schema', 'dark-div');
                 	<div class="cactus-container padding-20px">
                     	<div class="cactus-row magin-20px">
 <!--                        	<div class="copyright font-1">--><?php //echo wp_kses_post(ot_get_option('copyright', 'WordPress Theme by CactusThemes'));?><!--</div>-->
-                        	<div class="copyright font-1" style="align-content: center">Copyright © 2018-2020 17jbh 简笔画教育 | <a title="17jbh" href="http://www.miibeian.gov.cn" target="_blank">沪ICP备18006062号-2</a></div>
+                        	<div class="copyright font-1" style="align-content: center">Copyright © 2018-2020 17jbh 简笔画视频 | <a title="17jbh" href="http://www.miibeian.gov.cn" target="_blank">沪ICP备18006062号-2</a></div>
                             <div class="link font-1">
                             	<div class="menu-footer-menu-container <?php if(ot_get_option('gototop', 'on') == 'on'){ echo 'has-gototop'; }?>">
                                 	<ul id="menu-footer-menu" class="menu">
@@ -114,7 +114,7 @@ $footer_schema = apply_filters('videopro-footer-schema', 'dark-div');
         <div class="canvas-ovelay"></div>
         <div id="off-canvas" class="off-canvas-default dark-div">
           <div class="off-canvas-inner navigation-font">
-            <div class="close-canvas-menu"> <i class="fas fa-times"></i> <?php echo __('CLOSE', '17jbh')?> </div>
+            <div class="close-canvas-menu"> <i class="fa fa-times"></i> <?php echo __('CLOSE', '17jbh')?> </div>
             <nav class="off-menu">
               <ul>                        	
 				  <?php
@@ -141,7 +141,7 @@ $footer_schema = apply_filters('videopro-footer-schema', 'dark-div');
     if(ot_get_option('gototop', 'on') == 'on'){
     ?>
     <div id="gototop" class="hidden">
-        <a href="#top" title="<?php echo esc_html__('To Top', '17jbh');?>"><i class="fas fa-angle-up"></i></a>
+        <a href="#top" title="<?php echo esc_html__('To Top', '17jbh');?>"><i class="fa fa-angle-up"></i></a>
     </div>
     <?php    
     }
@@ -155,5 +155,14 @@ $footer_schema = apply_filters('videopro-footer-schema', 'dark-div');
     <div style="padding-left: 17px; padding-right: 17px;">
         <script>cambrian.render('tail')</script>
     </div>
+    <!--?php
+        print_r(current_user_can('administrator'));
+        if (current_user_can('administrator')){
+            global $wpdb;
+            echo "<pre>";
+            print_r($wpdb->queries);
+            echo "</pre>";
+        }
+    ?-->
 </body>
 </html>
