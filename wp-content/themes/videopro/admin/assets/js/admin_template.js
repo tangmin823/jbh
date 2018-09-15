@@ -307,12 +307,12 @@ jQuery(document).ready(function($){
                 <td><input type="text" name="cactus_account['+usermeta_count+'][title]" id="title" value="" class="" /></td>\
                 <td><input type="text" name="cactus_account['+usermeta_count+'][icon]" id="icon" value="" class="regular-text" /></td>\
                 <td><input type="text" name="cactus_account['+usermeta_count+'][url]" id="url" value="" class="regular-text" /></td>\
-                <td valign="top"><button class="custom-acc-remove button"><i class="fas fa-times"></i> Remove</button></td>\
+                <td valign="top"><button class="custom-acc-remove button"><i class="fa fa-times"></i> Remove</button></td>\
             </tr>\
             ' );
             return false;
         });
-        $(".custom-acc-remove").live('click', function() {
+        $(".custom-acc-remove").on('click', function() {
             $(this).parent().parent().remove();
         });
 

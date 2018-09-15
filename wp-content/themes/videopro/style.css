@@ -74,7 +74,6 @@ License URI: https://www.cactusthemes.com
  * 17.0 - Custom Shortcode tab (Visual Composer)
  * 18.0 - Custom Shortcode tour (Visual Composer)
  * 19.0 - Custom Shortcode Accordion (Visual Composer)
- * 20.0 - Comment Form (Wordpress)
  * 21.0 - Custom Social Count Plus (Plugin)
  * 22.0 - Lightbox
  * 23.0 - Custom Gravity Form
@@ -1710,7 +1709,6 @@ License URI: https://www.cactusthemes.com
 		.cactus-info.date-time { text-transform: uppercase;}
 		.cactus-info.date-time > .cactus-info{display: inline-block} /* when no-link for datetime */
 		.cactus-info.view span:before { font-family:'Font Awesome\ 5 Free'; content:'\f06e'; font-size:16px; line-height:1; margin-right:5px; font-weight: 900}
-		.cactus-info.comment span:before { font-family:'Font Awesome\ 5 Free'; content:'\f086'; font-size:16px; line-height:1; margin-right:5px;}
 		.cactus-info.creator-elm span:before { font-family:'Font Awesome\ 5 Free'; content:"\f007"; font-size:16px; line-height:1; margin-right:5px;}
 
 		.cactus-info.categories > a { /*text-transform:uppercase;*/}
@@ -2465,7 +2463,6 @@ License URI: https://www.cactusthemes.com
 		.widget_meta ul,
 		.widget_archive ul,
 		.widget_recent_entries ul,
-		.widget_recent_comments ul,
 		.widget_pages ul,
 		.widget_nav_menu ul,
 		.widget_mostlikedpostswidget ul,
@@ -2476,7 +2473,6 @@ License URI: https://www.cactusthemes.com
 		.widget_meta li,
 		.widget_archive li,
 		.widget_recent_entries li,
-		.widget_recent_comments li,
 		.widget_pages li,
 		.widget_nav_menu li,
 		.widget_mostlikedpostswidget li,
@@ -2487,7 +2483,6 @@ License URI: https://www.cactusthemes.com
 		.widget_meta li a,
 		.widget_archive li a,
 		.widget_recent_entries li a,
-		.widget_recent_comments li a,
 		.widget_pages li a,
 		.widget_nav_menu li a,
 		.widget_mostlikedpostswidget li a,
@@ -2518,7 +2513,6 @@ License URI: https://www.cactusthemes.com
 		.widget_meta li a:hover,
 		.widget_archive li a:hover,
 		.widget_recent_entries li a:hover,
-		.widget_recent_comments li a:hover,
 		.widget_pages li a:hover,
 		.widget_nav_menu li a:hover,
 		.widget_mostlikedpostswidget li a:hover,
@@ -2529,7 +2523,6 @@ License URI: https://www.cactusthemes.com
 		.widget_meta li ul li,
 		.widget_archive li ul li,
 		.widget_recent_entries li ul li,
-		.widget_recent_comments li ul li,
 		.widget_pages li ul li,
 		.widget_nav_menu li ul li,
 		.widget_mostlikedpostswidget li ul li,
@@ -2540,7 +2533,6 @@ License URI: https://www.cactusthemes.com
 		.widget_meta li ul li a,
 		.widget_archive li ul li a,
 		.widget_recent_entries li ul li a,
-		.widget_recent_comments li ul li a,
 		.widget_pages li ul li a,
 		.widget_nav_menu li ul li a,
 		.widget_mostlikedpostswidget li ul li a,
@@ -2551,7 +2543,6 @@ License URI: https://www.cactusthemes.com
 		.widget_meta li ul li a:before,
 		.widget_archive li ul li a:before,
 		.widget_recent_entries li ul li a:before,
-		.widget_recent_comments li ul li a:before,
 		.widget_pages li ul li a:before,
 		.widget_nav_menu li ul li a:before,
 		.widget_mostlikedpostswidget li ul li a:before,
@@ -2563,7 +2554,6 @@ License URI: https://www.cactusthemes.com
 		.widget_meta li ul li:first-child,
 		.widget_archive li ul li:first-child,
 		.widget_recent_entries li ul li:first-child,
-		.widget_recent_comments li ul li:first-child,
 		.widget_pages li ul li:first-child,
 		.widget_nav_menu li ul li:first-child,
 		.widget_mostlikedpostswidget li ul li:first-child,
@@ -2574,7 +2564,6 @@ License URI: https://www.cactusthemes.com
 		.widget_meta li ul li:last-child,
 		.widget_archive li ul li:last-child,
 		.widget_recent_entries li ul li:last-child,
-		.widget_recent_comments li ul li:last-child,
 		.widget_pages li ul li:last-child,
 		.widget_nav_menu li ul li:last-child,
 		.widget_mostlikedpostswidget li ul li:last-child,
@@ -2585,7 +2574,6 @@ License URI: https://www.cactusthemes.com
 		.widget_meta .widget-inner > ul,
 		.widget_archive .widget-inner > ul,
 		.widget_recent_entries .widget-inner > ul,
-		.widget_recent_comments .widget-inner > ul,
 		.widget_pages .widget-inner > ul,
 		.widget_nav_menu .widget-inner > ul,
 		.widget_nav_menu .widget-inner > div,
@@ -2597,13 +2585,9 @@ License URI: https://www.cactusthemes.com
 		.widget_meta .widget-inner .widget-title + ul,
 		.widget_archive .widget-inner .widget-title + ul,
 		.widget_recent_entries .widget-inner .widget-title + ul,
-		.widget_recent_comments .widget-inner .widget-title + ul,
 		.widget_pages .widget-inner .widget-title + ul,
 		.widget_nav_menu .widget-inner .widget-title + ul,
 		.widget_nav_menu .widget-inner .widget-title + div {}
-
-		.widget_recent_comments li .comment-author-link > a {color: rgba(34,34,34,1.0); text-decoration:underline;}
-		.widget_recent_comments li .comment-author-link > a:hover {}
 
 		.widget_categories .widget-inner > select {margin-top:20px; margin-bottom:40px;}
 
@@ -2611,7 +2595,6 @@ License URI: https://www.cactusthemes.com
 		.dark-div .widget_meta li,
 		.dark-div .widget_archive li,
 		.dark-div .widget_recent_entries li,
-		.dark-div .widget_recent_comments li,
 		.dark-div .widget_pages li,
 		.dark-div .widget_nav_menu li,
 
@@ -2623,7 +2606,6 @@ License URI: https://www.cactusthemes.com
 		.dark-div.widget_meta li,
 		.dark-div.widget_archive li,
 		.dark-div.widget_recent_entries li,
-		.dark-div.widget_recent_comments li,
 		.dark-div.widget_pages li,
 		.dark-div.widget_nav_menu li,
 
@@ -2635,7 +2617,6 @@ License URI: https://www.cactusthemes.com
 		.dark-div .widget_meta li a,
 		.dark-div .widget_archive li a,
 		.dark-div .widget_recent_entries li a,
-		.dark-div .widget_recent_comments li a,
 		.dark-div .widget_pages li a,
 		.dark-div .widget_nav_menu li a,
 
@@ -2647,7 +2628,6 @@ License URI: https://www.cactusthemes.com
 		.dark-div.widget_meta li a,
 		.dark-div.widget_archive li a,
 		.dark-div.widget_recent_entries li a,
-		.dark-div.widget_recent_comments li a,
 		.dark-div.widget_pages li a,
 		.dark-div.widget_nav_menu li a,
 
@@ -2659,7 +2639,6 @@ License URI: https://www.cactusthemes.com
 		.dark-div .widget_meta li a:hover,
 		.dark-div .widget_archive li a:hover,
 		.dark-div .widget_recent_entries li a:hover,
-		.dark-div .widget_recent_comments li a:hover,
 		.dark-div .widget_pages li a:hover,
 		.dark-div .widget_nav_menu li a:hover,
 
@@ -2671,7 +2650,6 @@ License URI: https://www.cactusthemes.com
 		.dark-div.widget_meta li a:hover,
 		.dark-div.widget_archive li a:hover,
 		.dark-div.widget_recent_entries li a:hover,
-		.dark-div.widget_recent_comments li a:hover,
 		.dark-div.widget_pages li a:hover,
 		.dark-div.widget_nav_menu li a:hover,
 
@@ -2837,14 +2815,6 @@ License URI: https://www.cactusthemes.com
 		.dark-div .textwidget .wpcf7 input[type="submit"]:not(:hover),
 		.dark-div.textwidget .wpcf7 input[type="submit"]:not(:hover) { background-color:rgba(245,235,78,1.0);}
 
-		.style-widget-popular-post.cactus-listing-config.style-3.style-latest-comment .cactus-post-item > .entry-content > * { width:65px;}
-		.style-widget-popular-post.cactus-listing-config.style-3.style-latest-comment .cactus-post-item > .entry-content > .content { width:100%;}
-		.style-widget-popular-post.cactus-listing-config.style-3.style-latest-comment .cactus-post-item > .entry-content > .picture + .content { width:calc(100% - 65px); width:-webkit-calc(100% - 65px); width:-ms-calc(100% - 65px); width:-moz-calc(100% - 65px); width:-o-calc(100% - 65px);}
-
-		.style-widget-popular-post.cactus-listing-config.style-3.style-latest-comment .cactus-post-item > .entry-content > .content > .posted-on { margin-bottom:8px;}
-		.style-widget-popular-post.cactus-listing-config.style-3.style-latest-comment .cactus-post-item > .entry-content > .content > .posted-on:last-child { margin-bottom:-7px;}
-		.style-widget-popular-post.cactus-listing-config.style-3.style-latest-comment .cactus-post-item > .entry-content > .content > .posted-on > * + *:before {content:''; display:inline-block; width:2px; height:2px; background-color:rgba(153,153,153,1.0); padding:0; margin:0 10px;}
-
 		.style-widget-popular-post.style-casting .cactus-post-item > .entry-content { margin-left:-5px; margin-right:-5px; font-size:0; line-height:0;}
 		.style-widget-popular-post.style-casting .cactus-post-item > .entry-content > * { padding-left:5px; padding-right:5px; font-size:14px; line-height:1.8; display:inline-block; vertical-align:middle; float:none;}
 		.style-widget-popular-post.cactus-listing-config.style-3.style-casting .cactus-post-item > .entry-content > * { width:42px;}
@@ -2979,111 +2949,6 @@ License URI: https://www.cactusthemes.com
 		.body-content .vc_tta.vc_general.vc_tta-accordion .vc_tta-panel:last-child .vc_tta-panel-body { padding-bottom:0;}
 	}
 /*End - 19.0 - Custom Shortcode Accordion (Visual Composer)*/
-
-/*20.0 - Comment Form (Wordpress)*/
-	.comments-area { position:relative; z-index:1;}
-	.comments-area * { line-height:1.8}
-	.comments-area .comment-reply-title,
-	.comments-area .comments-title { font-size:18px; margin-top:-10px; position:relative; margin-bottom:27px; padding-top:0; padding-bottom:3px;}
-	.comments-area .comment-form > .comment-notes,
-	.comments-area label[for="author"],
-	.comments-area label[for="email"],
-	.comments-area label[for="url"],
-	.comments-area label[for="author"],
-	.comments-area label[for="comment"],
-	.comments-area .form-allowed-tags
-	{display:none;}
-	.comments-area .comment-form > p { padding:0;}
-
-	.comments-area .comment-form textarea { height:150px; line-height:1.3;}
-	.comments-area .comment-form > .form-submit { margin-bottom:-10px;}
-
-	.comments-area .comment-form > .logged-in-as { margin-top:-8px; margin-bottom:33px;}
-	.comments-area .comment-form > .logged-in-as > a { color:rgba(28,28,28,1.0)}
-
-	.comments-area #author,
-	.comments-area #email,
-	.comments-area #url { width:50%;}
-
-	@media(max-width:767px){
-		.comments-area #author,
-		.comments-area #email,
-		.comments-area #url { width:100%;}
-	}
-
-	.comments-area footer { background-color:transparent;}
-	.comments-area ul.comment-list,
-	.comments-area ol.comment-list,
-	.comments-area ul.children,
-	.comments-area ol.children { list-style:none; padding:0; margin:0;}
-
-	.comments-area article[id^="div-comment-"] { position:relative; margin-bottom:40px; min-height:74px;}
-
-	.comments-area .comment-list > [id^="comment-"]:last-child.parent { position:relative;}
-	.comments-area .comment-list > [id^="comment-"]:last-child.parent:after { content:''; position:absolute; left:0; bottom:-1px; background-color:rgba(230,230,230,1.00); width:100%; height:1px; display:block;}
-
-	.comments-area footer.comment-meta { position:absolute;}
-	.comments-area .comment-author { display:inline-block; position:relative; font-size:0; line-height:0; vertical-align:top}
-	.comments-area .comment-author > * { font-size:14px; line-height:1.8;} /*change font size*/
-	.comments-area .comment-metadata  { display:block; position: absolute; top:19px; left:60px; right:-500%;}
-	.comments-area .comment-author > img { width:50px; height:50px; display:inline-block; vertical-align:top; margin-right:10px;}
-	.comments-area .comment-metadata time { font-size:12px; color:rgba(153,153,153,1.0);}
-	.comments-area .comment-author > .says { display:none;}
-
-	.comments-area .comment-author > .fn > a,
-	.comments-area .comment-author > .fn,
-	.comments-area .comment-metadata a { display:inline-block; vertical-align:top; text-decoration:none;}
-
-	.comments-area .comment-author > .fn,
-	.comments-area .comment-author > .fn > a {text-decoration:none; font-weight:bold;}
-	.comments-area .comment-author > .fn > a:hover { text-decoration:none;}
-
-	.comments-area .comment-metadata .edit-link { position:relative; padding-left:5px;}
-	.comments-area .comment-metadata .edit-link:before {content:'-'; text-decoration:none; font-size:12px; display: inline-block; line-height:1; vertical-align:top; margin-right:5px;}
-
-	.comments-area .comment-author > .fn,
-	.comments-area .comment-metadata a { margin-top:-7px;}
-	.dark-div .comments-area .comment-author > .fn { color:rgba(255,255,255,1.0);}
-
-	.comments-area .comment-content { padding-left:60px; padding-top:34px; margin-bottom:-15px; position:relative;}
-	.comments-area .reply { position:absolute; top:-7px; right:0;}
-	.comments-area .reply a {font-size:12px;  color:rgba(153,153,153,1.0); text-decoration:none;}
-	.comments-area .reply a:hover { text-decoration:none; color:rgba(34,34,34,1.0);}
-
-	.comments-area .comment-awaiting-moderation { position:absolute; left:0; bottom:100%; margin-bottom:-5px; white-space:nowrap; font-size:12px; color:rgba(255,0,4,1.00);}
-
-	@media(min-width:1024px) {
-		.comments-area ol.children {padding-left:60px;}
-		.comments-area ol.children ol.children { padding-left:60px;}
-	}
-
-	@media(max-width:1023px) {
-		.comments-area .children article[id^="div-comment-"] { padding-left:60px;}
-	}
-
-	.comments-area article[id^="div-comment-"] + #respond { padding-bottom:30px; border-bottom:1px solid rgba(230,230,230,1.0); margin-bottom:30px;}
-	.comments-area .children article[id^="div-comment-"] + #respond { padding-left:50px;}
-
-	.comments-area .comment-author > .fn > a:hover,
-	.comments-area .comment-metadata a:hover,
-	.comments-area .reply a:hover { text-decoration:none;}
-	.comments-area .comment-list > [id^="comment-"]:last-child article[id^="div-comment-"] + #respond { margin-bottom:0; border:none; padding-bottom:0;}
-
-	#respond { padding-top:1px;}
-
-	@media(max-width:480px) {
-		.comments-area article[id^="div-comment-"] { min-height:74px;}
-		.comments-area .children article[id^="div-comment-"] { padding-left:0;}
-		.comments-area ol.comment-list { padding-bottom:10px}
-	}
-	@media(max-width:400px) {
-		.comments-area .comment-list > [id^="comment-"]:last-child:not(.parent) > article[id^="div-comment-"] { padding-bottom:70px;}
-		.comments-area .children article[id^="div-comment-"] { padding-left:0;}
-		.comments-area .reply { right:auto; left:8px; top: 52px;}
-		.comments-area footer.comment-meta {left:0; right:0;}
-
-	}
-/*End - 20.0 - Comment Form (Wordpress)*/
 
 /*22.0 - Lightbox*/
     .submitModal { position:fixed; top:0; left:0; width:100%; height:100%; z-index:99999; outline:none; opacity:0; visibility:hidden; background-color:rgba(0,0,0,0.75)}
@@ -3437,17 +3302,9 @@ License URI: https://www.cactusthemes.com
 
 /*30.0 - Archive screenshots*/
 	.cactus-post-item .picture-content.screenshots-preview-inline { position:relative; overflow:hidden;}
-	.cactus-post-item .picture-content.screenshots-preview-inline.downloading{}
-	.cactus-post-item .picture-content.screenshots-preview-inline.downloading:after{content: '\f1ce';width:20px;height:20px;position:absolute; font-family: 'Font Awesome\ 5 Free'; top: 3px; left: 13px; font-size: 15px; color: #FFF; line-height: 21px; -webkit-animation:a 2s infinite linear;animation:a 2s infinite linear; font-weight: bold}
 	.cactus-post-item .picture-content.screenshots-preview-inline .svg-loading { position:absolute; right:10px; top:10px;}
 	.cactus-post-item .picture-content.screenshots-preview-inline img:not(:first-child) {
 		opacity:0; visibility:hidden; position:absolute; top:0; left:0; width:100%; height:auto; backface-visibility:hidden; -webkit-backface-visibility:hidden;
-	}
-	.cactus-post-item .picture-content.screenshots-preview-inline:not(.play-screenshots) img:not(:first-child){
-		transition-delay:0s !important; -webkit-transition-delay:0s !important;
-	}
-	.cactus-post-item .picture-content.screenshots-preview-inline.play-screenshots img:not(:first-child){
-		opacity:1; visibility:visible; transition:0.1s ease-in; -webkit-transition:0.1s ease-in;
 	}
 /*End 30.0 - Archive screenshots*/
 

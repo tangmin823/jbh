@@ -72,22 +72,22 @@ $menu[15] = array( __('Links'), 'manage_links', 'link-manager.php', '', 'menu-to
 // $menu[20] = Pages
 
 // Avoid the comment count query for users who cannot edit_posts.
-if ( current_user_can( 'edit_posts' ) ) {
-	$awaiting_mod = wp_count_comments();
-	$awaiting_mod = $awaiting_mod->moderated;
-	$menu[25] = array(
-		sprintf( __( 'Comments %s' ), '<span class="awaiting-mod count-' . absint( $awaiting_mod ) . '"><span class="pending-count">' . number_format_i18n( $awaiting_mod ) . '</span></span>' ),
-		'edit_posts',
-		'edit-comments.php',
-		'',
-		'menu-top menu-icon-comments',
-		'menu-comments',
-		'dashicons-admin-comments',
-	);
-	unset( $awaiting_mod );
-}
+//if ( current_user_can( 'edit_posts' ) ) {
+//	$awaiting_mod = wp_count_comments();
+//	$awaiting_mod = $awaiting_mod->moderated;
+//	$menu[25] = array(
+//		sprintf( __( 'Comments %s' ), '<span class="awaiting-mod count-' . absint( $awaiting_mod ) . '"><span class="pending-count">' . number_format_i18n( $awaiting_mod ) . '</span></span>' ),
+//		'edit_posts',
+//		'edit-comments.php',
+//		'',
+//		'menu-top menu-icon-comments',
+//		'menu-comments',
+//		'dashicons-admin-comments',
+//	);
+//	unset( $awaiting_mod );
+//}
 
-$submenu[ 'edit-comments.php' ][0] = array( __('All Comments'), 'edit_posts', 'edit-comments.php' );
+//$submenu[ 'edit-comments.php' ][0] = array( __('All Comments'), 'edit_posts', 'edit-comments.php' );
 
 $_wp_last_object_menu = 25; // The index of the last top-level menu in the object menu group
 

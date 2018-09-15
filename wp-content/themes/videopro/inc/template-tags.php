@@ -986,7 +986,7 @@ if(!function_exists('videopro_singlevideo_left_meta')){
 
 		$isWTIinstalled = (ot_get_option('single_post_show_likes', 'off') == 'on' ? (function_exists('GetWtiLikeCount') ? 1 : 0) : 0);
 
-		$is_comment_count_available = ot_get_option('show_cmcount_single_post','on') != 'off' && ! post_password_required() && ( comments_open() || '0' != get_comments_number() );
+		$is_comment_count_available = ot_get_option('show_cmcount_single_post','on') != 'off' && ! post_password_required();
 
 		$html = '';
 		ob_start();
@@ -1007,9 +1007,6 @@ if(!function_exists('videopro_singlevideo_left_meta')){
         	<div class="posted-on metadata-font right">
 				<?php if($viewed != '' && ot_get_option('single_post_show_views', 'on') == 'on') {?>
                 <div class="view cactus-info font-size-1"><span><?php echo sprintf(esc_html__('%s 阅读','17jbh'), videopro_get_formatted_string_number($viewed));?></span></div>
-                <?php }
-                if ($is_comment_count_available) {?>
-                    <a href="<?php echo get_comments_link(); ?>" class="comment cactus-info font-size-1"><span><?php echo sprintf(esc_html__('%s 评论','17jbh'), number_format_i18n(get_comments_number())); ?></span></a>
                 <?php }?>
             </div>
 		</div>

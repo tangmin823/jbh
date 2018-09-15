@@ -445,7 +445,7 @@ if(!function_exists('videopro_singlevideo_left_meta_html')){
 			$show_right_meta = false;
 		}
 
-        $is_comment_count_available = ot_get_option('show_cmcount_single_post','on') != 'off' && ! post_password_required() && ( comments_open() || '0' != get_comments_number() );
+        $is_comment_count_available = ot_get_option('show_cmcount_single_post','on') != 'off' && ! post_password_required();
 
 		ob_start();
 		?>
@@ -460,25 +460,9 @@ if(!function_exists('videopro_singlevideo_left_meta_html')){
 				</div>
 				<?php } ?>
 			</div>
-			<?php if (!$show_right_meta && $is_comment_count_available){?>
-			<div class="posted-on metadata-font right">
-				<a href="<?php echo get_comments_link($post->ID); ?>" class="comment cactus-info font-size-1"><span><?php echo sprintf(esc_html__('%s 评论','17jbh'), number_format_i18n(get_comments_number($post->ID))); ?></span></a>
-			</div>
-			<?php }?>
 		</div>
 		<?php
-		if($show_right_meta && $is_comment_count_available){
-		?>
-		<div class="right">
-			<div class="posted-on metadata-font right">
-				<a href="<?php echo get_comments_link($post->ID); ?>" class="comment cactus-info font-size-1"><span><?php echo sprintf(esc_html__('%s 评论','17jbh'), number_format_i18n(get_comments_number($post->ID))); ?></span></a>
-			</div>
-		</div>
-			<?php
-		}
-
 		$html .= ob_get_clean();
-
 		return $html;
 	}
 }
@@ -743,12 +727,6 @@ function videopro_print_header_thumbnail_image($video_id){
                     $isWTIinstalled = $use_network_data ? 1 : (function_exists('GetWtiLikeCount') ? 1 : 0);
                     $isTop10PluginInstalled = $use_network_data ? 1 : (is_plugin_active('top-10/top-10.php') ? 1 : 0);
                 ?>
-                <div class="posted-on metadata-font">
-                    <?php if($isTop10PluginInstalled) {?>
-                    <div class="view cactus-info font-size-1"><span><?php echo sprintf(esc_html__('%s 阅读','17jbh'), videopro_get_formatted_string_number($viewed));?></span></div>
-                    <?php }?>
-                    <a href="<?php echo get_comments_link($video_id); ?>" class="comment cactus-info font-size-1"><span><?php echo sprintf(esc_html__('%s 评论','17jbh'), number_format_i18n(get_comments_number($video_id))); ?></span></a>
-                </div>
             </div>
         </div>
 		<?php do_action('videopro-after-player-content'); ?>
@@ -756,6 +734,8 @@ function videopro_print_header_thumbnail_image($video_id){
 	<div id="video-shadow"></div>
     <?php
 }
+
+
 
 add_filter('videopro_content_video_header', 'videopro_content_video_header_filter',10, 3);
 if(!function_exists('videopro_content_video_header_filter')){

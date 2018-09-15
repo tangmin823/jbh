@@ -180,7 +180,6 @@ require( ABSPATH . WPINC . '/comment.php' );
 require( ABSPATH . WPINC . '/class-wp-comment.php' );
 require( ABSPATH . WPINC . '/class-wp-comment-query.php' );
 require( ABSPATH . WPINC . '/class-walker-comment.php' );
-require( ABSPATH . WPINC . '/comment-template.php' );
 require( ABSPATH . WPINC . '/rewrite.php' );
 require( ABSPATH . WPINC . '/class-wp-rewrite.php' );
 require( ABSPATH . WPINC . '/feed.php' );

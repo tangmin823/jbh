@@ -85,7 +85,7 @@ function compareTableCallbackColumns() {
 	}
 	
 	$(document).ready(function(e) {
-		$('[data-element_type="v_column"] .vc_control.column_clone').live('click', function(){
+		$('[data-element_type="v_column"] .vc_control.column_clone').on('click', function(){
 			var $this = $(this);
 			setTimeout(function() {
 				initColumns($('[data-element_type="v_column"]:not(.col-extend)'));

@@ -68,7 +68,7 @@ function tm_mtl_inner_custom_box() {
             $('#tm_here').append('<tr><td valign="top"><input type="text" name="tm_multi_link['+count+'][title]" value="" placeholder="Group Title" size=30 /></td><td valign="top"><textarea type="text" name="tm_multi_link['+count+'][links]" cols=90 rows=4></textarea></td><td valign="top"><button class="mtl-remove button"><i class="fa fa-times"></i> <?php esc_html_e('Remove','17jbh');?></button></td></tr>' );
             return false;
         });
-        $(".mtl-remove").live('click', function() {
+        $(".mtl-remove").on('click', function() {
             $(this).parent().parent().remove();
         });
     });

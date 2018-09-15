@@ -517,27 +517,6 @@ class WP_Media_List_Table extends WP_List_Table {
 	}
 
 	/**
-	 * Handles the comments column output.
-	 *
-	 * @since 4.3.0
-	 *
-	 * @param WP_Post $post The current WP_Post object.
-	 */
-	public function column_comments( $post ) {
-		echo '<div class="post-com-count-wrapper">';
-
-		if ( isset( $this->comment_pending_count[ $post->ID ] ) ) {
-			$pending_comments = $this->comment_pending_count[ $post->ID ];
-		} else {
-			$pending_comments = get_pending_comments_num( $post->ID );
-		}
-
-		$this->comments_bubble( $post->ID, $pending_comments );
-
-		echo '</div>';
-	}
-
-	/**
 	 * Handles output for the default column.
 	 *
 	 * @since 4.3.0

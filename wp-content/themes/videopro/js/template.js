@@ -114,13 +114,13 @@
 		
 		$('.cactus-main-menu:not(.cactus-user-login)>ul>li>*:not(a)').each(function(index, element) {
             if($(this).length>0){
-				$(this).parents('li').children('a').addClass('cactus-hasIcon').append('<i class="fas fa-sort-down"></i>');
+				$(this).parents('li').children('a').addClass('cactus-hasIcon').append('<i class="fa fa-sort-down"></i>');
 			};
         }); //Menu lv1
 		
 		$('.cactus-main-menu:not(.cactus-user-login)>ul>li>*:not(a) li>*:not(a)').each(function(index, element) {
             if($(this).length>0){
-				$(this).parent().children('a').addClass('cactus-hasIcon').append('<i class="fas fa-sort-down"></i>');
+				$(this).parent().children('a').addClass('cactus-hasIcon').append('<i class="fa fa-sort-down"></i>');
 			};
         }); //Menu lv2, 3, 4 ...
 		
@@ -143,13 +143,13 @@
 		/*Mobile*/
 		$('#off-canvas .off-menu>ul>li>*:not(a)').each(function(index, element) {
             if($(this).length>0){
-				$(this).parent('li').addClass('set-parent').children('a').append('<span class="set-children"><i class="fas fa-sort-down"></i></span>');
+				$(this).parent('li').addClass('set-parent').children('a').append('<span class="set-children"><i class="fa fa-sort-down"></i></span>');
 			};
         }); //Menu lv1
 		
 		$('#off-canvas .off-menu>ul>li>*:not(a) li>*:not(a)').each(function(index, element) {
 			if($(this).length>0){
-				$(this).parent('li').addClass('set-parent').children('a').append('<span class="set-children"><i class="fas fa-sort-down"></i></span>');
+				$(this).parent('li').addClass('set-parent').children('a').append('<span class="set-children"><i class="fa fa-sort-down"></i></span>');
 			};
 		}); //Menu lv2, 3, 4 ...
 		
@@ -682,10 +682,10 @@
                 });
 				
                 if($('.sticky-menu .cactus-header-search-form').length > 0){
-                    $('<div class="cactus-main-menu cactus-open-menu-mobile navigation-font"><ul><li><a href="javascript:;"><i class="fas fa-bars"></i></a></li></ul></div>')
+                    $('<div class="cactus-main-menu cactus-open-menu-mobile navigation-font"><ul><li><a href="javascript:;"><i class="fa fa-bars"></i></a></li></ul></div>')
                             .insertAfter('.sticky-menu .cactus-header-search-form');
                 } else {
-                    $('<div class="cactus-main-menu cactus-open-menu-mobile navigation-font"><ul><li><a href="javascript:;"><i class="fas fa-bars"></i></a></li></ul></div>')
+                    $('<div class="cactus-main-menu cactus-open-menu-mobile navigation-font"><ul><li><a href="javascript:;"><i class="fa fa-bars"></i></a></li></ul></div>')
                             .insertAfter('.sticky-menu .cactus-main-menu');
                 }
 				
@@ -869,76 +869,6 @@
 				$('.share-tool-block ~ style').remove();
 			});
 		/*like action*/
-		
-		/*screenShots Play*/			
-			var speedScreenShots = 1000; //delay speed :ms
-			$('body')
-			.on('mouseenter touchstart', '.screenshots-preview-inline', function(){
-				var $this = $(this);
-				
-				if($this.hasClass('screenshots-loaded')){
-					if(!$this.hasClass('animation-ready')){
-						var totalLength = $this.find('img').length;
-						$this.find('img').each(function(index, element){											
-							if(index > 0){
-								var animationDelay = (index - 1) * speedScreenShots;	
-								$(this).css({'-webkit-transition-delay':animationDelay+'ms', 'transition-delay':animationDelay+'ms',});
-							}
-						});					
-					};
-					
-					if(!$this.hasClass('play-screenshots')){
-						if($this.find('img.lazyload').length > 0 || $this.find('img.lazyloading').length > 0){
-							return;
-						}
-						$('.screenshots-preview-inline').removeClass('play-screenshots');				
-						$this.addClass('animation-ready play-screenshots');	
-						return false;					
-					};
-				} else {
-					// load screenshots
-					data = 	{
-						action: 'get_video_screenshots',
-						post_id: $this.attr('data-post-id')
-					};
-					
-					$this.addClass('downloading');
-					
-					if(!_ajax_loading){
-						_ajax_loading = true;
-						jQuery.ajax({
-							  type: 'POST',
-							  url: cactus.ajaxurl,
-							  cache: false,
-							  data: data,
-							  context: $this,
-							  success: function(data, textStatus, XMLHttpRequest){
-								if(data != ''){
-									$('.screenshots', $(this)).append(data);
-								}
-
-								$(this).addClass('screenshots-loaded');
-								_ajax_loading = false;
-								$this = $(this);
-								$this.removeClass('downloading');
-								setTimeout(function(){$this.trigger('mouseenter');},400);
-							  },
-							  error: function(MLHttpRequest, textStatus, errorThrown){
-									$(this).addClass('screenshots-loaded');
-									_ajax_loading = false;
-									$this.removeClass('downloading');
-							  }
-						  });
-					}
-				}
-			})
-			.on('mouseleave', '.screenshots-preview-inline' , function(){
-				$(this).removeClass('play-screenshots');
-			})
-			.on('touchstart', function(){
-				$('.screenshots-preview-inline').removeClass('play-screenshots');
-			});
-		/*screenShots Play*/
 		
 		/*float video*/
 			function floatVideoFunction(){
@@ -1131,7 +1061,7 @@
                 <td><input type="text" name="cactus_account['+usermeta_count+'][title]" id="title" value="" class="" /></td>\
                 <td><input type="text" name="cactus_account['+usermeta_count+'][icon]" id="icon" value="" class="regular-text" /></td>\
                 <td><input type="text" name="cactus_account['+usermeta_count+'][url]" id="url" value="" class="regular-text" /></td>\
-                <td valign="top"><button class="custom-acc-remove button"><i class="fas fa-times"></i> x</button></td>\
+                <td valign="top"><button class="custom-acc-remove button"><i class="fa fa-times"></i> x</button></td>\
             </tr>\
             ' );
             return false;

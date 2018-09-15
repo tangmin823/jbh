@@ -125,12 +125,6 @@ $live_cm = get_post_meta($post->ID,'enable_live_video',true);
 									
 									do_action('videopro-single-video-before-comment');
 									
-                                    if(ot_get_option('show_comment', 'on')!='off' && $live_cm != 'on'){
-                                        if ( comments_open() || '0' != get_comments_number() ){
-                                            comments_template();
-                                        }
-                                    }
-									
 									do_action('videopro-single-video-end-post');
                                     ?>   
                                 </article> 

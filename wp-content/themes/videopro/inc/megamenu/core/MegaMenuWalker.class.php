@@ -272,9 +272,9 @@ class MashMenuWalkerCore extends Walker_Nav_Menu{
 			
 			if($depth == 0 && $opt_caretDownPos == 'left'){
 				if($options['icon_mainmenu_parent'] != ''){
-					$item_output .= "<i class='fas " . $options['icon_mainmenu_parent'] . "'></i>";
+					$item_output .= "<i class='fa " . $options['icon_mainmenu_parent'] . "'></i>";
 				} else {
-					$item_output .= "<i class='fas fa-caret-down'></i>";
+					$item_output .= "<i class='fa fa-caret-down'></i>";
 				}
 			}
 			if(!empty( $args->link_before)){

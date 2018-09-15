@@ -363,15 +363,11 @@ function videopro_scripts() {
 	}
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap-lib.js', array('jquery'), '3.1.1', true );
-//	wp_enqueue_script( 'jquery-migrate', 'https://cdn.bootcss.com/jquery-migrate/1.4.1' . '/jquery-migrate.min.js', array('jquery'), '1.4.1', true );
+	wp_enqueue_script( 'jquery-migrate', 'https://cdn.bootcss.com/jquery-migrate/1.4.1' . '/jquery-migrate.min.js', array('jquery'), '1.4.1', true );
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.1.0', true );
     wp_enqueue_script( 'malihu-scroll', 'https://cdn.bootcss.com/malihu-custom-scrollbar-plugin/3.1.5' . '/jquery.mCustomScrollbar.concat.min.js', array('jquery'), '3.1.5', true );
     wp_enqueue_script( 'js-cookie', get_template_directory_uri() . '/js/js.cookie.js', array('jquery'), '2.1.1', true );
 	wp_enqueue_script( 'js-isotope', get_template_directory_uri() . '/js/isotope.js', array('jquery'), '3.0.1', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 
 	// code to embed the java script file that makes the Ajax request
 	wp_enqueue_script( 'videopro-ajax-request', get_template_directory_uri() . '/js/ajax.js', array( 'jquery' ) );
@@ -741,9 +737,6 @@ function videopro_ajax_scroll_next_post()
 
 						get_template_part( 'html/single/single', 'related' );
 
-						if ( comments_open() || '0' != get_comments_number() ) :
-							comments_template();
-						endif;
 						echo "</article>";
 					}
 

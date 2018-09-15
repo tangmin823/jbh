@@ -300,8 +300,6 @@ class videopro_Popular_posts extends WP_Widget
                                     $html .= '<div class="date-time cactus-info font-size-1">'. videopro_get_datetime($id, $link_post).'</div>';
                                 } elseif($order_by == 'most_viewed') {
                                     $html .= '<div class="viewed cactus-info font-size-1">' . sprintf(esc_html__('%s 阅读','17jbh'), videopro_get_formatted_string_number($viewed)) . '</div>';
-                                } elseif($order_by == 'most_commented'){
-                                    $html .= '<div class="commented cactus-info font-size-1">' . sprintf(esc_html__('%s 评论','17jbh'), videopro_get_formatted_string_number(get_comments_number( $id ))) . '</div>';
                                 }
 
 							$html .= '</div>    

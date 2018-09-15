@@ -101,11 +101,6 @@ $link_post = apply_filters('videopro_loop_item_url', $link_post, $id);
 				if(ot_get_option('enable_archive_view', 'on') != 'off'){?>
                 <div class="view cactus-info font-size-1"><span><?php echo videopro_get_formatted_string_number($viewed);?></span></div>
 				<?php }?>
-				
-				<?php 
-				if (ot_get_option('enable_archive_cm', 'on') != 'off' && ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ){?>
-                <a href="<?php echo get_comments_link(); ?>" class="comment cactus-info font-size-1"><span><?php echo number_format_i18n(get_comments_number());?></span></a>
-                <?php }?>
             </div>
             <?php }?>
             <?php do_action('videopro_loop_item_after_content');?>
