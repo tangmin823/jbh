@@ -40,13 +40,7 @@ $time_video = function_exists( 'videopro_secondsToTime' ) ? videopro_secondsToTi
             
             <div class="posted-on metadata-font">
                 <div class="date-time cactus-info font-size-1"><?php echo videopro_get_datetime(); ?></div>
-            </div> 
-            
-            <div class="posted-on metadata-font">                                                            	
-                <?php if($viewed!=''){?><div class="view cactus-info font-size-1"><span><?php echo esc_html($viewed);?></span></div><?php }
-				if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ){?>
-                <a href="<?php echo get_comments_link(); ?>" class="comment cactus-info font-size-1"><span><?php echo get_comments_number();?></span></a>
-                <?php }?>
+                <?php if($viewed!=''){?><span class="fa fa-eye cactus-info font-size-1"><?php echo sprintf(esc_html__(' %s 阅读','17jbh'), esc_html($viewed));?></span><?php }?>
             </div>
             
         </div>

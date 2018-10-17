@@ -46,7 +46,7 @@ $has_no_picture_class = !has_post_thumbnail() ? ' no-picture' : '';
             <div class="posted-on metadata-font">
                 <a href="#" class="author cactus-info font-size-1"><span><?php echo sprintf(esc_html__('%d videos', '17jbh'), $n_video);?></span></a>
                 <?php if($view_channel!=''){?>
-                <div class="view cactus-info font-size-1"><span><?php echo sprintf(esc_html__('%d views', '17jbh'), $view_channel);?></span></div>
+                <span class="fa fa-eye cactus-info font-size-1"><?php echo sprintf(esc_html__(' %d 阅读', '17jbh'), $view_channel);?></span>
                 <?php }?>
             </div>
             

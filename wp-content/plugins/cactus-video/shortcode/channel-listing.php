@@ -107,8 +107,8 @@ function videopro_channel_listing_sc($atts, $content = null) {
 									<a href="<?php echo get_permalink($channel_ID);?>" title="<?php the_title_attribute();?>"><?php the_title();?><?php do_action('videopro_after_title', $channel_ID );?></a> 
 								</h3>
 								<div class="posted-on metadata-font">
-								  <div class="cactus-info font-size-1"><span><?php echo sprintf(esc_html__('%d Videos', '17jbh'), $n_video);?></span></div>
-								  <div class="view cactus-info font-size-1"><span><?php echo videopro_get_formatted_string_number($viewed);?></span></div>
+								  <div class="cactus-info font-size-1"><span><?php echo sprintf(esc_html__('%d 阅读', '17jbh'), $n_video);?></span></div>
+								  <span class="fa fa-eye cactus-info font-size-1"><?php echo sprintf(esc_html__(' %s 阅读','17jbh'), videopro_get_formatted_string_number($viewed));?></span>
 								</div>                                
 								<?php do_action('cactus-video-subscribe-button', $channel_ID);?>                                
 							</div>

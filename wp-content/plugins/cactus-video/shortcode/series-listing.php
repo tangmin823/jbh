@@ -132,8 +132,8 @@ function videopro_series_listing_sc($atts, $content = null) {
                             	<a href="<?php echo esc_url($cat_url);?>" title="<?php echo esc_attr($term->name);?>"><?php echo esc_html($term->name);?></a> 
                             </h3>
                             <div class="posted-on metadata-font">
-                              <div class="cactus-info font-size-1"><span><?php echo esc_html($term->count);?> <?php echo esc_html__(' Videos','17jbh');?></span></div>
-                              <div class="view cactus-info font-size-1"><span><?php echo videopro_get_formatted_string_number($viewed);?></span></div>
+                              <div class="cactus-info font-size-1"><span><?php echo esc_html($term->count);?> <?php echo esc_html__(' 阅读','17jbh');?></span></div>
+                              <span class="fa fa-eye cactus-info font-size-1"><?php echo sprintf(esc_html__(' %s 阅读','17jbh'), videopro_get_formatted_string_number($viewed));?></span>
                             </div>
                         </div>
                     </div>

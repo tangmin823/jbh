@@ -255,7 +255,7 @@ function add_advance_search_form_media(){
 	if(!wp_script_is('advance-search')){
 		wp_register_script('advance-search',plugins_url('searchform.js', __FILE__),array('jquery'));
 		wp_enqueue_script('advance-search');
-		wp_register_script('mousewheel',plugins_url('jquery.mousewheel.js', __FILE__),array('jquery'));
+		wp_register_script('mousewheel', 'https://cdn.staticfile.org/twitter-bootstrap/3.3.5/js/bootstrap.js', array('jquery'));
 		wp_enqueue_script('mousewheel');
 		// declare the URL to the file that handles the AJAX request (wp-admin/admin-ajax.php)
 		wp_localize_script( 'advance-search', 'asf', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );

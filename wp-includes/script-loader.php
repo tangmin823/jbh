@@ -194,7 +194,7 @@ function wp_default_scripts( &$scripts ) {
 	// jQuery
 //	$scripts->add( 'jquery', false, array( 'jquery-core', 'jquery-migrate' ), '1.12.4' );
 	$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.4' );
-	$scripts->add( 'jquery-core', 'https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js', array(), '1.12.4' );
+	$scripts->add( 'jquery-core', 'https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js', array(), '1.12.4' );
 //	$scripts->add( 'jquery-migrate', "https://cdn.bootcss.com/jquery-migrate/1.4.1/jquery-migrate.min.js", array(), '1.4.1' );
 
 	// full jQuery UI

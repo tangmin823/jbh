@@ -99,21 +99,11 @@ if($i == 1 ){
                         <?php if((isset($atts_sc['show_datetime']) && $atts_sc['show_datetime'] !='0') || (!isset($atts_sc['show_datetime']))){?>
                         <div class="date-time cactus-info font-size-1"><?php echo videopro_get_datetime($id, $link_post); ?></div>
                         <?php }?>
-                    </div> 
-                    
-                    <div class="posted-on metadata-font">                                                            	
-						<?php 
-                        
+                        <?php
                         if((isset($atts_sc['show_view_count']) && $atts_sc['show_view_count'] !='0') || (!isset($atts_sc['show_view_count']))){
-                            if($viewed!=''){?><div class="view cactus-info font-size-1"><span><?php echo videopro_get_formatted_string_number($viewed);?></span></div><?php }
-                        }
-                        
-                        if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ){?>
-                        <a href="<?php echo get_comments_link(); ?>" target="<?php echo apply_filters('videopro_loop_item_url_target', '_self', $id);?>" class="comment cactus-info font-size-1"><span><?php echo number_format_i18n(get_comments_number());?></span></a>
-                        <?php }?>
-
+                            if($viewed!=''){?><span class="fa fa-eye cactus-info font-size-1"><?php echo sprintf(esc_html__(' %s 阅读','17jbh'), videopro_get_formatted_string_number($viewed));?></span><?php }
+                        }?>
                     </div>
-                    
                 </div>
                 
             </div>
@@ -185,14 +175,8 @@ if($i == 1 ){
 						<?php 
                         
                         if((isset($atts_sc['show_view_count']) && $atts_sc['show_view_count'] !='0') || (!isset($atts_sc['show_view_count']))){
-                            if($viewed!=''){?><div class="view cactus-info font-size-1"><span><?php echo $viewed;?></span></div><?php }
-                        }
-						
-						if((isset($atts_sc['show_comment_count']) && $atts_sc['show_comment_count'] !='0') || (!isset($atts_sc['show_comment_count']))){
-                        if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ){?>
-                        <a href="<?php echo get_comments_link(); ?>" class="comment cactus-info font-size-1"><span><?php echo number_format_i18n(get_comments_number());?></span></a>
-                        <?php }
-						}?>
+                            if($viewed!=''){?><span class="fa fa-eye cactus-info font-size-1"><?php echo sprintf(esc_html__(' %s 阅读','17jbh'), videopro_get_formatted_string_number($viewed));?></span><?php }
+                        }?>
 
                     </div>
                     

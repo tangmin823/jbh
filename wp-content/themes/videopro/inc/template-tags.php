@@ -1006,7 +1006,7 @@ if(!function_exists('videopro_singlevideo_left_meta')){
 		<div class="right">
         	<div class="posted-on metadata-font right">
 				<?php if($viewed != '' && ot_get_option('single_post_show_views', 'on') == 'on') {?>
-                <div class="view cactus-info font-size-1"><span><?php echo sprintf(esc_html__('%s 阅读','17jbh'), videopro_get_formatted_string_number($viewed));?></span></div>
+                <span class="fa fa-eye cactus-info font-size-1"><?php echo sprintf(esc_html__(' %s 阅读','17jbh'), videopro_get_formatted_string_number($viewed));?></span>
                 <?php }?>
             </div>
 		</div>

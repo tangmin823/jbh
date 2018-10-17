@@ -40,7 +40,7 @@
 				  );
 				  $the_query = new WP_Query( $args );
 				  $it = $the_query->found_posts;?>
-                 <div class="view cactus-info font-size-1"><?php echo sprintf(esc_html__('%d Videos','17jbh'), $it); ?></div>
+                 <span class="fa fa-eye cactus-info font-size-1"><?php echo sprintf(esc_html__('%d 阅读','17jbh'), $it); ?></span>
             </div>
             <?php do_action('videopro_loop_item_after_content');?>
         </div>

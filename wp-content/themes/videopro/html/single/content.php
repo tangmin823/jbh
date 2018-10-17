@@ -56,7 +56,7 @@ if(ot_get_option('show_tags_single_post', 'on') != 'off'){
 $posttags = get_the_tags();
 if ($posttags) {?>
 <div class="posted-on metadata-font">                                               
-    <div class="categories tags cactus-info">
+    <div class="fa fa-tags categories cactus-info">
         <?php videopro_get_tags();?>
     </div>
 </div>

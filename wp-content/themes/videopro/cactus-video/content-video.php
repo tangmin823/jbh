@@ -37,7 +37,7 @@
             <div class="posted-on metadata-font">
                 <div class="date-time cactus-info font-size-1"><?php echo videopro_get_datetime();?></div>
                  <?php if(function_exists( 'get_tptn_post_count_only' )){ ?>
-                 <div class="view cactus-info font-size-1"><?php echo  videopro_get_formatted_string_number($viewed).esc_html__(' Views','17jbh'); ?></div>
+                 <span class="fa fa-eye cactus-info font-size-1"><?php echo  videopro_get_formatted_string_number($viewed).esc_html__(' 阅读','17jbh'); ?></span>
                  <?php }?>
             </div>
             

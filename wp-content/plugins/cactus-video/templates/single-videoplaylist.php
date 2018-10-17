@@ -382,10 +382,7 @@ if(($using_jwplayer_param == 1 && $video_source == 'youtube' && function_exists(
                                                             	<?php
                                                                 $viewed     = function_exists( 'get_tptn_post_count_only' ) ?  videopro_get_formatted_string_number(get_tptn_post_count_only( get_the_ID() )) : '';?>
                                                                 <?php if($viewed=''){?>                                                           	
-                                                                <div class="view cactus-info font-size-1"><span><?php echo esc_html($viewed);?></span></div>
-                                                                <?php }
-																if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ){?>
-                                                                <a href="<?php echo get_comments_link(); ?>" class="comment cactus-info font-size-1"><span><?php echo number_format_i18n(get_comments_number());?></span></a>
+                                                                <span class="fa fa-eye cactus-info font-size-1"><?php echo sprintf(esc_html__(' %s 阅读','17jbh'), videopro_get_formatted_string_number($viewed));?></span>
                                                                 <?php }?>
                                                             </div>
                                                             

@@ -91,12 +91,6 @@ $videopro_post_layout = videopro_global_post_layout();
 										get_template_part( 'html/single/single-related');
 									}
 
-									if(ot_get_option('show_comment', 'on')!='off'){
-										if ( comments_open() || '0' != get_comments_number() ){
-											comments_template();
-										}
-									}
-
 									endwhile; // end of the loop.
 
 									?>

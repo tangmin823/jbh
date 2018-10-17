@@ -43,10 +43,7 @@ $time_video = function_exists( 'videopro_secondsToTime' ) ? videopro_secondsToTi
             </div> 
             
             <div class="posted-on metadata-font">                                                            	
-                <?php if($viewed!=''){?><div class="view cactus-info font-size-1"><span><?php echo $viewed;?></span></div><?php }
-				if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ){?>
-                <a href="<?php echo get_comments_link(); ?>" class="comment cactus-info font-size-1"><span><?php echo get_comments_number();?></span></a>
-                <?php }?>
+                <?php if($viewed!=''){?><span class="fa fa-eye cactus-info font-size-1"><?php echo sprintf(esc_html__(' %s 阅读','17jbh'), videopro_get_formatted_string_number($viewed));?></span><?php }?>
             </div>
             
         </div>

@@ -51,7 +51,7 @@ $des = term_description( $term->term_id, 'video-series' ) ;
             	<?php if($video_series_release!=''){?>
 				<div class="date-time cactus-info font-size-1"><time datetime="<?php echo esc_attr($video_series_release);?>" class="entry-date updated"><?php echo esc_attr($video_series_release);?></time></div>
                 <?php }?>
-				<div class="view cactus-info font-size-1"><span><?php echo $term->count;?> <?php echo $term->count > 1 ? esc_html__('VIDEOS', '17jbh') : esc_html__('VIDEO', '17jbh');?></span></div>
+				<span class="fa fa-eye cactus-info font-size-1"><?php echo $term->count;?> <?php echo $term->count > 1 ? esc_html__(' 阅读', '17jbh') : esc_html__(' 阅读', '17jbh');?></span>
 			</div>
 			
 		</div>

@@ -31,7 +31,7 @@
 				  );
 				  $the_query = new WP_Query( $args );
 				  $it = $the_query->found_posts;?>
-                 <div class="view cactus-info font-size-1"><?php echo  $it.esc_html__(' Videos','17jbh'); ?></div>
+                 <span class="fa fa-eye cactus-info font-size-1"><?php echo  $it.esc_html__(' 阅读','17jbh'); ?></>
             </div>
             
         </div>

@@ -721,7 +721,7 @@ form.initial-form.quickpress-open input#title {
 	padding: 0;
 	font-size: 14px;
 	font-weight: 400;
-	color: #23282d;
+	color: rgb(153, 104, 152);
 }
 
 #dashboard_quick_press .drafts h2 {

@@ -66,8 +66,6 @@ require get_template_directory() . '/inc/widgets/widgets_theme.php';
 require get_template_directory() . '/inc/author-metadata.php';
 
 require get_template_directory() . '/inc/hook_filters.php';
-
-require get_template_directory() . '/inc/facebook-instant-articles.php';
 if ( ! function_exists( 'videopro_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -279,7 +277,7 @@ function videopro_get_google_fonts_url ($font_names) {
 
     $font_url = '';
 
-    $font_url = add_query_arg( 'family', urlencode(implode('|', $font_names)) , "//fonts.googleapis.com/css" );
+//    $font_url = add_query_arg( 'family', urlencode(implode('|', $font_names)) , "//fonts.googleapis.com/css" );
     return $font_url;
 }
 
@@ -300,18 +298,19 @@ add_action( 'wp_enqueue_scripts', 'videopro_rtl_customCSS', 99 );
  * Enqueue scripts and styles.
  */
 function videopro_scripts() {
-	wp_enqueue_style( 'font-awesome-2', get_template_directory_uri() . '/css/font-awesome/css/font-awesome.min.css', array(), '5.0.6');
+	wp_enqueue_style( 'font-awesome-2', 'https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css');
+//	wp_enqueue_style( 'font-awesome-2', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
 	wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css');
-	wp_enqueue_style( 'malihu-scroll', get_template_directory_uri() . '/css/jquery.mCustomScrollbar.min.css');
+//	wp_enqueue_style( 'malihu-scroll', 'https://cdn.bootcss.com/malihu-custom-scrollbar-plugin/3.1.5' . '/jquery.mCustomScrollbar.min.css');
 	wp_enqueue_style( 'videopro-style', get_stylesheet_uri() );
 
 	if(ot_get_option('pre_loading', -1) != -1){
 		wp_enqueue_style('videopro-pre-loaders', get_parent_theme_file_uri('/css/loaders.min.css'));
     }
 
-    if(videopro_is_membership_pages()){
-        wp_enqueue_style( 'videopro-membership', get_template_directory_uri() . '/css/membership.css');
-    }
+//    if(videopro_is_membership_pages()){
+//        wp_enqueue_style( 'videopro-membership', get_template_directory_uri() . '/css/membership.css');
+//    }
 
     if(ot_get_option('body_schema', 'light') == 'dark'){
         wp_enqueue_style( 'videopro-dark-style', get_template_directory_uri() . '/css/dark.css', array('videopro-style'));
@@ -353,26 +352,22 @@ function videopro_scripts() {
 	if(count($g_fonts)>0){
 		wp_enqueue_style( 'videopro-google-fonts', videopro_get_google_fonts_url($g_fonts), array(), '1.0.0' );
 	}
-	
+
 	//wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js', array(), '5.0.6', false );
 	//wp_enqueue_script( 'font-awesome-shim', 'https://use.fontawesome.com/releases/v5.0.6/js/v4-shims.js', array(), '5.0.6', false );
-	
+
 
 	$smoothScroll = ot_get_option('scroll_effect', 'off');
 	if($smoothScroll == 'on') {
 		wp_enqueue_script('videopro_smoothScroll', get_template_directory_uri() . '/js/smoothscroll.js', array(), '1.4.4', true);
 	}
 
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap-lib.js', array('jquery'), '3.1.1', true );
-	wp_enqueue_script( 'jquery-migrate', get_template_directory_uri() . '/js/jquery-migrate-1.2.1.min.js', array('jquery'), '1.2.1', true );
-	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.1.0', true );
-	wp_enqueue_script( 'malihu-scroll', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', array('jquery'), '3.1.12', true );
-	wp_enqueue_script( 'js-cookie', get_template_directory_uri() . '/js/js.cookie.js', array('jquery'), '2.1.1', true );
-	wp_enqueue_script( 'js-isotope', get_template_directory_uri() . '/js/isotope.js', array('jquery'), '3.0.1', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_script( 'bootstrap', 'https://cdn.staticfile.org/twitter-bootstrap/3.3.5/js/bootstrap.js', array('jquery'), '3.1.1', true );
+	wp_enqueue_script( 'jquery-migrate', 'https://cdn.staticfile.org/jquery-migrate/1.4.1/jquery-migrate.min.js', array('jquery'), '1.4.1', true );
+	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.6.0', true );
+    wp_enqueue_script( 'malihu-scroll', 'https://cdn.staticfile.org/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js', array('jquery'), '3.1.5', true );
+    wp_enqueue_script( 'js-cookie', 'https://cdn.staticfile.org/js-cookie/2.1.1/js.cookie.min.js', array('jquery'), '2.1.1', true );
+//	wp_enqueue_script( 'js-isotope', get_template_directory_uri() . '/js/isotope.js', array('jquery'), '3.0.1', true );
 
 	// code to embed the java script file that makes the Ajax request
 	wp_enqueue_script( 'videopro-ajax-request', get_template_directory_uri() . '/js/ajax.js', array( 'jquery' ) );
@@ -407,7 +402,7 @@ add_action( 'wp_enqueue_scripts', 'videopro_scripts' );
 function videopro_add_defer_attribute($tag, $handle) {
    // add script handles to the array below
    $scripts_to_defer = array('font-awesome', 'font-awesome-shim');
-   
+
    foreach($scripts_to_defer as $defer_script) {
       if ($defer_script === $handle) {
          return str_replace(' src', ' defer src', $tag);
@@ -450,8 +445,6 @@ function videopro_remove_author_pages_link( $author_url ) {
 	return 'javascript:void(0)';
 }
 
-
-
 if(!function_exists('videopro_get_custom_css')){
 	function videopro_get_custom_css(){
 		// Retina Logo
@@ -465,12 +458,12 @@ if(!function_exists('videopro_get_custom_css')){
 			$css .=
 				'@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
 					/* Retina Logo */
-					.primary-header .cactus-logo.navigation-font a{background:url(http://www.17jbh.com/wp-content/uploads/2018/06/logo.png) no-repeat center; background-size:contain;}
+					.primary-header .cactus-logo.navigation-font a{background:url(https://www.17jbh.com/wp-content/uploads/2018/06/logo.png) no-repeat center; background-size:contain;}
 					.primary-header .cactus-logo.navigation-font a img{ opacity:0; visibility:hidden}
 				}';
 //		}
 
-//		$css .= 'img.gform_ajax_spinner{background:url(' . apply_filters('http://www.17jbh.com/wp-content/uploads/2018/06/logo.png') . ');}';
+//		$css .= 'img.gform_ajax_spinner{background:url(' . apply_filters('https://www.17jbh.com/wp-content/uploads/2018/06/logo.png') . ');}';
 //
 //		require get_template_directory() . '/css/custom.css.php';
 //		$css .= videopro_custom_css();
@@ -744,9 +737,6 @@ function videopro_ajax_scroll_next_post()
 
 						get_template_part( 'html/single/single', 'related' );
 
-						if ( comments_open() || '0' != get_comments_number() ) :
-							comments_template();
-						endif;
 						echo "</article>";
 					}
 
@@ -1146,99 +1136,7 @@ function videopro_get_custom_bg(){
 }
 
 function videopro_wti_like_buttons(){
-    if(function_exists('GetWtiLikePost')){
-        $like = GetWtiLikeCount(get_the_ID());
-        $unlike = GetWtiUnlikeCount(get_the_ID());
-        $like = $re_like = str_replace('+','',$like);
-        $unlike = $re_unlike = str_replace('-','',$unlike);
-        $sum = $re_like + $re_unlike;
-        $class_li = '';
-        $is_logged_in = is_user_logged_in();
-        $login_required = get_option('wti_like_post_login_required');
-        if ($login_required && !$is_logged_in) {
-            $class_li = 'login-to-vote';
-        }
-        ?>
-        <div class="share-tool-block like-button _check-like-id-<?php the_ID();?> <?php echo esc_attr($class_li);?>" data-like="<?php esc_html_e('like','17jbh');?>" data-unlike="<?php esc_html_e('dislike','17jbh');?>">
-            <?php
 
-            GetWtiLikePost();
-
-            if($class_li != ''){
-                $login_message = get_option('wti_like_post_login_message');
-                ?>
-                <div class="login-msg">
-                    <div class="login-content">
-                        <span class="login-info">
-                            <?php if($login_message!=''){
-                                echo esc_attr($login_message);
-                            }else{
-                                esc_html_e('Please Signin','17jbh');
-                            }?>
-                        </span>
-                        <a href="<?php echo wp_login_url(get_permalink());?>" class="login-link button btn btn-default bt-style-1"><?php esc_html_e('Sign In','17jbh');?></a></span>
-                    </div>
-                </div>
-                <?php
-            }
-            ?>
-        </div>
-
-        <?php
-        if($sum != 0 && $sum != ''){
-            $fill_cl = (($re_like/$sum)*100);
-        } else
-        if($sum == 0){
-            $fill_cl = 50;
-        }
-
-        $msg = GetWtiVotedMessage(get_the_ID());
-
-        $ip = WtiGetRealIpAddress();
-
-        $tm_vote = videopro_AlreadyVoted(get_the_ID(), $ip);
-
-        // get setting data
-        $child_theme = wp_get_theme();
-        if ($child_theme->get('Name') == 'videopro-netflix') {
-            $color_active = (ot_get_option('nf_main_color', '#d9251d') != '#d9251d') ? ot_get_option('nf_main_color', '#d9251d') : '#d9251d';
-        } else {
-            $color_active = (ot_get_option('main_color', '#d9251d') != '#d9251d') ? ot_get_option('main_color', '#d9251d') : '#d9251d';
-        }
-        $mes = '<style scoped>.action-like a span{ background-color: ' . $color_active . ' !important; color:#FFFFFF !important;}</style>';
-        $mes_un = '<style scoped>.action-unlike a span{ background-color: ' . $color_active . ' !important; color:#FFFFFF !important;}</style>';
-        if ($login_required && !$is_logged_in) {
-            //echo $mes;
-            //echo $mes_un;
-        } else {
-            $has_already_voted = HasWtiAlreadyVoted(get_the_ID(), $ip);
-            $voting_period = get_option('wti_like_post_voting_period');
-            $datetime_now = date('Y-m-d H:i:s');
-            if ("once" == $voting_period && $has_already_voted) {
-                // user can vote only once and has already voted.
-                if($tm_vote>0){echo $mes;}
-                else if ($tm_vote<0){echo $mes_un;}
-            } elseif (0 == $voting_period) {
-                if($tm_vote>0){echo $mes;}
-                else if ($tm_vote<0){echo $mes_un;}
-            } else {
-                if (!$has_already_voted) {
-                    // never voted befor so can vote
-                } else {
-                    // get the last date when the user had voted
-                    $last_voted_date = GetWtiLastVotedDate(get_the_ID(), $ip);
-                    // get the bext voted date when user can vote
-                    $next_vote_date = GetWtiNextVoteDate($last_voted_date, $voting_period);
-                    if ($next_vote_date > $datetime_now) {
-                        $revote_duration = (strtotime($next_vote_date) - strtotime($datetime_now)) / (3600 * 24);
-
-                        if($tm_vote>0){echo $mes;}
-                        else if ($tm_vote<0){echo $mes_un;}
-                    }
-                }
-            }
-        }
-    }
 }
 
 /**
@@ -1289,6 +1187,17 @@ function videopro_ajax_get_latest_post() {
 add_action( 'wp_ajax_get_latest_post', 'videopro_ajax_get_latest_post' );
 add_action( 'wp_ajax_nopriv_get_latest_post', 'videopro_ajax_get_latest_post' );
 
+//remove_action( 'wp_head', 'feed_links_extra', 3 ); //去除评论feed
+//remove_action( 'wp_head', 'feed_links', 2 ); //去除文章feed
+//remove_action( 'wp_head', 'rsd_link' ); //针对Blog的远程离线编辑器接口
+//remove_action( 'wp_head', 'wlwmanifest_link' ); //Windows Live Writer接口
+//remove_action( 'wp_head', 'index_rel_link' ); //移除当前页面的索引
+//remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); //移除后面文章的url
+//remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); //移除最开始文章的url
+//remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );//自动生成的短链接
+//remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); ///移除相邻文章的url
+//remove_action( 'wp_head', 'wp_generator' ); // 移除版本号
+
 function is_video_listing_template($page_name) {
     $page = get_page_by_path($page_name);
     $page_id = $page->ID;
@@ -1306,5 +1215,21 @@ function is_video_listing_template($page_name) {
         return true;
     } else {
         return false;
+    }
+}
+
+function coolwp_remove_open_sans_from_wp_core()
+{
+    wp_deregister_style('open-sans');
+    wp_register_style('open-sans', false);
+    wp_enqueue_style('open-sans', '');
+}
+
+add_action('init', 'coolwp_remove_open_sans_from_wp_core');
+
+add_action('login_enqueue_scripts', 'login_protection');
+function login_protection() {
+    if ($_GET['wlq'] != 'jbh') {
+        header('Location: https://www.17jbh.com');
     }
 }

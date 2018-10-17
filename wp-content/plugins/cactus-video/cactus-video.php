@@ -240,7 +240,7 @@ class Cactus_video {
 	function ct_video_scripts_styles() {
 		wp_enqueue_script( 'cactus-video-js',plugins_url('/js/custom.js', __FILE__) , array(), '', true );
 		wp_enqueue_script( 'videopro-lightbox-js',plugins_url('/js/lightbox/lightbox.js', __FILE__) , array(), '20161405', true );
-		wp_enqueue_script( 'videopro-lazysizes-js',plugins_url('/js/lazysizes.min.js', __FILE__) , array(), '20161405', true );
+		wp_enqueue_script( 'videopro-lazysizes-js','https://cdn.staticfile.org/lazysizes/2.0.0/lazysizes.min.js' , array(), '20161405', true );
 
         $js_params = array( 'ajaxurl' => admin_url( 'admin-ajax.php' ), 'lang' => array() );
         $js_params['lang']['confirm_delete_video'] = esc_html__('You are about to delete a video. Are you sure?', '17jbh');

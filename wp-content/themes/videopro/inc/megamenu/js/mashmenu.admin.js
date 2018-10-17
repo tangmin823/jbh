@@ -18,7 +18,7 @@ jQuery(document).ready(function($){
 	
 	processMegaAtts();
 	
-	$megaInputs.live( 'change' , function(){
+	$megaInputs.on( 'change' , function(){
 		var $attGroup = $( this ).parents( '.wpmega-atts' );
 		var $inputs = $attGroup.find( ':input:not( .mashmenu_options_input )' );
 		$inputs.each( function(){

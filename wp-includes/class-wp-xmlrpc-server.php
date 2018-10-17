@@ -1047,8 +1047,8 @@ class wp_xmlrpc_server extends IXR_Server {
 		}
 
 		// Determine comment and ping settings.
-		$allow_comments = comments_open( $page->ID ) ? 1 : 0;
-		$allow_pings = pings_open( $page->ID ) ? 1 : 0;
+		$allow_comments = 0;
+		$allow_pings = 0;
 
 		// Format page date.
 		$page_date = $this->_convert_date( $page->post_date );
@@ -6374,10 +6374,6 @@ class wp_xmlrpc_server extends IXR_Server {
 
 		if ( $post_ID == url_to_postid($pagelinkedfrom) )
 			return $this->pingback_error( 0, __( 'The source URL and the target URL cannot both point to the same resource.' ) );
-
-		// Check if pings are on
-		if ( !pings_open($post) )
-	  		return $this->pingback_error( 33, __( 'The specified target URL cannot be used as a target. It either doesn&#8217;t exist, or it is not a pingback-enabled resource.' ) );
 
 		// Let's check that the remote site didn't already pingback this entry
 		if ( $wpdb->get_results( $wpdb->prepare("SELECT * FROM $wpdb->comments WHERE comment_post_ID = %d AND comment_author_url = %s", $post_ID, $pagelinkedfrom) ) )

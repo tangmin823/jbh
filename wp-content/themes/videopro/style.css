@@ -68,8 +68,6 @@ License URI: https://www.cactusthemes.com
 		16.4 - Popular Post
 		16.5 - PromoBox
 		16.6 - Casting
-		16.7 - Easy Tab
-		16.8 - Advance Search Form
 		16.9 - Social Account
  * 17.0 - Custom Shortcode tab (Visual Composer)
  * 18.0 - Custom Shortcode tour (Visual Composer)
@@ -78,7 +76,6 @@ License URI: https://www.cactusthemes.com
  * 22.0 - Lightbox
  * 23.0 - Custom Gravity Form
  * 24.0 - Comming soon
- * 25.0 - Advance search form
  * 26.0 - Category listing
  * 27.0 - Custom Age verify (plugin)
  * 28.0 - Tooltip
@@ -199,8 +196,8 @@ License URI: https://www.cactusthemes.com
 		/*End - 3.1 - Theme Color*/
 
 		/*3.2 - dark div background*/
-		.dark-div { color:rgba(153,153,153,1.0)} /*Hex: #999999*/
-		.dark-bg-color-1 { background-color:rgba(38,38,38,1.00); /*Hex: #262626*/}
+		.dark-div { color:rgba(219, 223, 219)} /*Hex: #999999*/
+		.dark-bg-color-1 { background-color: rgb(112, 13, 110); /*Hex: #262626*/}
 		/*End - 3.2 - dark div background*/
 
 		/*3.3 - link*/
@@ -713,35 +710,6 @@ License URI: https://www.cactusthemes.com
 		img { max-width:100%; height:auto}
 		/*End - 3.16 - img*/
 
-		/*3.17 - auto play button (single video)*/
-		.autoplay-elms { width:25px; height:15px; background-color:rgba(215,215,215,1.0); border-radius:25px; -webkit-border-radius:25px; position:relative; transition:background-color 0.2s; -webkit-transition:background-color 0.2s;}
-		.dark-div .autoplay-elms { background-color:rgba(153,153,153,1.0);}
-		.autoplay-elms .oval-button { width:11px; height:11px; border-radius:50%; -webkit-border-radius:50%; background-color:rgba(255,255,255,1.00); position:absolute; top:2px; left:3px; transition:all ease-in-out 0.2s; -webkit-transition:all ease-in-out 0.2s;}
-		.autoplay-elms.active { background-color:rgba(1,154,250,1.0);}
-		.autoplay-elms.active .oval-button { left:11px;}
-
-		.autoplay-group {cursor:pointer;}
-		.autoplay-group > * { display:inline-block; vertical-align:middle; line-height:1; white-space:nowrap;}
-		.autoplay-group > *:first-child { margin-right:2px;}
-		/*3.17 - auto play button (single video)*/
-
-		/*font map*/
-		/*1*/.content-font { font-family:inherit;} 		/*font family, line height*/
-		/*2*/.navigation-font { font-family:inherit;} 	/*font family, line height*/
-		/*3*/.heading-font { font-family:inherit;} 		/*font family, line height*/
-		/*4*/.metadata-font { font-family:inherit;} 		/*font family, line height*/
-			/*font size*/
-				.font-size-0 { font-size:10px;} /*note*/
-				.font-size-1 { font-size:12px;} /*metadata*/
-				.font-size-2 { font-size:14px;} /*content - change content font size*/
-				.font-size-3 { font-size:16px;} /*heading small 1*/
-				.font-size-4 { font-size:18px;} /*heading small 2*/
-				.font-size-5 { font-size:20px;} /*heading medium*/
-				.font-size-6 { font-size:24px;} /*heading large*/
-				.font-size-7 { font-size:28px;} /*heading large*/
-			/*font size*/
-		/*font map*/
-
         /* 3.18 - Custom Class */
         .alert{    padding: 15px;    margin-bottom: 20px;    border: 1px solid transparent;    border-radius: 4px;}
         .alert-warning{color: #8a6d3b;    background-color: #fcf8e3;    border-color: #faebcc;}
@@ -829,7 +797,7 @@ License URI: https://www.cactusthemes.com
 		/*5.2 - Search Form*/
 			.cactus-header-search-form { padding-top:30px; padding-bottom:30px; width:300px;}
 			.cactus-header-search-form form { display:block; position:relative; margin:0;}
-			.cactus-header-search-form form input:not([type="submit"]) { margin:0; padding-right:45px; background-color:rgba(51,51,51,1.0); border:2px solid rgba(255,255,255,0.2);}
+			.cactus-header-search-form form input:not([type="submit"]) { margin:0; padding-right:45px; background-color: rgb(227, 228, 235); border:2px solid rgba(255,255,255,0.2);}
 			.cactus-header-search-form form input:not([type="submit"]):focus {background-color:rgba(255,255,255,1.0); border-color:rgba(255,255,255,1.0); color: rgba(102,102,102,1.0)}
 
 			.cactus-header-search-form form input:not([type="submit"]):focus::-moz-placeholder{color: rgba(102,102,102,1.0);opacity: 1;}
@@ -875,7 +843,7 @@ License URI: https://www.cactusthemes.com
 				.cactus-main-menu > ul > li > ul,
 				.cactus-main-menu > ul > li > div { visibility:hidden; opacity:0; position:absolute; top:100%; left:0; transition:opacity 0.2s ease-in-out, visibility 0.2s ease-in-out; -webkit-transition:opacity 0.2s ease-in-out, visibility 0.2s ease-in-out; border-right:1px solid rgba(0,0,0,0); -webkit-backface-visibility:hidden;}
 				.cactus-main-menu > ul > li:hover > ul { visibility:visible; opacity:1; display: block}
-				.cactus-main-menu > ul > li > ul li a{display:block; background-color:rgba(0,0,0,1.00); border-bottom:1px solid rgba(36,36,36,1.0); padding:8px 20px 7px 20px; min-width:150px; text-decoration:none; font-weight:bold; white-space:nowrap;}
+				.cactus-main-menu > ul > li > ul li a{display:block; background-color:rgba(28, 120, 11); border-bottom:1px solid rgba(36,36,36,1.0); padding:8px 20px 7px 20px; min-width:150px; text-decoration:none; font-weight:bold; white-space:nowrap;}
 
 				.cactus-main-menu > ul > li > ul li a.cactus-hasIcon { padding-right:40px; position:relative;}
 				.cactus-main-menu > ul > li > ul li a.cactus-hasIcon > i.fas.fa-sort-down { position:absolute; right:20px; top:50%; margin-top:-2px;}
@@ -1593,7 +1561,7 @@ License URI: https://www.cactusthemes.com
 	/*End - 6.0 - Widget*/
 
 	/*7.0 - Footer*/
-		footer { position:relative; background-color:rgba(38,38,38,1.0); z-index:3}
+		footer { position:relative; background-color:rgba(112,13,110); z-index:3}
 		.footer-sidebar.cactus-sidebar { float:none; padding-left:0; padding-right:0; padding-bottom:20px;}
 		.footer-sidebar.cactus-sidebar:before,
 		.footer-sidebar.cactus-sidebar:after { display:none;}
@@ -1633,7 +1601,7 @@ License URI: https://www.cactusthemes.com
 		footer .footer-info .link #menu-footer-menu { display:block; width:auto; list-style: none; margin: 0; padding: 0; text-align:right; font-size:0; line-height:0; margin-left:-15px; margin-right:-15px;}
 		.cactus-box footer .footer-info .link #menu-footer-menu { padding-right:0;}
 		footer .footer-info .link #menu-footer-menu li { display: inline-block; font-size:14px; line-height:1.8; vertical-align:top; padding-left:15px; padding-right:15px;}
-		footer .footer-info .link #menu-footer-menu li a { color:rgba(153,153,153,1.0); text-decoration:none; font-weight:bold; /*text-transform:capitalize;*/}
+		footer .footer-info .link #menu-footer-menu li a { color:rgba(249,209,209,1.0); text-decoration:none; font-weight:bold; /*text-transform:capitalize;*/}
 		footer .footer-info .link #menu-footer-menu li a:hover { color:rgba(255,255,255,1.00);}
 
 		@media(max-width:1023px) {
@@ -1691,7 +1659,7 @@ License URI: https://www.cactusthemes.com
 		.cactus-post-item > .entry-content .excerpt.sub-lineheight { line-height:1.6; border:none !important}
 		.cactus-post-item > .entry-content .excerpt:last-child { margin-bottom:-10px;}
 
-		.posted-on { color:rgba(153,153,153,1.0); font-size:0; line-height:0; margin-top:-5px;}
+		.posted-on { color:rgba(153,153,153,1.0); line-height:0; margin-top:-5px;}
 		.posted-on a, .posted-on a:before {color:rgba(153,153,153,1.0); text-decoration:none;}
 		.posted-on a span:before {color:rgba(153,153,153,1.0)}
 		.posted-on a:hover { color:rgba(34,34,34,1.0);}
@@ -2145,7 +2113,7 @@ License URI: https://www.cactusthemes.com
 				.slider-toolbar .next-slide { left:auto; right:0;}
 
 				.slider-toolbar .prev-slide:hover,
-				.slider-toolbar .next-slide:hover { background-color:background-color:rgba(19,19,19,1.0); color:rgba(255,255,255,1.00);}
+				.slider-toolbar .next-slide:hover { background-color:rgba(19,19,19,1.0); color:rgba(255,255,255,1.00);}
 
 				@media(max-width:767px) {
 					.slider-toolbar {padding:30px 0 90px 0;}
@@ -3434,7 +3402,7 @@ img.lazyloaded { padding-top:0 !important; background-color:#bcbcbc;}
 
 /** go to top button **/
 #gototop{display: inline-block;    width: 40px;    height: 40px; position: fixed;    right: 15px;    bottom: 15px;    z-index:10}
-#gototop a{display:inline-block; width: 40px;    height: 40px;    text-align: center;    z-index: 10;    background: #3c3c3c;   font-size: 24px;    color: #a1a1a1;    border-radius: 2px; backface-visibility: hidden; -webkit-backface-visibility: hidden;}
+#gototop a{display:inline-block; width: 40px;    height: 40px;    text-align: center;    z-index: 10;    background: #700d6e;   font-size: 24px;    color: #a1a1a1;    border-radius: 2px; backface-visibility: hidden; -webkit-backface-visibility: hidden;}
 #gototop:hover{
 	transition:all ease-in 0.2s;
 }

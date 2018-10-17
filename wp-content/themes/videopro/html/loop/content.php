@@ -94,15 +94,13 @@ $link_post = apply_filters('videopro_loop_item_url', $link_post, $id);
 				if(ot_get_option('enable_archive_date', 'on') != 'off'){?>
                 <div class="date-time cactus-info font-size-1"><?php echo videopro_get_datetime($id, $link_post); ?></div>
                 <?php }?>
-            </div> 
-            <?php if(!is_tax('video-series')){?>
-            <div class="posted-on metadata-font">   
-				<?php
-				if(ot_get_option('enable_archive_view', 'on') != 'off'){?>
-                <div class="view cactus-info font-size-1"><span><?php echo videopro_get_formatted_string_number($viewed);?></span></div>
-				<?php }?>
+                <?php if(!is_tax('video-series')){?>
+                    <?php
+                    if(ot_get_option('enable_archive_view', 'on') != 'off'){?>
+                        <span class="fa fa-eye cactus-info font-size-1"><?php echo sprintf(esc_html__(' %s 阅读','17jbh'), videopro_get_formatted_string_number($viewed));?></span>
+                    <?php }?>
+                <?php }?>
             </div>
-            <?php }?>
             <?php do_action('videopro_loop_item_after_content');?>
         </div>
         
