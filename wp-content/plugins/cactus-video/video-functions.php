@@ -9,8 +9,8 @@ if(!function_exists('cactus_edit_columns')) {
 		if($post->post_type != 'post') return $columns;
 
 		return array_merge( $columns,
-				array('ct-channel' => esc_html__('Channel','17jbh')) ,
-				array('ct-playlist' => esc_html__('Playlist','17jbh'))
+				array('ct-channel' => esc_html__('Channel','videopro')) ,
+				array('ct-playlist' => esc_html__('Playlist','videopro'))
 		  );
 	}
 }
@@ -668,7 +668,7 @@ function videopro_build_multi_link($arr, $echo=false) {
 											'url' => $link
 										);
 
-										$a_html = '<a id="video-server-' . $link_count . '" class="' . ((isset($_GET['link']) && $_GET['link'] == $link_count) ? 'active' : '') . '" href="' . add_query_arg( 'link', $link_count, get_permalink(get_the_ID()) ) . '"><i class="fa fa-play"></i> '. ($temp_title ? $temp_title : esc_html__('Link ','17jbh') . ($link_number+1)) . '</a>';
+										$a_html = '<a id="video-server-' . $link_count . '" class="' . ((isset($_GET['link']) && $_GET['link'] == $link_count) ? 'active' : '') . '" href="' . add_query_arg( 'link', $link_count, get_permalink(get_the_ID()) ) . '"><i class="fa fa-play"></i> '. ($temp_title ? $temp_title : esc_html__('Link ','videopro') . ($link_number+1)) . '</a>';
 
 										echo apply_filters('videopro_multi_link_html', $a_html, get_the_ID(), $link_count, $link_number, $temp_title);
 
@@ -910,7 +910,7 @@ if(!function_exists('videopro_numbervideo_byauthor')){
 		$count = videopro_get_numbervideo_by_author(get_the_author_meta( 'ID' ));
 		?>
         <div class="channel-button">
-            <span class="font-size-1 metadata-font sub-count"><?php echo $count.' '. esc_html__('Videos','17jbh');?></span>
+            <span class="font-size-1 metadata-font sub-count"><?php echo $count.' '. esc_html__('Videos','videopro');?></span>
         </div>
         <?php
 		$output_string = ob_get_contents();

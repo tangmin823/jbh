@@ -222,7 +222,7 @@
     margin-bottom: 3px;
 }
 
-.swarmify-lightbox-button{
+.swarmify-lightbox-button,.swarmify-lightbox-button-img{
     background-color: #FFDE17;
     display: inline-block;
     border-radius: 4px;
@@ -232,4 +232,11 @@
     cursor: pointer;
     border: none;
     margin-top: 6px;
+}
+.video_url_fancybox p,.image_url_fancybox p{
+	margin-bottom: 10px;
+}
+
+.wp-customizer .fancybox-container{
+	z-index: 560000;
 }

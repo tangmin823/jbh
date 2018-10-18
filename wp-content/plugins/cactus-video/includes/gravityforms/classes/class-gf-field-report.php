@@ -11,7 +11,7 @@ class GF_Field_VS_Report extends GF_Field {
     public $isRequired = true;
 
 	public function get_form_editor_field_title() {
-		return esc_html__( 'Report URL', '17jbh' );
+		return esc_html__( 'Report URL', 'videopro' );
 	}
     
     /**
@@ -37,7 +37,7 @@ class GF_Field_VS_Report extends GF_Field {
 
 			if ( empty($value) ) {
 				$this->failed_validation  = true;
-				$this->validation_message = empty( $this->errorMessage ) ? esc_html__( 'This field is required.', '17jbh' ) : $this->errorMessage;
+				$this->validation_message = empty( $this->errorMessage ) ? esc_html__( 'This field is required.', 'videopro' ) : $this->errorMessage;
 			}
 		}
 	}
@@ -65,7 +65,7 @@ class GF_Field_VS_Report extends GF_Field {
 		$id          = (int) $this->id;
 		$field_id    = $is_entry_detail || $is_form_editor || $form_id == 0 ? "input_$id" : 'input_' . $form_id . "_$id";
 
-		$value        = esc_attr( $is_form_editor ? esc_html__('{video url}','17jbh') : videopro_get_current_url() );
+		$value        = esc_attr( $is_form_editor ? esc_html__('{video url}','videopro') : videopro_get_current_url() );
 		$size         = $this->size;
 		$class_suffix = $is_entry_detail ? '_admin' : '';
 		$class        = $size . $class_suffix;

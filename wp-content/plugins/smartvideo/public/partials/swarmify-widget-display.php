@@ -7,13 +7,13 @@
 		// Beaver Builder
 		array_key_exists('fl_builder',$_REQUEST)
 	){
-		echo '<link rel="stylesheet" href="'.dirname(plugin_dir_url( __DIR__ )) . '/admin/css/jquery.fancybox.min'.'">';
-		echo '<link rel="stylesheet" href="'.dirname(plugin_dir_url( __DIR__ )) . '/admin/css/swarmify-admin.css'.'">';
-		echo '<script src="'.dirname(plugin_dir_url( __DIR__ )) . '/admin/js/jquery.fancybox.min.js'.'"></script>';
+		echo '<link rel="stylesheet" href="'.dirname(plugin_dir_url( __DIR__ )) . '/admin/css/jquery.fancybox.min.css?ver='.SWARMIFY_PLUGIN_VERSION.'">';
+		echo '<link rel="stylesheet" href="'.dirname(plugin_dir_url( __DIR__ )) . '/admin/css/swarmify-admin.css?ver='.SWARMIFY_PLUGIN_VERSION.'">';
+		echo '<script src="'.dirname(plugin_dir_url( __DIR__ )) . '/admin/js/jquery.fancybox.min.js?ver='.SWARMIFY_PLUGIN_VERSION.'"></script>';
 
-		echo '<script src="'.dirname(plugin_dir_url( __DIR__ )) . '/admin/js/jquery.inputmask.bundle.js'.'"></script>';
+		echo '<script src="'.dirname(plugin_dir_url( __DIR__ )) . '/admin/js/jquery.inputmask.bundle.js?ver='.SWARMIFY_PLUGIN_VERSION.'"></script>';
 
-		echo '<script src="'.dirname(plugin_dir_url( __DIR__ )) . '/admin/js/swarmify-admin.js'.'"></script>';
+		echo '<script src="'.dirname(plugin_dir_url( __DIR__ )) . '/admin/js/swarmify-admin.js?ver='.SWARMIFY_PLUGIN_VERSION.'"></script>';
 	}
 
 	if(array_key_exists('fl_builder',$_REQUEST)){
@@ -89,20 +89,20 @@
 	</div>
 	<div class="swarmify-main">
 		<p>
+
 			<label
 				for="<?php echo $this->get_field_id('swarmify_url'); ?>" style="display: block;">
 				<?php _e('Add a video:', $this->plugin_name); ?>
 			</label>
 			<button class="swarmify_add_video button">Add video from WordPress Media Library</button>
-			<button data-fancybox data-src="#video_url_fancybox" class="swarmify_add_youtube button">Add video from YouTube</button>
-			<button data-fancybox data-src="#video_url_fancybox" class="swarmify_add_source button">Add video from another source</button>
-			
+			<button data-fancybox data-src="#<?php echo $this->get_field_id('lightbox'); ?>" class="swarmify_fancybox swarmify_add_youtube button">Add video from YouTube</button>
+			<button data-fancybox data-src="#<?php echo $this->get_field_id('lightbox'); ?>" class="swarmify_add_source button">Add video from another source</button>
 			<!-- Fancybox URL -->
-			<div id="video_url_fancybox" style="display: none;">
+			<div class="video_url_fancybox" id="<?php echo $this->get_field_id('lightbox'); ?>" style="display: none;">
 				<p class="yt" style="display: none;">Head to YouTube, view your video, click "Share", click "Copy", and paste the URL here:</p>
 				<p class="other" style="display: none;">To add a video from another source (like Amazon S3, Google Drive, Dropbox, etc.), paste the URL ending in ".mp4" here:</p>
-				<input class="swarmify_url widefat" id="<?php echo $this->get_field_id('swarmify_url'); ?>" name="<?php echo $this->get_field_name('swarmify_url'); ?>" placeholder="Video URL" type="text" value="<?php echo esc_attr($swarmify_url); ?>"/>
-				<button data-fancybox-close class="swarmify-lightbox-button">Save</button>
+				<input class="swarmify_url widefat" id="<?php echo $this->get_field_id('swarmify_url'); ?>" name="<?php echo $this->get_field_name('swarmify_url'); ?>" placeholder="Video URL" type="text" value="<?php echo $swarmify_url; ?>"/>
+				<button class="swarmify-lightbox-button">Save</button>
 			</div>
 		</p>
 		<p>
@@ -113,17 +113,17 @@
 				<?php _e('Add an optional poster image:', $this->plugin_name); ?>
 			</label>
 			<button class="swarmify_add_image button ">Add image from WordPress Media Library</button>
-			<button data-fancybox data-src="#image_url_fancybox" class="swarmify_add_source button ">Add image from another source</button>
+			<button data-fancybox data-src="#<?php echo $this->get_field_id('lightbox_image'); ?>" class="swarmify_add_source button ">Add image from another source</button>
 			<!-- Fancybox URL -->
-			<div id="image_url_fancybox" style="display: none;">
+			<div class="image_url_fancybox" id="<?php echo $this->get_field_id('lightbox_image'); ?>" style="display: none;">
 				<p>Add an image from another source (like Amazon S3, Google Drive, Dropbox, etc.), paste the URL here.</p>
 				<input class="swarmify_poster widefat" id="<?php echo $this->get_field_id('swarmify_poster'); ?>"
 				name="<?php echo $this->get_field_name('swarmify_poster'); ?>" placeholder="Image URL" type="text"
 				value="<?php echo esc_attr($swarmify_poster); ?>"/>
-				<button data-fancybox-close class="swarmify-lightbox-button">Save</button>
+				<button data-fancybox-close class="swarmify-lightbox-button-img">Save</button>
 			</div>
 		</p>
-		<p>
+		<p id="<?php echo $this->get_field_id('lightbox_title'); ?>">
 			<i class="swarmify_info">i</i>
 			<small class="swarmify_info_tooltip">Places a title above the video. If you do not want one, leave this field blank.</small>
 			<label

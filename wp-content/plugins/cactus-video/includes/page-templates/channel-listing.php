@@ -37,7 +37,7 @@ videopro_global_sidebar_style($sidebar_style);
 							echo '</div>';
 						} ?>  
                         
-                        <h1 class="category-title entry-title"><?php if(is_page()){the_title();} else{ esc_html_e('Channels','17jbh');}?></h1>
+                        <h1 class="category-title entry-title"><?php if(is_page()){the_title();} else{ esc_html_e('Channels','videopro');}?></h1>
                         
                         <?php 
 						$paged = get_query_var('paged') ? get_query_var('paged') : (get_query_var('page') ? get_query_var('page'):1);
@@ -106,13 +106,13 @@ videopro_global_sidebar_style($sidebar_style);
 									$pageURL = get_permalink();
 
 									if( $orderby == 'subscribers'){
-										echo esc_html__('Order By: &nbsp; Subscribers','17jbh');
+										echo esc_html__('Order By: &nbsp; Subscribers','videopro');
 									}else{
-										echo esc_html__('Order By: &nbsp; Latest','17jbh'); 
+										echo esc_html__('Order By: &nbsp; Latest','videopro'); 
 									}?><i class="fa fa-angle-down"></i>
 									<ul>
-											<li><a href="<?php echo esc_url(add_query_arg( array('orderby' => ''), $pageURL )); ?>" title=""><?php echo esc_html__('Latest','17jbh'); ?></a></li>
-											<li><a href="<?php echo esc_url(add_query_arg( array('orderby' => 'subscribers'), $pageURL )); ?>" title=""><?php echo esc_html__('Subscribers','17jbh'); ?></a></li>
+											<li><a href="<?php echo esc_url(add_query_arg( array('orderby' => ''), $pageURL )); ?>" title=""><?php echo esc_html__('Latest','videopro'); ?></a></li>
+											<li><a href="<?php echo esc_url(add_query_arg( array('orderby' => 'subscribers'), $pageURL )); ?>" title=""><?php echo esc_html__('Subscribers','videopro'); ?></a></li>
 									</ul>
 								</div>
 							

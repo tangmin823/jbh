@@ -68,12 +68,12 @@ add_action( 'after_setup_theme', 'reg_ct_iconbox' );
 function reg_ct_iconbox(){
     if(function_exists('vc_map')){
     vc_map( 	array(
-			   "name" => esc_html__("VideoPro Iconbox",'17jbh'),
+			   "name" => esc_html__("VideoPro Iconbox",'videopro'),
 			   "base" => "c_iconbox",
 			   "class" => "",
 			   "icon" => "icon-iconbox",
 			   "controls" => "full",
-			   "category" => esc_html__('17jbh', '17jbh'),
+			   "category" => esc_html__('VideoPro', 'videopro'),
 			   "params" => 	array(
 			   					array(
 			   						"type" => "dropdown",
@@ -101,7 +101,7 @@ function reg_ct_iconbox(){
 									"param_name" => false,
 									"param_name" => "icon",
 									"value" => "",
-									"description" => esc_html__('enter CSS class of icon. Font Awesome Icons are supported (https://fortawesome.github.io/Font-Awesome/icons/)', '17jbh' ),
+									"description" => esc_html__('enter CSS class of icon. Font Awesome Icons are supported (https://fortawesome.github.io/Font-Awesome/icons/)', 'videopro' ),
 								),
 								array(
 									"type" => "colorpicker",

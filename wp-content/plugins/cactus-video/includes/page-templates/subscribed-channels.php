@@ -83,17 +83,17 @@ videopro_global_sidebar_style($sidebar_style);
                                         <?php
                                     } else {?>
                                         <div class="no-post">
-                                            <h2 class="h4"><?php echo wp_kses(__('You do not have any subscriptions.<br>Browse Channels to subscribe.','17jbh'),array('br'=>array()));?></h2>
+                                            <h2 class="h4"><?php echo wp_kses(__('You do not have any subscriptions.<br>Browse Channels to subscribe.','videopro'),array('br'=>array()));?></h2>
                                             <?php
 											$query = new WP_Query( array('post_type'  => 'page', 'posts_per_page' => 1, 'meta_key' => '_wp_page_template', 'meta_value' => 'cactus-video/includes/page-templates/channel-listing.php' ) );
 											if ( $query->have_posts() ){
 												while ( $query->have_posts() ) : $query->the_post();?>
-                                                <a href="<?php echo esc_url(get_permalink());?>" class="btn btn-default"><?php esc_html_e('Browse Channels','17jbh');?></a>
+                                                <a href="<?php echo esc_url(get_permalink());?>" class="btn btn-default"><?php esc_html_e('Browse Channels','videopro');?></a>
                                                 <?php 
 											endwhile; 
                                             wp_reset_postdata();
 											}else{?>
-                                            	<a href="<?php echo get_post_type_archive_link('ct_channel');?>" class="btn btn-default"><?php esc_html_e('Browse Channels','17jbh');?></a>
+                                            	<a href="<?php echo get_post_type_archive_link('ct_channel');?>" class="btn btn-default"><?php esc_html_e('Browse Channels','videopro');?></a>
                                             <?php }?>
                                         </div>
                                     <?php }?>

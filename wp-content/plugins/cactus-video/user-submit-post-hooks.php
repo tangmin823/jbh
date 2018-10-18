@@ -21,9 +21,9 @@ function videopro_do_post_submission($posted_data, $contact_form_7 = null){
 	$post_format = osp_get('ct_video_settings','user_submit_format');
 	
     if((isset($posted_data['video-url']) && videopro_is_valid_video_url($posted_data['video-url'])) || isset($posted_data['video-code']) || isset($posted_data['video-file'])){
-        $post_title = isset($posted_data['post-title']) ? $posted_data['post-title'] : esc_html__('User Submitted Post Title', '17jbh');
+        $post_title = isset($posted_data['post-title']) ? $posted_data['post-title'] : esc_html__('User Submitted Post Title', 'videopro');
         
-        $post_description = isset($posted_data['post-description']) ? $posted_data['post-description'] : esc_html__('User Submitted Post Content', '17jbh');
+        $post_description = isset($posted_data['post-description']) ? $posted_data['post-description'] : esc_html__('User Submitted Post Content', 'videopro');
         $post_excerpt = isset($posted_data['post-excerpt']) ? $posted_data['post-excerpt'] : '';
         $post_user = isset($posted_data['your-email']) ? $posted_data['your-email'] : '';
         $post_cat = isset($posted_data['cat']) ? $posted_data['cat'] : '';
@@ -221,10 +221,10 @@ function videopro_do_post_submission($posted_data, $contact_form_7 = null){
         $post_user = isset($posted_data['your-email']) ? $posted_data['your-email'] : '';
         $post_message = isset($posted_data['your-message']) ? $posted_data['your-message'] : '';
         
-        $post_title = sprintf(esc_html__('%s reported a post','17jbh'), $post_user);
-        $post_content = sprintf(esc_html__('%s reported a post has inappropriate content with message:','17jbh'), $post_user).
+        $post_title = sprintf(esc_html__('%s reported a post','videopro'), $post_user);
+        $post_content = sprintf(esc_html__('%s reported a post has inappropriate content with message:','videopro'), $post_user).
             '<blockquote>'.$post_message.'</blockquote><br><br>'.
-            esc_html__('You could review it here','17jbh').' <a href="'.esc_url($post_url).'">'.esc_url($post_url).'</a>';
+            esc_html__('You could review it here','videopro').' <a href="'.esc_url($post_url).'">'.esc_url($post_url).'</a>';
         
         $report_post = array(
           'post_content'   => $post_content,
@@ -398,13 +398,13 @@ function videopro_notify_user_submit( $post_id ) {
 	$notified = get_post_meta($post_id,'notified',true);
 	$email = get_post_meta($post_id,'tm_user_submit',true);
 	if(!$notified && $email && is_string($email) && $email != '' && is_email($email) && get_post_status($post_id) == 'publish'){
-		$subject = esc_html__('Your post submission has been approved','17jbh');
+		$subject = esc_html__('Your post submission has been approved','videopro');
         
         $subject = apply_filters('videopro_post_submission_user_notification_subject', $subject);
 
         $video_permalink = get_permalink($post_id);
 
-		$message = sprintf(esc_html__('Congratulation! Your submission has been approved. You can see it here: %s','17jbh'), $video_permalink);
+		$message = sprintf(esc_html__('Congratulation! Your submission has been approved. You can see it here: %s','videopro'), $video_permalink);
         
         $message = apply_filters('videopro_post_submission_user_notification_message', $message, $video_permalink);
         
@@ -488,7 +488,7 @@ function videopro_channel_dropdown($tag){
             
             wp_reset_postdata();
         } else {
-			$html .= esc_html__('No Channels available', '17jbh');
+			$html .= esc_html__('No Channels available', 'videopro');
 		}
     }
     
@@ -583,7 +583,7 @@ function videopro_playlist_dropdown($tag){
             
             wp_reset_postdata();
         } else {
-			$html .= '<p class="no-data">' . esc_html__('No Playlists available', '17jbh') . '</p>';
+			$html .= '<p class="no-data">' . esc_html__('No Playlists available', 'videopro') . '</p>';
 		}
     }
     
@@ -639,7 +639,7 @@ function videopro_catdropdown($tag){
 		}
 		$output .= '</span></span>';
 	} else {
-		$output .= '<p class="no-data">' . esc_html__('No Categories available', '17jbh') . '</p>';
+		$output .= '<p class="no-data">' . esc_html__('No Categories available', 'videopro') . '</p>';
 	}
     
 	return $output;
@@ -662,7 +662,7 @@ if(!function_exists('videopro_user_submit_video_form_html')) {
             <div class="modal-content">              
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
-                <h4 class="modal-title" id="videopro_frontend_submit_heading"><?php esc_html_e('Submit Video','17jbh'); ?></h4>
+                <h4 class="modal-title" id="videopro_frontend_submit_heading"><?php esc_html_e('Submit Video','videopro'); ?></h4>
               </div>
               <div class="modal-body" <?php echo $style;?>>
                 <?php 
@@ -680,7 +680,7 @@ if(!function_exists('videopro_user_submit_video_form_html')) {
                         }
                     }
 				} else {
-					echo esc_html__('Please go to Appearance > Sidebars and drag a widget into User Submit Sidebar. Contact Form 7 or GravityForms plugin is required!','17jbh');
+					echo esc_html__('Please go to Appearance > Sidebars and drag a widget into User Submit Sidebar. Contact Form 7 or GravityForms plugin is required!','videopro');
 				}
 				?>
               </div>
@@ -697,61 +697,61 @@ add_action('videopro_before_end_body' , 'videopro_user_submit_video_form_html', 
  */
 add_filter('gform_add_field_buttons', 'videopro_gform_custom_fields');
 function videopro_gform_custom_fields($g_fields){
-    $new_group = array( 'name' => 'videopro_submission_fields', 'label' => esc_html__( 'VideoPro Post Submission', '17jbh' ), 'tooltip_class' => 'tooltip_bottomleft' );
+    $new_group = array( 'name' => 'videopro_submission_fields', 'label' => esc_html__( 'VideoPro Post Submission', 'videopro' ), 'tooltip_class' => 'tooltip_bottomleft' );
     $new_group['fields'] = array(
                             array(
                                 'class'     => 'button',
                                 'data-type' => 'vs_categories',
-                                'value'     => esc_html__( 'Categories', '17jbh' )
+                                'value'     => esc_html__( 'Categories', 'videopro' )
                             ),
                             array(
                                 'class'     => 'button',
                                 'data-type' => 'vs_tags',
-                                'value'     => esc_html__( 'Tags', '17jbh' )
+                                'value'     => esc_html__( 'Tags', 'videopro' )
                             ),
                             
                             array(
                                 'class'     => 'button',
                                 'data-type' => 'vs_channels',
-                                'value'     => esc_html__( 'Channels', '17jbh' )
+                                'value'     => esc_html__( 'Channels', 'videopro' )
                             ),
                             
                             array(
                                 'class'     => 'button',
                                 'data-type' => 'vs_playlists',
-                                'value'     => esc_html__( 'Playlists', '17jbh' )
+                                'value'     => esc_html__( 'Playlists', 'videopro' )
                             ),
                             
                             );
     
     $g_fields[] = $new_group;
     
-    $new_group = array( 'name' => 'videopro_report_fields', 'label' => esc_html__( 'VideoPro Post Report', '17jbh' ), 'tooltip_class' => 'tooltip_bottomleft' );
+    $new_group = array( 'name' => 'videopro_report_fields', 'label' => esc_html__( 'VideoPro Post Report', 'videopro' ), 'tooltip_class' => 'tooltip_bottomleft' );
     $new_group['fields'] = array(
                             array(
                                 'class'     => 'button',
                                 'data-type' => 'vs_report',
-                                'value'     => esc_html__( 'Report URL', '17jbh' )
+                                'value'     => esc_html__( 'Report URL', 'videopro' )
                             ));
                             
     $g_fields[] = $new_group;
     
-    $new_group = array( 'name' => 'videopro_upload_fields', 'label' => esc_html__( 'VideoPro Upload Videos', '17jbh' ), 'tooltip_class' => 'tooltip_bottomleft' );
+    $new_group = array( 'name' => 'videopro_upload_fields', 'label' => esc_html__( 'VideoPro Upload Videos', 'videopro' ), 'tooltip_class' => 'tooltip_bottomleft' );
     $new_group['fields'] = array(
                             array(
                                 'class'     => 'button',
                                 'data-type' => 'vs_current_channel',
-                                'value'     => esc_html__( 'Current Channel', '17jbh' )
+                                'value'     => esc_html__( 'Current Channel', 'videopro' )
                             ),
                             array(
                                 'class'     => 'button',
                                 'data-type' => 'vs_current_playlist',
-                                'value'     => esc_html__( 'Current Playlist', '17jbh' )
+                                'value'     => esc_html__( 'Current Playlist', 'videopro' )
                             ),
                             array(
                                 'class'     => 'button',
                                 'data-type' => 'vs_needrefresh',
-                                'value'     => esc_html__( 'Refresh Browser', '17jbh' )
+                                'value'     => esc_html__( 'Refresh Browser', 'videopro' )
                             )
                             );
                             
@@ -767,13 +767,13 @@ add_action('gform_editor_js_set_default_values', 'videopro_gform_editor_js_set_d
 function videopro_gform_editor_js_set_default_values(){
     ?>
     case "vs_current_channel" :
-				field.label = '<?php esc_html_e( 'Current Channel', '17jbh' )?>';
+				field.label = '<?php esc_html_e( 'Current Channel', 'videopro' )?>';
 				break;
     case "vs_current_playlist" :
-				field.label = '<?php esc_html_e( 'Current Playlist', '17jbh' )?>';
+				field.label = '<?php esc_html_e( 'Current Playlist', 'videopro' )?>';
 				break;
     case "vs_needrefresh" :
-				field.label = '<?php esc_html_e( 'Refresh Browser', '17jbh' )?>';
+				field.label = '<?php esc_html_e( 'Refresh Browser', 'videopro' )?>';
 				break;
     <?php
 }

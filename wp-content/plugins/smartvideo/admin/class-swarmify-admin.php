@@ -75,6 +75,7 @@ class Swarmify_Admin {
 
 		wp_enqueue_style( $this->plugin_name.'bootstrap', plugin_dir_url( __FILE__ ) . 'css/bootstrap.css', array(), $this->version, 'all' );
 
+
 		wp_enqueue_style( $this->plugin_name.'fancybox', plugin_dir_url( __FILE__ ) . 'css/jquery.fancybox.min.css', array(), $this->version, 'all' );
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/swarmify-admin.css', array(), $this->version, 'all' );
@@ -107,6 +108,7 @@ class Swarmify_Admin {
 		wp_enqueue_script( $this->plugin_name.'fancybox', plugin_dir_url( __FILE__ ) . 'js/jquery.fancybox.min.js', array( 'jquery' ), $this->version, false );
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/swarmify-admin.js', array( 'jquery' ), $this->version, false );
+
 
 	}
 

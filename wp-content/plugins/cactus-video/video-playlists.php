@@ -96,7 +96,7 @@ class videopro_playlist{
         $nonce = isset($_POST['_v_create_playlist_nonce']) ? $_POST['_v_create_playlist_nonce'] : '';
         
         $result['status'] = 0;
-        $result['message'] = esc_html__('Cheating, huh?!','17jbh');
+        $result['message'] = esc_html__('Cheating, huh?!','videopro');
                 
         if($nonce && wp_verify_nonce($nonce, 'create-playlist')){
             $user_id = get_current_user_id();
@@ -131,7 +131,7 @@ class videopro_playlist{
                             }
                             
                             $result['status'] = 1;
-                            $result['message'] = esc_html__('Well done!','17jbh');
+                            $result['message'] = esc_html__('Well done!','videopro');
                             $result['redirect'] = get_permalink($post_id);
                         } else {
                             $result['status'] = 1;
@@ -139,13 +139,13 @@ class videopro_playlist{
                         }
                     } else {
                         $result['status'] = 0;
-                        $result['message'] = esc_html__('Cheating, huh?!','17jbh');
+                        $result['message'] = esc_html__('Cheating, huh?!','videopro');
                     }
                     
                     do_action('videopro_user_create_playlist_submit', $post_id);
                 } else {
                     $result['status'] = 0;
-                    $result['message'] = esc_html__('You cannot create another playlist in 1 minute','17jbh');
+                    $result['message'] = esc_html__('You cannot create another playlist in 1 minute','videopro');
                 }
             } else {
                 // do nothing
@@ -243,19 +243,19 @@ class videopro_playlist{
 	
 	function register_post_type(){
 		$labels = array(
-			'name'               => esc_html__('Playlist', '17jbh'),
-			'singular_name'      => esc_html__('Playlist', '17jbh'),
-			'add_new'            => esc_html__('Add New Playlist', '17jbh'),
-			'add_new_item'       => esc_html__('Add New Playlist', '17jbh'),
-			'edit_item'          => esc_html__('Edit Playlist', '17jbh'),
-			'new_item'           => esc_html__('New Playlist', '17jbh'),
-			'all_items'          => esc_html__('All Playlists', '17jbh'),
-			'view_item'          => esc_html__('View Playlist', '17jbh'),
-			'search_items'       => esc_html__('Search Playlist', '17jbh'),
-			'not_found'          => esc_html__('No Playlist found', '17jbh'),
-			'not_found_in_trash' => esc_html__('No Playlist found in Trash', '17jbh'),
+			'name'               => esc_html__('Playlist', 'videopro'),
+			'singular_name'      => esc_html__('Playlist', 'videopro'),
+			'add_new'            => esc_html__('Add New Playlist', 'videopro'),
+			'add_new_item'       => esc_html__('Add New Playlist', 'videopro'),
+			'edit_item'          => esc_html__('Edit Playlist', 'videopro'),
+			'new_item'           => esc_html__('New Playlist', 'videopro'),
+			'all_items'          => esc_html__('All Playlists', 'videopro'),
+			'view_item'          => esc_html__('View Playlist', 'videopro'),
+			'search_items'       => esc_html__('Search Playlist', 'videopro'),
+			'not_found'          => esc_html__('No Playlist found', 'videopro'),
+			'not_found_in_trash' => esc_html__('No Playlist found in Trash', 'videopro'),
 			'parent_item_colon'  => '',
-			'menu_name'          => esc_html__('Video Playlist', '17jbh'),
+			'menu_name'          => esc_html__('Video Playlist', 'videopro'),
 		  );
 		$slug_pl =  osp_get('ct_playlist_settings','playlist-slug');
 		if(is_numeric($slug_pl)){ 
@@ -291,21 +291,21 @@ class videopro_playlist{
 		
 		// Plays list meta
 		$playlist_channel = array(	
-				array( 'id' => 'playlist_channel_id', 'name' => esc_html__('Channel','17jbh'), 'type' => 'post_select', 'use_ajax' => true, 'query' => array( 'post_type' => 'ct_channel' ), 'multiple' => true,  'desc' => esc_html__('Add this playlist to a channel') , 'repeatable' => false ),
+				array( 'id' => 'playlist_channel_id', 'name' => esc_html__('Channel','videopro'), 'type' => 'post_select', 'use_ajax' => true, 'query' => array( 'post_type' => 'ct_channel' ), 'multiple' => true,  'desc' => esc_html__('Add this playlist to a channel') , 'repeatable' => false ),
 		);
 		$meta_boxes[] = array(
-			'title' => esc_html__('Video Channel','17jbh'),
+			'title' => esc_html__('Video Channel','videopro'),
 			'pages' => 'ct_playlist',
 			'fields' => $playlist_channel,
 			'priority' => 'high'
 		);
 		
 		$playlist_id = array(	
-				array( 'id' => 'playlist_id', 'name' => esc_html__('Playlist','17jbh'), 'type' => 'post_select', 'use_ajax' => true, 'query' => array( 'post_type' => 'ct_playlist' ), 'multiple' => true,  'desc' => esc_html__('Add this video to a playlist', '17jbh'),  'repeatable' => false),
+				array( 'id' => 'playlist_id', 'name' => esc_html__('Playlist','videopro'), 'type' => 'post_select', 'use_ajax' => true, 'query' => array( 'post_type' => 'ct_playlist' ), 'multiple' => true,  'desc' => esc_html__('Add this video to a playlist', 'videopro'),  'repeatable' => false),
 		);
 
 		$meta_boxes[] = array(
-			'title' => esc_html__('Video PlayList','17jbh'),
+			'title' => esc_html__('Video PlayList','videopro'),
 			'pages' => 'post',
 			'fields' => $playlist_id,
 			'priority' => 'high'
@@ -320,7 +320,7 @@ class videopro_playlist{
 	function add_custom_column_quickedit($columns) {
 
 		$new_columns = array(
-			'playlist' => esc_html__('Playlists', '17jbh')
+			'playlist' => esc_html__('Playlists', 'videopro')
 		);
 
 		return array_merge($columns, $new_columns);
@@ -339,7 +339,7 @@ class videopro_playlist{
 		if($post_type == 'post' && $column_name == 'playlist'){
 			?>			
 			<fieldset class="inline-edit-col-right post-playlists-edit"><div class="inline-edit-col">
-				<span class="title inline-edit-categories-label"><?php echo esc_html__('Playlists', '17jbh');?></span>
+				<span class="title inline-edit-categories-label"><?php echo esc_html__('Playlists', 'videopro');?></span>
 				<ul class="cat-checklist playlist-checklist">
 					<?php
 					$playlists = get_posts( array('post_type' => 'ct_playlist', 'posts_per_page' => -1) );

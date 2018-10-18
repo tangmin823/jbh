@@ -1040,6 +1040,25 @@ class WP_Posts_List_Table extends WP_List_Table {
 	}
 
 	/**
+	 * Handles the comments column output.
+	 *
+	 * @since 4.3.0
+	 *
+	 * @param WP_Post $post The current WP_Post object.
+	 */
+	public function column_comments( $post ) {
+		?>
+		<div class="post-com-count-wrapper">
+		<?php
+			$pending_comments = isset( $this->comment_pending_count[$post->ID] ) ? $this->comment_pending_count[$post->ID] : 0;
+
+			$this->comments_bubble( $post->ID, $pending_comments );
+		?>
+		</div>
+		<?php
+	}
+
+	/**
 	 * Handles the post author column output.
 	 *
 	 * @since 4.3.0

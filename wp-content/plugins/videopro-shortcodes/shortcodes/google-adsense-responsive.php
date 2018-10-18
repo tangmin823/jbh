@@ -56,9 +56,6 @@ if(!function_exists('videopro_get_responsive_ad')){
         );
         (adsbygoogle = window.adsbygoogle || []).push({});
          
-        </script>
-         
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
         </script>';
 
         return $html;

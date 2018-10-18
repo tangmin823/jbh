@@ -940,6 +940,34 @@ function _oembed_filter_feed_content( $content ) {
 }
 
 /**
+ * Prints the necessary markup for the embed comments button.
+ *
+ * @since 4.4.0
+ */
+function print_embed_comments_button() {
+	if ( is_404() || ! ( get_comments_number() || comments_open() ) ) {
+		return;
+	}
+	?>
+	<div class="wp-embed-comments">
+		<a href="<?php comments_link(); ?>" target="_top">
+			<span class="dashicons dashicons-admin-comments"></span>
+			<?php
+			printf(
+				_n(
+					'%s <span class="screen-reader-text">Comment</span>',
+					'%s <span class="screen-reader-text">Comments</span>',
+					get_comments_number()
+				),
+				number_format_i18n( get_comments_number() )
+			);
+			?>
+		</a>
+	</div>
+	<?php
+}
+
+/**
  * Prints the necessary markup for the embed sharing button.
  *
  * @since 4.4.0

@@ -131,7 +131,7 @@ if(!class_exists('Options_Page')){
 						$tab_name = $tab_atts['label'];
 						$icon = isset($tab_atts['icon']) ? '<i class="uk-icon-' . $tab_atts['icon'] . '"></i> ' : '';
 
-						$tab_titles .= '<li ' . ($tabidx == 1 ? 'class="uk-active"':'') .'><a href="#option-tab-'.$tabidx.'">'.$icon. esc_html__(''.$tab_name,'17jbh').'</a></li>';
+						$tab_titles .= '<li ' . ($tabidx == 1 ? 'class="uk-active"':'') .'><a href="#option-tab-'.$tabidx.'">'.$icon. esc_html__(''.$tab_name,'videopro').'</a></li>';
 						$tab_contents .= '<div id="option-tab-'.$tabidx.'" class="tab-content">';
 						
 						foreach($tab->group as $group){
@@ -145,7 +145,7 @@ if(!class_exists('Options_Page')){
 									if($group_name != ''){
 									$tab_contents .= '
 									<thead>
-										<th class="group-label">'.$icon. esc_html__(''.$group_name,'17jbh').'</th>
+										<th class="group-label">'.$icon. esc_html__(''.$group_name,'videopro').'</th>
 									</thead>';
 									}
 									
@@ -167,7 +167,7 @@ if(!class_exists('Options_Page')){
 									'<tr id="'.$id.'" ' . $expr . ' class="row row-' . $id . ' ' . (count($fields->description) > 0?'no-border':'').'">
 										<td align="left">
 											<label class="fields-label">'
-												. esc_html__(''.$fields_atts['label'],'17jbh').'</label>
+												. esc_html__(''.$fields_atts['label'],'videopro').'</label>
 										</td>
 									</tr>
 									<tr class="row row-' . $id . ' ">
@@ -177,7 +177,7 @@ if(!class_exists('Options_Page')){
                                                 
                                                 $props = '';
 												if(isset($atts['tooltip'])){
-													$props = ' data-uk-tooltip title="' . esc_html__(''.$atts['tooltip'],'17jbh') . '" ';
+													$props = ' data-uk-tooltip title="' . esc_html__(''.$atts['tooltip'],'videopro') . '" ';
 												}
 												if(count($fields->option) > 1){
 													$tab_contents .= '<div class="option fields-' . $atts['type'] . '" '.$props.'>';
@@ -196,7 +196,7 @@ if(!class_exists('Options_Page')){
 												}
 											
 												if(isset($atts['label']) && $atts['label']!=''){
-													$tab_contents .= '<label>' . esc_html__(''.$atts['label'],'17jbh') . ':</label>';
+													$tab_contents .= '<label>' . esc_html__(''.$atts['label'],'videopro') . ':</label>';
 												}
 												
 												// call responsible option element to generate HTML
@@ -215,7 +215,7 @@ if(!class_exists('Options_Page')){
 									</tr>';
 									if(count($fields->description) > 0){
 										foreach($fields->description as $desc){
-											$tab_contents .= '<tr class="row row-' . $id . ' description"><td>'.esc_html__(''.$desc,'17jbh').'</td></tr>';
+											$tab_contents .= '<tr class="row row-' . $id . ' description"><td>'.esc_html__(''.$desc,'videopro').'</td></tr>';
 										}
 									}
 							}
@@ -228,7 +228,7 @@ if(!class_exists('Options_Page')){
 					$tab_contents .= '</div>';//end uk-tab-content
 					$tab_titles .= '</ul>';
 				} catch (Exception $e) {
-					echo esc_html__("Exception occurs: ",'17jbh') . print_r($e);
+					echo esc_html__("Exception occurs: ",'videopro') . print_r($e);
 				}
 			}
 			

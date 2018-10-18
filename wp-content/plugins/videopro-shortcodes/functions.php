@@ -90,7 +90,7 @@ function videopro_get_post_screenshots_html($post_id, $img_size, $source_sizes =
 
 $current_theme = wp_get_theme();
 
-if($current_theme->get('Name') != '17jbh' && $current_theme->get('Template') != '17jbh'){
+if($current_theme->get('Name') != 'videopro' && $current_theme->get('Template') != 'videopro'){
 	// if current theme is VideoPro, then it it needn't to declare this function
 	if(!function_exists('videopro_get_post_viewlikeduration')){
 		function videopro_get_post_viewlikeduration($id){

@@ -223,14 +223,14 @@ class videopro_series{
 	
 	function get_metas(){
 		return apply_filters('videopro_video_series_metas', array('release' 	=> array('type' => 'text', 
-																					'title' => esc_html__('Release Year','17jbh'), 
-																					'description' => esc_html__('Year of release. Date String appears as you enter', '17jbh')),
+																					'title' => esc_html__('Release Year','videopro'), 
+																					'description' => esc_html__('Year of release. Date String appears as you enter', 'videopro')),
 																'creator' 		=> array('type' => 'text',
-																					'title' => esc_html__('Creators', '17jbh'),
-																					'description' => esc_html__('List of creators, separated by a comma', '17jbh')),
+																					'title' => esc_html__('Creators', 'videopro'),
+																					'description' => esc_html__('List of creators, separated by a comma', 'videopro')),
 																'stars'			=> array('type' => 'text',
-																					'title' => esc_html__('Stars', '17jbh'),
-																					'description' => esc_html__('List of stars, separated by a comma', '17jbh'))
+																					'title' => esc_html__('Stars', 'videopro'),
+																					'description' => esc_html__('List of stars, separated by a comma', 'videopro'))
 																)
 							);
 	}
@@ -238,16 +238,16 @@ class videopro_series{
 	function register_series_taxonomies(){
 		if( function_exists('ot_get_option') && ot_get_option('enable_series','on') != 'off' ){
 			$series_label = array(
-				'name'              => esc_html__( 'Series', '17jbh' ),
-				'singular_name'     => esc_html__( 'Series', '17jbh' ),
-				'search_items'      => esc_html__( 'Search','17jbh' ),
-				'all_items'         => esc_html__( 'All Series','17jbh' ),
-				'parent_item'       => esc_html__( 'Parent Series' ,'17jbh'),
-				'parent_item_colon' => esc_html__( 'Parent Series:','17jbh' ),
-				'edit_item'         => esc_html__( 'Edit Series' ,'17jbh'),
-				'update_item'       => esc_html__( 'Update Series','17jbh' ),
-				'add_new_item'      => esc_html__( 'Add New Series' ,'17jbh'),
-				'new_item_name'     => esc_html__( 'New Series' ,'17jbh'),
+				'name'              => esc_html__( 'Series', 'videopro' ),
+				'singular_name'     => esc_html__( 'Series', 'videopro' ),
+				'search_items'      => esc_html__( 'Search','videopro' ),
+				'all_items'         => esc_html__( 'All Series','videopro' ),
+				'parent_item'       => esc_html__( 'Parent Series' ,'videopro'),
+				'parent_item_colon' => esc_html__( 'Parent Series:','videopro' ),
+				'edit_item'         => esc_html__( 'Edit Series' ,'videopro'),
+				'update_item'       => esc_html__( 'Update Series','videopro' ),
+				'add_new_item'      => esc_html__( 'Add New Series' ,'videopro'),
+				'new_item_name'     => esc_html__( 'New Series' ,'videopro'),
 				'menu_name'         => esc_html__( 'Series' ),
 			);
 			
@@ -268,19 +268,19 @@ class videopro_series{
 			
 			// register hidden Video Series post types for query purposes
 			$labels = array(
-				'name'               => esc_html__('Video Series', '17jbh'),
-				'singular_name'      => esc_html__('Video Series', '17jbh'),
-				'add_new'            => esc_html__('Add New Video Series', '17jbh'),
-				'add_new_item'       => esc_html__('Add New Video Series', '17jbh'),
-				'edit_item'          => esc_html__('Edit Video Series', '17jbh'),
-				'new_item'           => esc_html__('New Video Series', '17jbh'),
-				'all_items'          => esc_html__('All Video Series', '17jbh'),
-				'view_item'          => esc_html__('View Video Series', '17jbh'),
-				'search_items'       => esc_html__('Search Video Series', '17jbh'),
-				'not_found'          => esc_html__('No Video Series found', '17jbh'),
-				'not_found_in_trash' => esc_html__('No Video Series found in Trash', '17jbh'),
+				'name'               => esc_html__('Video Series', 'videopro'),
+				'singular_name'      => esc_html__('Video Series', 'videopro'),
+				'add_new'            => esc_html__('Add New Video Series', 'videopro'),
+				'add_new_item'       => esc_html__('Add New Video Series', 'videopro'),
+				'edit_item'          => esc_html__('Edit Video Series', 'videopro'),
+				'new_item'           => esc_html__('New Video Series', 'videopro'),
+				'all_items'          => esc_html__('All Video Series', 'videopro'),
+				'view_item'          => esc_html__('View Video Series', 'videopro'),
+				'search_items'       => esc_html__('Search Video Series', 'videopro'),
+				'not_found'          => esc_html__('No Video Series found', 'videopro'),
+				'not_found_in_trash' => esc_html__('No Video Series found in Trash', 'videopro'),
 				'parent_item_colon'  => '',
-				'menu_name'          => esc_html__('Video Series', '17jbh'),
+				'menu_name'          => esc_html__('Video Series', 'videopro'),
 			  );
 			  
 			$rewrite = false;
@@ -306,12 +306,12 @@ class videopro_series{
 	
 	function register_video_series_metadata(array $meta_boxes){
 		$video_series = array(	
-				array( 'id' => 'title_in_series', 'name' => esc_html__('Alternative Title in series','17jbh'), 'type' => 'text',  'repeatable' => false, 'multiple' => false , 'desc' => esc_html__('Enter alternative title for this video in series. For example: Episode 1','17jbh') ),
-				array( 'id' => 'order_series', 'name' => esc_html__('Order in series','17jbh'), 'type' => 'text',  'repeatable' => false, 'multiple' => false, 'default' => '0', 'desc' => esc_html__('Enter order of this video in series','17jbh') ),
+				array( 'id' => 'title_in_series', 'name' => esc_html__('Alternative Title in series','videopro'), 'type' => 'text',  'repeatable' => false, 'multiple' => false , 'desc' => esc_html__('Enter alternative title for this video in series. For example: Episode 1','videopro') ),
+				array( 'id' => 'order_series', 'name' => esc_html__('Order in series','videopro'), 'type' => 'text',  'repeatable' => false, 'multiple' => false, 'default' => '0', 'desc' => esc_html__('Enter order of this video in series','videopro') ),
 		);
 
 		$meta_boxes[] = array(
-			'title' => esc_html__('Video Series settings ','17jbh'),
+			'title' => esc_html__('Video Series settings ','videopro'),
 			'pages' => 'post',
 			'fields' => $video_series,
 			'priority' => 'default'
@@ -373,7 +373,7 @@ class videopro_series{
                 $style = osp_get('ct_video_settings', 'series_single_style');
 				if($style == 2){
 					echo '
-					<span class="series-dropdown-title">'.esc_html__('SELECT EPISODES: ','17jbh').'</span>
+					<span class="series-dropdown-title">'.esc_html__('SELECT EPISODES: ','videopro').'</span>
 					<span class="dropdown series-dropdown">
 					<button class="dropbtn" id="series-dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.esc_html($series_title).' <i class="fa fa-caret-down"></i></button>
 					<ul id="dropdown-menu-series" class="dropdown-menu text-left" aria-labelledby="series-dLabel">';
@@ -397,7 +397,7 @@ class videopro_series{
 						<div class="series-content">
 							<div class="series-content-row">
 								<div class="series-content-item">
-									<div class="content-title"><?php esc_html_e('EPISODES','17jbh');?>:</div>
+									<div class="content-title"><?php esc_html_e('EPISODES','videopro');?>:</div>
 								</div>
 								<div class="series-content-item">
 									<div class="content-epls">

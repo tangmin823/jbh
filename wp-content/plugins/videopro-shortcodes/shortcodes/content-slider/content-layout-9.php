@@ -77,7 +77,7 @@ $link_post = apply_filters('videopro_loop_item_url', get_the_permalink(), $id);
 							$class_li = 'login-to-vote';
 						}
 						?>
-                    	<div  class="share-tool-block like-button _check-like-id-<?php the_ID();?> <?php echo esc_attr($class_li);?>" data-like="<?php esc_html_e('like','17jbh');?>" data-unlike="<?php esc_html_e('dislike','17jbh');?>"">
+                    	<div  class="share-tool-block like-button _check-like-id-<?php the_ID();?> <?php echo esc_attr($class_li);?>" data-like="<?php esc_html_e('like','videopro');?>" data-unlike="<?php esc_html_e('dislike','videopro');?>"">
 							<?php 
                             GetWtiLikePost();
 							if($class_li != ''){
@@ -89,10 +89,10 @@ $link_post = apply_filters('videopro_loop_item_url', get_the_permalink(), $id);
                                             <?php if($login_message!=''){ 
                                                 echo esc_attr($login_message);
                                             }else{ 
-                                                esc_html_e('Please Signin','17jbh');
+                                                esc_html_e('Please Signin','videopro');
                                             }?>
                                         </span>
-                                        <a href="<?php echo wp_login_url($link_post);?>" class="login-link button btn btn-default bt-style-1"><?php esc_html_e('Sign In','17jbh');?></a></span>
+                                        <a href="<?php echo wp_login_url($link_post);?>" class="login-link button btn btn-default bt-style-1"><?php esc_html_e('Sign In','videopro');?></a></span>
                                 	</div>
                                 </div>
                                 <?php 
@@ -114,7 +114,7 @@ $link_post = apply_filters('videopro_loop_item_url', get_the_permalink(), $id);
         
     </div>
     
-    <div class="social-share-html" data-lang="<?php echo esc_attr__('Share this video', '17jbh');?>">
+    <div class="social-share-html" data-lang="<?php echo esc_attr__('Share this video', 'videopro');?>">
     	<?php videopro_print_social_share();?>
     </div>
     

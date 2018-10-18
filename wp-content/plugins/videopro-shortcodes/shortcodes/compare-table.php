@@ -68,33 +68,33 @@ add_shortcode( 'v_row', 'videopro_compare_table_row');
 function reg_v_comparetable(){
 	if(function_exists('vc_map')){
 			vc_map( array(
-			"name" => esc_html__("Compare Table", '17jbh'),
+			"name" => esc_html__("Compare Table", 'videopro'),
 			"base" => "v_comparetable",
 			"as_parent" => array('only' => 'v_column'),
 			"content_element" => true,
 			"icon" => 'icon_comparetable',
 			"class" => "",
 			"controls" => "full",
-			"category" => esc_html__('Cactus Shortcodes', '17jbh'),
+			"category" => esc_html__('Cactus Shortcodes', 'videopro'),
 			"is_container" => true,			
 			"params" => array(				
 				array(
 					"type" => "textfield",
-					"heading" => esc_html__("Class", '17jbh'),
+					"heading" => esc_html__("Class", 'videopro'),
 					"param_name" => "table_class",
-					"description" => esc_html__("Custom CSS class", '17jbh')
+					"description" => esc_html__("Custom CSS class", 'videopro')
 				),
 				array(
 					"type" => "textfield",
-					"heading" => esc_html__("ID", '17jbh'),
+					"heading" => esc_html__("ID", 'videopro'),
 					"param_name" => "id",
-					"description" => esc_html__("Custom ID. If not provided, random ID is generated", '17jbh')
+					"description" => esc_html__("Custom ID. If not provided, random ID is generated", 'videopro')
 				),
 			),
 			"js_view" => 'VcColumnView'
 		));
 		vc_map( array(
-			"name" => esc_html__("Compare Table Column", '17jbh'),
+			"name" => esc_html__("Compare Table Column", 'videopro'),
 			"base" => "v_column",
 			"icon" => 'icon_column',
 			"content_element" => true,
@@ -106,32 +106,32 @@ function reg_v_comparetable(){
 			"params" => array(				
 				array(
 					"type" => "textfield",
-					"heading" => esc_html__("Custom CSS class", '17jbh'),
+					"heading" => esc_html__("Custom CSS class", 'videopro'),
 					"admin_label" => true,
 					"param_name" => "column_class",					
 				),
 				array(
 					"type" => "dropdown",
 					"admin_label" => true,
-					"heading" => esc_html__("Special Column", '17jbh'),
+					"heading" => esc_html__("Special Column", 'videopro'),
 					"param_name" => "is_special",
 					"value" => array(
-						esc_html__('False', '17jbh') => '0',
-						esc_html__('True', '17jbh') => '1',
+						esc_html__('False', 'videopro') => '0',
+						esc_html__('True', 'videopro') => '1',
 					),
 				),				
 				array(
 					"type" => "dropdown",
 					"holder" => "br",
 					"admin_label" => true,
-					"heading" => esc_html__("Column Size", '17jbh'),
+					"heading" => esc_html__("Column Size", 'videopro'),
 					"param_name" => "column_size",
 					"value" => array(						
-						esc_html__('3', '17jbh') => '3',
-						esc_html__('4', '17jbh') => '4',
-						esc_html__('6', '17jbh') => '6',
+						esc_html__('3', 'videopro') => '3',
+						esc_html__('4', 'videopro') => '4',
+						esc_html__('6', 'videopro') => '6',
 					),
-					"description" => esc_html__("Select between 2, 3, 4, 6. Total column_size values of all columns should equal to 12", '17jbh'),
+					"description" => esc_html__("Select between 2, 3, 4, 6. Total column_size values of all columns should equal to 12", 'videopro'),
 					"std" => '4',
 					'dependency' 	=> 	array(
 							 		'callback' => 'compareTableCallbackColumns',
@@ -141,37 +141,37 @@ function reg_v_comparetable(){
 					"admin_label" => true,
 					"holder" => "br",
 					"type" => "textfield",
-					"heading" => esc_html__("Title", '17jbh'),
+					"heading" => esc_html__("Title", 'videopro'),
 					"param_name" => "title",
-					"description" => esc_html__("Title of this column (plan)", '17jbh')
+					"description" => esc_html__("Title of this column (plan)", 'videopro')
 				),
 				array(
 					"type" => "textfield",
-					"heading" => esc_html__("Currency", '17jbh'),
+					"heading" => esc_html__("Currency", 'videopro'),
 					"param_name" => "currency",
 				),
 				array(
 					"type" => "textfield",
-					"heading" => esc_html__("Price (Main Currency)", '17jbh'),
+					"heading" => esc_html__("Price (Main Currency)", 'videopro'),
 					"param_name" => "price",
-					"description" => esc_html__("Price of this plan", '17jbh')
+					"description" => esc_html__("Price of this plan", 'videopro')
 				),	
 				array(
 					"type" => "textfield",
-					"heading" => esc_html__("Price (Fractional Currency)", '17jbh'),
+					"heading" => esc_html__("Price (Fractional Currency)", 'videopro'),
 					"param_name" => "sub_price",
 				),			
 				array(
 					"type" => "textfield",
-					"heading" => esc_html__("Price Description", '17jbh'),
+					"heading" => esc_html__("Price Description", 'videopro'),
 					"param_name" => "sub_text",
-					"description" => esc_html__("Price description of this column", '17jbh')
+					"description" => esc_html__("Price description of this column", 'videopro')
 				),
 			),
 			"js_view" 		=> 'VcColumnView',			
 		));
 		vc_map( array(
-			"name" => esc_html__("Compare Table Row", '17jbh'),
+			"name" => esc_html__("Compare Table Row", 'videopro'),
 			"base" => "v_row",
 			"icon" => 'icon_row',
 			"as_child" => array('only' => 'v_column'),
@@ -179,7 +179,7 @@ function reg_v_comparetable(){
 				array(
 					"admin_label" => true,
 					"type" => "textarea_html",
-					"heading" => esc_html__("Content", '17jbh'),
+					"heading" => esc_html__("Content", 'videopro'),
 					"param_name" => "content",
 				)
 			),

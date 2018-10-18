@@ -489,12 +489,18 @@ class WP_Comments_List_Table extends WP_List_Table {
 
 		$comment = $item;
 
+		$the_comment_class = wp_get_comment_status( $comment );
+		if ( ! $the_comment_class ) {
+			$the_comment_class = '';
+		}
+		$the_comment_class = join( ' ', get_comment_class( $the_comment_class, $comment, $comment->comment_post_ID ) );
+
 		if ( $comment->comment_post_ID > 0 ) {
 			$post = get_post( $comment->comment_post_ID );
 		}
 		$this->user_can = current_user_can( 'edit_comment', $comment->comment_ID );
 
-		echo "<tr id='comment-$comment->comment_ID>";
+		echo "<tr id='comment-$comment->comment_ID' class='$the_comment_class'>";
 		$this->single_row_columns( $comment );
 		echo "</tr>\n";
 
@@ -633,6 +639,9 @@ class WP_Comments_List_Table extends WP_List_Table {
 	 * @param WP_Comment $comment The comment object.
 	 */
 	public function column_comment( $comment ) {
+		echo '<div class="comment-author">';
+			$this->column_author( $comment );
+		echo '</div>';
 
 		if ( $comment->comment_parent ) {
 			$parent = get_comment( $comment->comment_parent );
@@ -647,6 +656,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 			}
 		}
 
+		comment_text( $comment );
 		if ( $this->user_can ) { ?>
 		<div id="inline-<?php echo $comment->comment_ID; ?>" class="hidden">
 		<textarea class="comment" rows="1" cols="1"><?php
@@ -660,6 +670,73 @@ class WP_Comments_List_Table extends WP_List_Table {
 		</div>
 		<?php
 		}
+	}
+
+	/**
+	 *
+	 * @global string $comment_status
+	 *
+	 * @param WP_Comment $comment The comment object.
+	 */
+	public function column_author( $comment ) {
+		global $comment_status;
+
+		$author_url = get_comment_author_url( $comment );
+
+		$author_url_display = untrailingslashit( preg_replace( '|^http(s)?://(www\.)?|i', '', $author_url ) );
+		if ( strlen( $author_url_display ) > 50 ) {
+			$author_url_display = wp_html_excerpt( $author_url_display, 49, '&hellip;' );
+		}
+
+		echo "<strong>"; comment_author( $comment ); echo '</strong><br />';
+		if ( ! empty( $author_url_display ) ) {
+			printf( '<a href="%s">%s</a><br />', esc_url( $author_url ), esc_html( $author_url_display ) );
+		}
+
+		if ( $this->user_can ) {
+			if ( ! empty( $comment->comment_author_email ) ) {
+				/** This filter is documented in wp-includes/comment-template.php */
+				$email = apply_filters( 'comment_email', $comment->comment_author_email, $comment );
+
+				if ( ! empty( $email ) && '@' !== $email ) {
+					printf( '<a href="%1$s">%2$s</a><br />', esc_url( 'mailto:' . $email ), esc_html( $email ) );
+				}
+			}
+
+			$author_ip = get_comment_author_IP( $comment );
+			if ( $author_ip ) {
+				$author_ip_url = add_query_arg( array( 's' => $author_ip, 'mode' => 'detail' ), admin_url( 'edit-comments.php' ) );
+				if ( 'spam' === $comment_status ) {
+					$author_ip_url = add_query_arg( 'comment_status', 'spam', $author_ip_url );
+				}
+				printf( '<a href="%1$s">%2$s</a>', esc_url( $author_ip_url ), esc_html( $author_ip ) );
+			}
+		}
+	}
+
+	/**
+	 *
+	 * @param WP_Comment $comment The comment object.
+	 */
+	public function column_date( $comment ) {
+		/* translators: 1: comment date, 2: comment time */
+		$submitted = sprintf( __( '%1$s at %2$s' ),
+			/* translators: comment date format. See https://secure.php.net/date */
+			get_comment_date( __( 'Y/m/d' ), $comment ),
+			get_comment_date( __( 'g:i a' ), $comment )
+		);
+
+		echo '<div class="submitted-on">';
+		if ( 'approved' === wp_get_comment_status( $comment ) && ! empty ( $comment->comment_post_ID ) ) {
+			printf(
+				'<a href="%s">%s</a>',
+				esc_url( get_comment_link( $comment ) ),
+				$submitted
+			);
+		} else {
+			echo $submitted;
+		}
+		echo '</div>';
 	}
 
 	/**
@@ -692,6 +769,11 @@ class WP_Comments_List_Table extends WP_List_Table {
 			echo $thumb;
 		}
 		echo $post_link;
+		$post_type_object = get_post_type_object( $post->post_type );
+		echo "<a href='" . get_permalink( $post->ID ) . "' class='comments-view-item-link'>" . $post_type_object->labels->view_item . '</a>';
+		echo '<span class="post-com-count-wrapper post-com-count-', $post->ID, '">';
+		$this->comments_bubble( $post->ID, $pending_comments );
+		echo '</span> ';
 		echo '</div>';
 	}
 

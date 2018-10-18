@@ -20,8 +20,8 @@ function videopro_video_membership_get_options(){
                 'playlist-unlimited-memberships' => array(),
                 'video-ads-memberships' => array(),
                 'days-before-warning' => 7,
-                'expired-warning' => esc_html__('Your subscription: {name_tag} is about to expired in <strong>{days}</strong> days', '17jbh'),
-                'expired-error' => esc_html__('Your subscription: {name_tag} is expired', '17jbh'),
+                'expired-warning' => esc_html__('Your subscription: {name_tag} is about to expired in <strong>{days}</strong> days', 'videopro'),
+                'expired-error' => esc_html__('Your subscription: {name_tag} is expired', 'videopro'),
                 'default-channel-status' => 'publish',
                 'default-playlist-status' => 'publish',
                 'default-video-status' => 'publish'

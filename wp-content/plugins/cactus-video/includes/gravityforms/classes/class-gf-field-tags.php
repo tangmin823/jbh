@@ -9,7 +9,7 @@ class GF_Field_VS_Tags extends GF_Field {
 	public $type = 'vs_tags';
 
 	public function get_form_editor_field_title() {
-		return esc_html__( 'Post Tags', '17jbh' );
+		return esc_html__( 'Post Tags', 'videopro' );
 	}
     
     /**
@@ -35,7 +35,7 @@ class GF_Field_VS_Tags extends GF_Field {
 
 			if ( empty($value) ) {
 				$this->failed_validation  = true;
-				$this->validation_message = empty( $this->errorMessage ) ? esc_html__( 'This field is required. Please enter at least one tag', '17jbh' ) : $this->errorMessage;
+				$this->validation_message = empty( $this->errorMessage ) ? esc_html__( 'This field is required. Please enter at least one tag', 'videopro' ) : $this->errorMessage;
 			}
 		}
         
@@ -45,7 +45,7 @@ class GF_Field_VS_Tags extends GF_Field {
             $tags = explode(',',$value);
             if(count($tags) > $limit_tags){
                 $this->failed_validation  = true;
-                $this->validation_message = empty( $this->errorMessage ) ? sprintf(esc_html__( 'You are limited to enter %d tags', '17jbh' ), $limit_tags) : $this->errorMessage;
+                $this->validation_message = empty( $this->errorMessage ) ? sprintf(esc_html__( 'You are limited to enter %d tags', 'videopro' ), $limit_tags) : $this->errorMessage;
             } 
         }
 	}

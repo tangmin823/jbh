@@ -53,16 +53,16 @@ add_action( 'after_setup_theme', 'reg_cactus_videopro_playlist', 100 );
 function reg_cactus_videopro_playlist(){
 	if(function_exists('vc_map')){
 	vc_map( array(
-		"name"		=> esc_html__("VideoPro Playlist listing", '17jbh'),
+		"name"		=> esc_html__("VideoPro Playlist listing", 'videopro'),
 		"base"		=> "videopro_playlist",
 		"class"		=> "",
 		"icon"		=> "icon-playlist",
-		"category"  => esc_html__('Content', '17jbh'),
+		"category"  => esc_html__('Content', 'videopro'),
 		"params"	=> array(
 			array(
 				"type" => "dropdown",
 				"holder" => "div",
-				"heading" => esc_html__("Column", '17jbh'),
+				"heading" => esc_html__("Column", 'videopro'),
 				"param_name" => "column",
 				"value" => array(
 					'' => '',
@@ -91,23 +91,23 @@ function reg_cactus_videopro_playlist(){
 			   "admin_label" => true,
 			   "type" => "dropdown",
 			   "class" => "",
-			   "heading" => esc_html__("Order by", '17jbh'),
+			   "heading" => esc_html__("Order by", 'videopro'),
 			   "param_name" => "orderby",
 			   "value" => array(
-				  esc_html__('Date', '17jbh') => 'date',
-				  esc_html__('ID', '17jbh') => 'ID',
-				  esc_html__('Author', '17jbh') => 'author',
-				  esc_html__('Title', '17jbh') => 'title',
-				  esc_html__('Name', '17jbh') => 'name',
-				  esc_html__('Modified', '17jbh') => 'modified',
-				  esc_html__('Parent', '17jbh') => 'parent',
-				  esc_html__('Random', '17jbh') => 'rand',
-				  esc_html__('Comment count', '17jbh') => 'comment_count',
-				  esc_html__('Menu order', '17jbh') => 'menu_order',
-				  esc_html__('Meta value', '17jbh') => 'meta_value',
-				  esc_html__('Meta value num', '17jbh') => 'meta_value_num',
-				  esc_html__('Post__in', '17jbh') => 'post__in',
-				  esc_html__('None', '17jbh') => 'none',
+				  esc_html__('Date', 'videopro') => 'date',
+				  esc_html__('ID', 'videopro') => 'ID',
+				  esc_html__('Author', 'videopro') => 'author',
+				  esc_html__('Title', 'videopro') => 'title',
+				  esc_html__('Name', 'videopro') => 'name',
+				  esc_html__('Modified', 'videopro') => 'modified',
+				  esc_html__('Parent', 'videopro') => 'parent',
+				  esc_html__('Random', 'videopro') => 'rand',
+				  esc_html__('Comment count', 'videopro') => 'comment_count',
+				  esc_html__('Menu order', 'videopro') => 'menu_order',
+				  esc_html__('Meta value', 'videopro') => 'meta_value',
+				  esc_html__('Meta value num', 'videopro') => 'meta_value_num',
+				  esc_html__('Post__in', 'videopro') => 'post__in',
+				  esc_html__('None', 'videopro') => 'none',
 			   ),
 			   "description" => ''
 			),
@@ -118,7 +118,7 @@ function reg_cactus_videopro_playlist(){
 				"value" => array( 
 				esc_html__("Descending", "videopro") => "DESC", 
 				esc_html__("Ascending", "videopro") => "ASC" ),
-				"description" => esc_html__('Designates the ascending or descending order. More at <a href="http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress codex page</a>.', '17jbh')
+				"description" => esc_html__('Designates the ascending or descending order. More at <a href="http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress codex page</a>.', 'videopro')
 			),
 		)
 		) 

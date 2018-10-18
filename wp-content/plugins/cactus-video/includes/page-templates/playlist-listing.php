@@ -32,7 +32,7 @@ videopro_global_sidebar_style($sidebar_style);
                         <?php if(function_exists('videopro_breadcrumbs')){
 							 videopro_breadcrumbs();
 						}?>
-                		<h1 class="single-title entry-title"><?php if(is_page()){the_title();} else{ esc_html_e('Playlists','17jbh');}?></h1>
+                		<h1 class="single-title entry-title"><?php if(is_page()){the_title();} else{ esc_html_e('Playlists','videopro');}?></h1>
                         <?php 
 						$paged = get_query_var('paged')?get_query_var('paged'):(get_query_var('page')?get_query_var('page'):1);
 						$args = array(

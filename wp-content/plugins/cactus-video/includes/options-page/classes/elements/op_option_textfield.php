@@ -15,7 +15,7 @@ class OP_Option_textfield extends OP_Option{
 		$placeholder = '';
 
 		if(isset($atts['width'])) $width = ' style="width:' . $atts['width'] . 'px" '; 
-		if(isset($atts['placeholder'])) $placeholder = ' placeholder="' . esc_html__($atts['placeholder'],'17jbh') . '" '; 
+		if(isset($atts['placeholder'])) $placeholder = ' placeholder="' . esc_html__($atts['placeholder'],'videopro') . '" '; 
 		
 		$html = '<input type="text" name="'.$this->name.'" '. $width .'value="' . $selectedValue . '"' . $placeholder . '" />';
 					

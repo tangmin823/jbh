@@ -9,7 +9,7 @@ class GF_Field_VS_Channels extends GF_Field {
 	public $type = 'vs_channels';
 
 	public function get_form_editor_field_title() {
-		return esc_html__( 'Video Channels', '17jbh' );
+		return esc_html__( 'Video Channels', 'videopro' );
 	}
     
     /**
@@ -35,7 +35,7 @@ class GF_Field_VS_Channels extends GF_Field {
 
 			if ( empty($value) ) {
 				$this->failed_validation  = true;
-				$this->validation_message = empty( $this->errorMessage ) ? esc_html__( 'This field is required. Please choose at least one channel', '17jbh' ) : $this->errorMessage;
+				$this->validation_message = empty( $this->errorMessage ) ? esc_html__( 'This field is required. Please choose at least one channel', 'videopro' ) : $this->errorMessage;
 			}
 		}
 	}
@@ -178,7 +178,7 @@ class GF_Field_VS_Channels extends GF_Field {
             $total = $query->found_posts;
             
 			if ( $count < $total ) {
-				$html .= "<li class='gchoice_total'>" . sprintf( esc_html__( '%d of %d items shown', '17jbh' ), $count, $total ) . '</li>';
+				$html .= "<li class='gchoice_total'>" . sprintf( esc_html__( '%d of %d items shown', 'videopro' ), $count, $total ) . '</li>';
 			}
             
             wp_reset_postdata();
@@ -187,7 +187,7 @@ class GF_Field_VS_Channels extends GF_Field {
                 $html .= '</select>';
             }
 		} else {
-			$html .= '<p class="no-data">' . esc_html__('No Channels available', '17jbh') . '</p>';
+			$html .= '<p class="no-data">' . esc_html__('No Channels available', 'videopro') . '</p>';
 		}		
 
 		return $html;

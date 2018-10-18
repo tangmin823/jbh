@@ -9,7 +9,7 @@ class GF_Field_VS_Categories extends GF_Field {
 	public $type = 'vs_categories';
 
 	public function get_form_editor_field_title() {
-		return __( 'Post Categories', '17jbh' );
+		return __( 'Post Categories', 'videopro' );
 	}
     
     /**
@@ -34,7 +34,7 @@ class GF_Field_VS_Categories extends GF_Field {
 
 			if ( empty($value) ) {
 				$this->failed_validation  = true;
-				$this->validation_message = empty( $this->errorMessage ) ? __( 'This field is required. Please choose at least one category', '17jbh' ) : $this->errorMessage;
+				$this->validation_message = empty( $this->errorMessage ) ? __( 'This field is required. Please choose at least one category', 'videopro' ) : $this->errorMessage;
 			}
 		}
 	}
@@ -162,14 +162,14 @@ class GF_Field_VS_Categories extends GF_Field {
 
 			$total = sizeof( $cats );
 			if ( $count < $total ) {
-				$html .= "<li class='gchoice_total'>" . sprintf( __( '%d of %d items shown', '17jbh' ), $count, $total ) . '</li>';
+				$html .= "<li class='gchoice_total'>" . sprintf( __( '%d of %d items shown', 'videopro' ), $count, $total ) . '</li>';
 			}
             
             if($choice_type == 'dropdown'){
                 $html .= '</select>';
             }
 		} else {
-			$html .= '<p class="no-data">' . esc_html__('No Categories available', '17jbh') . '</p>';
+			$html .= '<p class="no-data">' . esc_html__('No Categories available', 'videopro') . '</p>';
 		}
 
 		return $html;

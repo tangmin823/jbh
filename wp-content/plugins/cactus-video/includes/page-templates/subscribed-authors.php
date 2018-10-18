@@ -86,17 +86,17 @@ videopro_global_sidebar_style($sidebar_style);
                                         <?php
                                     } else { ?>
                                         <div class="no-post">
-                                            <h2 class="h4"><?php echo wp_kses(__('You do not have any subscriptions.<br>Browse Authors to subscribe.','17jbh'),array('br'=>array()));?></h2>
+                                            <h2 class="h4"><?php echo wp_kses(__('You do not have any subscriptions.<br>Browse Authors to subscribe.','videopro'),array('br'=>array()));?></h2>
                                             <?php
 											$query = new WP_Query( array('post_type'  => 'page', 'posts_per_page' => 1, 'meta_key' => '_wp_page_template', 'meta_value' => 'page-templates/authors-listing.php' ) );
 											if ( $query->have_posts() ){
 												while ( $query->have_posts() ) : $query->the_post();?>
-                                                <a href="<?php echo esc_url(get_permalink());?>" class="btn btn-default"><?php esc_html_e('Browse Authors','17jbh');?></a>
+                                                <a href="<?php echo esc_url(get_permalink());?>" class="btn btn-default"><?php esc_html_e('Browse Authors','videopro');?></a>
                                                 <?php 
 											endwhile; 
                                             wp_reset_postdata();
 											}else{
-                                                $btn = '<a href="#" class="btn btn-default">' . esc_html__('Browse Authors','17jbh') . '</a>';
+                                                $btn = '<a href="#" class="btn btn-default">' . esc_html__('Browse Authors','videopro') . '</a>';
                                                 $btn = apply_filters('videopro-subscribed-authors-browse_authors-button', $btn);
                                                 echo $btn;
                                             }?>

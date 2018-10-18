@@ -8,7 +8,7 @@ class CactusShortcodePromoBox extends CactusShortcode {
 		$promoID 		=  rand(1, 9990);
 		$id 		= isset($atts['id']) ? $atts['id'] : 'cactus-btn-'.$promoID;
 		$title 				= isset($atts['title']) ? $atts['title'] : '';
-		$button_label 				= isset($atts['button_title']) ? $atts['button_title'] : esc_html__('Submit','17jbh');
+		$button_label 				= isset($atts['button_title']) ? $atts['button_title'] : esc_html__('Submit','videopro');
 		$button_link 				= isset($atts['button_url']) ? $atts['button_url'] : '';
 		$target 	= isset($atts['button_target']) && $atts['button_target'] != ''  ? 'target="'.$atts['button_target'].'"' : '';
 		$button_background_color	 	= isset($atts['button_background_color']) ? $atts['button_background_color'] : '';
@@ -85,12 +85,12 @@ add_action( 'after_setup_theme', 'reg_ct_promobox' );
 function reg_ct_promobox(){
     if(function_exists('vc_map')){
     vc_map( 	array(
-			   "name" => esc_html__("VideoPro Promobox",'17jbh'),
+			   "name" => esc_html__("VideoPro Promobox",'videopro'),
 			   "base" => "c_promobox",
 			   "class" => "",
 			   "icon" => "icon-promobox",
 			   "controls" => "full",
-			   "category" => esc_html__('17jbh', '17jbh'),
+			   "category" => esc_html__('VideoPro', 'videopro'),
 			   "params" => 	array(
 					array(
 						"admin_label" => true,
@@ -119,7 +119,7 @@ function reg_ct_promobox(){
 						"param_name" => false,
 						"param_name" => "button_title",
 						"value" => "",
-						"description" => esc_html__('title of the box', '17jbh' ),
+						"description" => esc_html__('title of the box', 'videopro' ),
 					),
 					array(
 						"admin_label" => true,
@@ -128,25 +128,25 @@ function reg_ct_promobox(){
 						"param_name" => false,
 						"param_name" => "button_url",
 						"value" => "",
-						"description" => esc_html__('URL of the button', '17jbh' ),
+						"description" => esc_html__('URL of the button', 'videopro' ),
 					),
 					array(
 						"admin_label" => true,
 					   "type" => "colorpicker",
 					   "class" => "",
-					   "heading" => esc_html__("Button Text Color", '17jbh'),
+					   "heading" => esc_html__("Button Text Color", 'videopro'),
 					   "param_name" => "button_text_color",
 					   "value" => '',
-					   "description" => esc_html__('RGB - hexa color of button\'s text', '17jbh'),
+					   "description" => esc_html__('RGB - hexa color of button\'s text', 'videopro'),
 					),
 					array(
 						"admin_label" => true,
 					   "type" => "colorpicker",
 					   "class" => "",
-					   "heading" => esc_html__("Button Background Color", '17jbh'),
+					   "heading" => esc_html__("Button Background Color", 'videopro'),
 					   "param_name" => "button_background_color",
 					   "value" => '',
-					   "description" => esc_html__('RGB - hexa color of button\'s background', '17jbh'),
+					   "description" => esc_html__('RGB - hexa color of button\'s background', 'videopro'),
 					),
 					array(
 						"admin_label" => true,

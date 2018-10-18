@@ -29,6 +29,7 @@ jQuery(document).ready(function($){
 	$(document).on('click', ".swarmify_add_video",open_video_window)
     $('.swarmify_add_video').click(open_video_window);
     function open_video_window() {
+        var button = $(this);
         if (this.window === undefined) {
             this.window = wp.media({
                     title: 'Insert a video',
@@ -40,7 +41,9 @@ jQuery(document).ready(function($){
             var self = this;
             this.window.on('select', function() {
                     var video = self.window.state().get('selection').first().toJSON();
-                    $('.swarmify_url').val(video.url).change();
+                    var div_parent = button.parent().parent().find('.swarmify_url');
+                    div_parent.val(video.url);
+                    update_swarmify_video(div_parent);
                 });
         }
 
@@ -49,9 +52,29 @@ jQuery(document).ready(function($){
     }
 
 
+
+    function update_swarmify_video(main){
+        var div_id = main.prev().parent().attr('id');
+        var title = $('#'+div_id+'_title').find('.swarmify_title');
+        title.trigger('keyup');
+    }
+
+
+    $(document).on('click', ".swarmify-lightbox-button",function(){
+        update_swarmify_video($(this));
+        $.fancybox.close();
+    });
+
+    $(document).on('click', ".swarmify-lightbox-button-img",function(){
+        update_swarmify_video($(this));
+        $.fancybox.close();
+    });
+
+
 	$(document).on('click', ".swarmify_add_image",open_image_window)
     $('.swarmify_add_image').click(open_image_window);
     function open_image_window() {
+        var button = $(this);
         if (this.window === undefined) {
             this.window = wp.media({
                     title: 'Insert an image',
@@ -63,7 +86,10 @@ jQuery(document).ready(function($){
             var self = this;
             this.window.on('select', function() {
                     var video = self.window.state().get('selection').first().toJSON();
-                    $('.swarmify_poster').val(video.url).change();
+                    var div_parent = button.parent().parent().find('.swarmify_poster');
+                    var div_parent2 = button.parent().parent().find('.swarmify_url');;
+                    div_parent.val(video.url);
+                    update_swarmify_video(div_parent2);
                 });
         }
 
@@ -154,7 +180,7 @@ jQuery(document).ready(function($){
         smartvideo = smartvideo.replace(/ +(?= )/g,'');
         smartvideo = smartvideo.replace(' ]',']');
         wp.media.editor.insert(smartvideo);
-        clear_form_elements('swarmify-modal-content')
+        clear_form_elements('swarmify-modal-content');
         parent.$.fancybox.close();
     });
 
@@ -175,14 +201,14 @@ jQuery(document).ready(function($){
       });
     }
 
-    $('.swarmify_add_youtube').click(function(){
-        $('#video_url_fancybox .yt').show();
-        $('#video_url_fancybox .other').hide();
+    $(document).on('click', ".swarmify_add_youtube",function(){
+        $('.video_url_fancybox .yt').show();
+        $('.video_url_fancybox .other').hide();
     });
 
-    $('.swarmify_add_source').click(function(){
-        $('#video_url_fancybox .yt').hide();
-        $('#video_url_fancybox .other').show();
+    $(document).on('click', ".swarmify_add_source",function(){
+        $('.video_url_fancybox .yt').hide();
+        $('.video_url_fancybox .other').show();
     });
 
 });

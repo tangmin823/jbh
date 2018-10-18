@@ -16,7 +16,7 @@
 				<button data-fancybox data-src="#video_url_fancybox" class="swarmify_add_source button">Add video from another source</button>
 				
 				<!-- Fancybox URL -->
-				<div id="video_url_fancybox" style="display: none;">
+				<div class="video_url_fancybox" id="video_url_fancybox" style="display: none;">
 					<p class="yt" style="display: none;">Head to YouTube, view your video, click "Share", click "Copy", and paste the URL here:</p>
 					<p class="other" style="display: none;">To add a video from another source (like Amazon S3, Google Drive, Dropbox, etc.), paste the URL ending in ".mp4" here:</p>
 					<input class="swarmify_url widefat" id="swarmify_url" placeholder="Video URL" type="text"/>

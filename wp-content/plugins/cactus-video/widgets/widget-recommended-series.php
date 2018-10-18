@@ -3,10 +3,10 @@ class VideoPro_Recommended_Series extends WP_Widget {
 	public function __construct() {
 		$widget_ops = array(
 			'classname' => 'videopro_widget_recommended_series',
-			'description' => esc_html__( 'A list of Video Series.','17jbh' ),
+			'description' => esc_html__( 'A list of Video Series.','videopro' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'VideoPro_Recommended_Series', esc_html__( 'VideoPro - Recommended Series','17jbh' ), $widget_ops );
+		parent::__construct( 'VideoPro_Recommended_Series', esc_html__( 'VideoPro - Recommended Series','videopro' ), $widget_ops );
 	}
 
 	/**
@@ -20,7 +20,7 @@ class VideoPro_Recommended_Series extends WP_Widget {
 	 * @param array $instance Settings for the current Categories widget instance.
 	 */
 	public function widget( $args, $instance ) {
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? esc_html__( 'Recommended Series','17jbh' ) : $instance['title'], $instance, $this->id_base );
+		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? esc_html__( 'Recommended Series','videopro' ) : $instance['title'], $instance, $this->id_base );
 
 		$layout = empty($instance['layout']) ? '' : $instance['layout'];
 		$limit = isset($instance['limit']) ? intval($instance['limit']) : 5;
@@ -153,7 +153,7 @@ class VideoPro_Recommended_Series extends WP_Widget {
 										<a href="<?php echo esc_url($cat_url);?>" title="<?php echo esc_attr($term->name);?>"><?php echo esc_html($term->name);?></a>
 									</h3>
 									<div class="posted-on metadata-font">
-										<a href="<?php echo esc_url($cat_url);?>" class="author cactus-info font-size-1"><span><?php echo esc_html($term->count);?> <?php echo esc_html__('Episodes','17jbh');?></span></a>
+										<a href="<?php echo esc_url($cat_url);?>" class="author cactus-info font-size-1"><span><?php echo esc_html($term->count);?> <?php echo esc_html__('Episodes','videopro');?></span></a>
 										<div class="date-time cactus-info font-size-1"><?php 
 										
 										echo date_i18n(get_option('date_format'), strtotime($seri->post_modified));
@@ -212,20 +212,20 @@ class VideoPro_Recommended_Series extends WP_Widget {
 		$list = isset($instance['list']) ? $instance['list'] : '';
 		$order = isset($instance['order']) ? $instance['order'] : '';
 		?>
-		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e( 'Title:','17jbh' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e( 'Title:','videopro' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>
-		<p><label for="<?php echo $this->get_field_id('list'); ?>"><?php esc_html_e( 'Video Series slugs/ids:','17jbh' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id('list'); ?>"><?php esc_html_e( 'Video Series slugs/ids:','videopro' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('list'); ?>" name="<?php echo $this->get_field_name('list'); ?>" type="text" value="<?php echo esc_attr( $list ); ?>" />
-		<span class="desc" style="font-style:italic;color:#999"><?php echo esc_html__('List of video series, separated by a comma','17jbh');?></span>
+		<span class="desc" style="font-style:italic;color:#999"><?php echo esc_html__('List of video series, separated by a comma','videopro');?></span>
 		</p>
-		<p><label for="<?php echo $this->get_field_id('order'); ?>"><?php esc_html_e( 'List by:','17jbh' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id('order'); ?>"><?php esc_html_e( 'List by:','videopro' ); ?></label>
 			<select name="<?php echo $this->get_field_name('order'); ?>">
-				<option value="updated" <?php if($order == 'updated') echo 'selected="selected"';?>><?php echo esc_html__('Latest Updated', '17jbh');?></option>
-				<option value="viewed" <?php if($order == 'viewed') echo 'selected="selected"';?>><?php echo esc_html__('Most Viewed (all time)', '17jbh');?></option>
+				<option value="updated" <?php if($order == 'updated') echo 'selected="selected"';?>><?php echo esc_html__('Latest Updated', 'videopro');?></option>
+				<option value="viewed" <?php if($order == 'viewed') echo 'selected="selected"';?>><?php echo esc_html__('Most Viewed (all time)', 'videopro');?></option>
 			</select>
-			<span class="desc" style="font-style:italic;color:#999"><?php echo esc_html__('How to order Video Series','17jbh');?></span>
+			<span class="desc" style="font-style:italic;color:#999"><?php echo esc_html__('How to order Video Series','videopro');?></span>
 		</p>
-		<p><label for="<?php echo $this->get_field_id('limit'); ?>"><?php esc_html_e( 'Count:','17jbh' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id('limit'); ?>"><?php esc_html_e( 'Count:','videopro' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('limit'); ?>" name="<?php echo $this->get_field_name('limit'); ?>" type="text" value="<?php echo esc_attr( $limit ); ?>" /></p>
 		<?php
 	}

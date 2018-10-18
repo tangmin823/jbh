@@ -79,12 +79,12 @@ add_action( 'after_setup_theme', 'reg_videopro_ctbox' );
 function reg_videopro_ctbox(){
     if(function_exists('vc_map')){
 	vc_map(array(
-		   "name" => esc_html__("Content Box",'17jbh'),
+		   "name" => esc_html__("Content Box",'videopro'),
 		   "base" => "c_contentbox",
 		   "class" => "",
 		   "icon" => "icon-contentbox",
 		   "controls" => "full",
-		   "category" => esc_html__('17jbh', '17jbh'),
+		   "category" => esc_html__('VideoPro', 'videopro'),
 		   "params" => 	array(
 				array(
 					"type" => "attach_image",
@@ -109,8 +109,8 @@ function reg_videopro_ctbox(){
 					 "param_name" => "title_url",
 					 "description" => esc_html__("(optional) enable clickable title", "videopro"),
 					 "value" => array(
-					 			esc_html__('No', '17jbh') => '0',
-								esc_html__('Yes', '17jbh') => '1',
+					 			esc_html__('No', 'videopro') => '0',
+								esc_html__('Yes', 'videopro') => '1',
 								),
 					 "std" => '0',
 				),

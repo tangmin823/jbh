@@ -85,6 +85,9 @@ Moves scripts from body to head
 = 1.1.4 =
 Adds widgets for standard WP editor, Beaver Builder, Elementor, and KingComposer
 
+= 1.1.7 =
+Bug fixes
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -98,3 +101,6 @@ You should upgrade if you are experiencing visible delays in the conversions fro
 
 = 1.1.4 =
 You should upgrade if you want more control over video parameters, you are using non-YouTube videos, or you are using Beaver Builder, Elementor, or KingComposer. 
+
+= 1.1.7 =
+All users of 1.1.4 should upgrade.

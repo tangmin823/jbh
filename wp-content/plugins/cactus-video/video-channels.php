@@ -238,7 +238,7 @@ class videopro_channel{
 					<div class="modal-content">
 					  <div class="modal-header">
 						<button type="button" class="close"><i class="fa fa-times"></i></button>
-						<h4 class="modal-title" id="myModalLabel"><?php echo esc_html__('Login Require', '17jbh');?></h4>
+						<h4 class="modal-title" id="myModalLabel"><?php echo esc_html__('Login Require', 'videopro');?></h4>
 					  </div>
 					  <div class="modal-body"><?php echo do_shortcode($popup);?></div>
 					</div>
@@ -251,8 +251,8 @@ class videopro_channel{
 			<?php if(!isset($enable_subscription) || $enable_subscription == 1){ ?>
 			<a href="<?php echo $l_href;?>" <?php if($is_logged) echo 'onclick="cactus_video.subscribe_channel(\'#' . esc_attr($button_id) . '\', \'' . esc_url($subscribe_url) . '\');"';?> class="btn btn-default <?php if($j_subscribe != ''){ echo esc_attr($j_subscribe);}else {echo 'subscribe';}?> font-size-1 metadata-font">
 				<i class="fa fa-circle"></i><i class="fa fa-check"></i>
-				<span class="first-title"><?php esc_html_e('Subscribe','17jbh');?></span>
-				<span class="last-title"><?php esc_html_e('Subscribed','17jbh');?></span>
+				<span class="first-title"><?php esc_html_e('Subscribe','videopro');?></span>
+				<span class="last-title"><?php esc_html_e('Subscribed','videopro');?></span>
 			</a>
 			<input type="hidden"  name="url_ajax" value="<?php echo esc_url(admin_url( 'admin-ajax.php' )); ?>">
 			
@@ -284,7 +284,7 @@ class videopro_channel{
 					$video_query = new WP_Query( $args );
 					$n_video = $video_query->post_count;
 					
-				?><?php echo sprintf(esc_html__('%d videos', '17jbh'), $n_video);
+				?><?php echo sprintf(esc_html__('%d videos', 'videopro'), $n_video);
 				}?>
 			</span>
 		</div>
@@ -316,7 +316,7 @@ class videopro_channel{
             $result['message'] = '';
         } else {
             $result['status'] = 0;
-            $result['message'] = esc_html__('Cheating, huh?!','17jbh');
+            $result['message'] = esc_html__('Cheating, huh?!','videopro');
         }
         
         echo json_encode($result);
@@ -331,7 +331,7 @@ class videopro_channel{
         $nonce = isset($_POST['_v_create_channel_nonce']) ? $_POST['_v_create_channel_nonce'] : '';
         
         $result['status'] = 0;
-        $result['message'] = esc_html__('Cheating, huh?!','17jbh');
+        $result['message'] = esc_html__('Cheating, huh?!','videopro');
                 
         if($nonce && wp_verify_nonce($nonce, 'create-channel')){
             $user_id = get_current_user_id();
@@ -363,7 +363,7 @@ class videopro_channel{
                         
                         if($post_id){
                             $result['status'] = 1;
-                            $result['message'] = esc_html__('Well done!','17jbh');
+                            $result['message'] = esc_html__('Well done!','videopro');
                             $result['redirect'] = get_permalink($post_id);
                             
                             wp_set_post_terms($post_id, array($category), 'channel_cat');
@@ -373,13 +373,13 @@ class videopro_channel{
                         }
                     } else {
                         $result['status'] = 0;
-                        $result['message'] = esc_html__('Cheating, huh?!','17jbh');
+                        $result['message'] = esc_html__('Cheating, huh?!','videopro');
                     }
                     
                     do_action('videopro_user_create_channel_submit', $post_id);
                 } else {
                     $result['status'] = 0;
-                    $result['message'] = esc_html__('You cannot create another channel in 1 minute','17jbh');
+                    $result['message'] = esc_html__('You cannot create another channel in 1 minute','videopro');
                 }
             } else {
                 // do nothing
@@ -493,19 +493,19 @@ class videopro_channel{
 	/* Register ct_channel post type and its custom taxonomies */
 	function register_post_type(){
 		$labels = array(
-			'name'               => esc_html__('Channel', '17jbh'),
-			'singular_name'      => esc_html__('Channel', '17jbh'),
-			'add_new'            => esc_html__('Add New Channel', '17jbh'),
-			'add_new_item'       => esc_html__('Add New Channel', '17jbh'),
-			'edit_item'          => esc_html__('Edit Channel', '17jbh'),
-			'new_item'           => esc_html__('New Channel', '17jbh'),
-			'all_items'          => esc_html__('All Channels', '17jbh'),
-			'view_item'          => esc_html__('View Channel', '17jbh'),
-			'search_items'       => esc_html__('Search Channel', '17jbh'),
-			'not_found'          => esc_html__('No Channel found', '17jbh'),
-			'not_found_in_trash' => esc_html__('No Channel found in Trash', '17jbh'),
+			'name'               => esc_html__('Channel', 'videopro'),
+			'singular_name'      => esc_html__('Channel', 'videopro'),
+			'add_new'            => esc_html__('Add New Channel', 'videopro'),
+			'add_new_item'       => esc_html__('Add New Channel', 'videopro'),
+			'edit_item'          => esc_html__('Edit Channel', 'videopro'),
+			'new_item'           => esc_html__('New Channel', 'videopro'),
+			'all_items'          => esc_html__('All Channels', 'videopro'),
+			'view_item'          => esc_html__('View Channel', 'videopro'),
+			'search_items'       => esc_html__('Search Channel', 'videopro'),
+			'not_found'          => esc_html__('No Channel found', 'videopro'),
+			'not_found_in_trash' => esc_html__('No Channel found in Trash', 'videopro'),
 			'parent_item_colon'  => '',
-			'menu_name'          => esc_html__('Video Channel', '17jbh'),
+			'menu_name'          => esc_html__('Video Channel', 'videopro'),
 		  );
 		$slug_cn =  $this->get_option('channel-slug');
 		if(is_numeric($slug_cn)){ 
@@ -538,21 +538,21 @@ class videopro_channel{
         
         $labels = array(
             'name'                       => 'Categories',
-			'singular_name'              => esc_html__('Category','17jbh'),
-            'search_items'               => esc_html__( 'Search Categories', '17jbh' ),
-            'popular_items'              => esc_html__( 'Popular Categories', '17jbh' ),
-            'all_items'                  => esc_html__( 'All Categories', '17jbh' ),
+			'singular_name'              => esc_html__('Category','videopro'),
+            'search_items'               => esc_html__( 'Search Categories', 'videopro' ),
+            'popular_items'              => esc_html__( 'Popular Categories', 'videopro' ),
+            'all_items'                  => esc_html__( 'All Categories', 'videopro' ),
             'parent_item'                => null,
             'parent_item_colon'          => null,
-            'edit_item'                  => esc_html__( 'Edit Category', '17jbh' ),
-            'update_item'                => esc_html__( 'Update Category', '17jbh' ),
-            'add_new_item'               => esc_html__( 'Add New Category', '17jbh' ),
-            'new_item_name'              => esc_html__( 'New Category Name', '17jbh' ),
-            'separate_items_with_commas' => esc_html__( 'Separate categories with commas', '17jbh' ),
-            'add_or_remove_items'        => esc_html__( 'Add or remove categories', '17jbh' ),
-            'choose_from_most_used'      => esc_html__( 'Choose from the most used categories', '17jbh' ),
-            'not_found'                  => esc_html__( 'No categories found.', '17jbh' ),
-            'menu_name'                  => esc_html__( 'Categories', '17jbh' )
+            'edit_item'                  => esc_html__( 'Edit Category', 'videopro' ),
+            'update_item'                => esc_html__( 'Update Category', 'videopro' ),
+            'add_new_item'               => esc_html__( 'Add New Category', 'videopro' ),
+            'new_item_name'              => esc_html__( 'New Category Name', 'videopro' ),
+            'separate_items_with_commas' => esc_html__( 'Separate categories with commas', 'videopro' ),
+            'add_or_remove_items'        => esc_html__( 'Add or remove categories', 'videopro' ),
+            'choose_from_most_used'      => esc_html__( 'Choose from the most used categories', 'videopro' ),
+            'not_found'                  => esc_html__( 'No categories found.', 'videopro' ),
+            'menu_name'                  => esc_html__( 'Categories', 'videopro' )
             );
             
         $slug_cat =  $this->get_option('channel_cat_slug');
@@ -609,38 +609,38 @@ class videopro_channel{
 	}
 	function register_post_type_metadata(array $meta_boxes){
 		$channel_fields = array(	
-				array( 'id' => 'channel_id', 'name' => esc_html__('Channel','17jbh'), 'type' => 'post_select', 'use_ajax' => true, 'query' => array( 'post_type' => 'ct_channel' ), 'multiple' => true,  'desc' => esc_html__('Add this video to a channel', '17jbh'),  'repeatable' => false),
+				array( 'id' => 'channel_id', 'name' => esc_html__('Channel','videopro'), 'type' => 'post_select', 'use_ajax' => true, 'query' => array( 'post_type' => 'ct_channel' ), 'multiple' => true,  'desc' => esc_html__('Add this video to a channel', 'videopro'),  'repeatable' => false),
 		);
 
 		$meta_boxes[] = array(
-			'title' => esc_html__('Video Channel','17jbh'),
+			'title' => esc_html__('Video Channel','videopro'),
 			'pages' => 'post',
 			'fields' => $channel_fields,
 			'priority' => 'high'
 		);	
 		
 		$channel_fields = array(	
-				array( 'id' => 'channel_sidebar', 'name' => esc_html__('Sidebar','17jbh'), 'type' => 'select', 'options' => array('' => esc_html__('Default','17jbh'),'both' => esc_html__('Left & Right','17jbh'), 'left' => esc_html__('Left','17jbh'), 'right' => esc_html__('Right','17jbh'), 'full' => esc_html__('Hidden','17jbh')),  'desc' => esc_html__('Choose sidebar for this channel','17jbh'), 'repeatable' => false, 'multiple' => false),
+				array( 'id' => 'channel_sidebar', 'name' => esc_html__('Sidebar','videopro'), 'type' => 'select', 'options' => array('' => esc_html__('Default','videopro'),'both' => esc_html__('Left & Right','videopro'), 'left' => esc_html__('Left','videopro'), 'right' => esc_html__('Right','videopro'), 'full' => esc_html__('Hidden','videopro')),  'desc' => esc_html__('Choose sidebar for this channel','videopro'), 'repeatable' => false, 'multiple' => false),
                 array(
                     'id' => 'channel_thumb',
-                    'name' => esc_html__('Thumbnail', '17jbh'),
+                    'name' => esc_html__('Thumbnail', 'videopro'),
                     'type' => 'image',
-                    'desc' => esc_html__('Choose a thumbnail for this channel. A square image is recommended', '17jbh')
+                    'desc' => esc_html__('Choose a thumbnail for this channel. A square image is recommended', 'videopro')
                 ),
                 array(
                     'id' => 'is_verified',
-                    'name' => esc_html__('Is Verified Channel?', '17jbh'),
+                    'name' => esc_html__('Is Verified Channel?', 'videopro'),
                     'type' => 'select',
                     'options' => array(
-                            '' => esc_html__('Not verified', '17jbh'),
-                            '1' => esc_html__('Verified', '17jbh')
+                            '' => esc_html__('Not verified', 'videopro'),
+                            '1' => esc_html__('Verified', 'videopro')
                         ),
-                    'desc' => esc_html__('Show a Verified Icon to the channel title', '17jbh')
+                    'desc' => esc_html__('Show a Verified Icon to the channel title', 'videopro')
                 )
             );
 
 		$meta_boxes[] = array(
-			'title' => esc_html__('Channel Settings','17jbh'),
+			'title' => esc_html__('Channel Settings','videopro'),
 			'pages' => 'ct_channel',
 			'fields' => $channel_fields,
 			'priority' => 'high'
@@ -653,7 +653,7 @@ class videopro_channel{
 		//option tree
 		  $meta_box_review = array(
 			'id'        => 'social_acount_box',
-			'title'     => esc_html__('Social Account Settings', '17jbh'),
+			'title'     => esc_html__('Social Account Settings', 'videopro'),
 			'desc'      => '',
 			'pages'     => array( 'ct_channel' ),
 			'context'   => 'normal',
@@ -661,8 +661,8 @@ class videopro_channel{
 			'fields'    => array(
 				array(
 					  'id'          => 'facebook',
-					  'label'       => esc_html__('Facebook', '17jbh'),
-					  'desc'        => esc_html__('Enter link to channel Facebook page', '17jbh' ),
+					  'label'       => esc_html__('Facebook', 'videopro'),
+					  'desc'        => esc_html__('Enter link to channel Facebook page', 'videopro' ),
 					  'std'         => '',
 					  'type'        => 'text',
 					  'class'       => '',
@@ -670,8 +670,8 @@ class videopro_channel{
 				  ),
 				  array(
 					  'id'          => 'twitter',
-					  'label'       => esc_html__('Twitter', '17jbh'),
-					  'desc'        => esc_html__('Enter link to channel Twitter page', '17jbh' ),
+					  'label'       => esc_html__('Twitter', 'videopro'),
+					  'desc'        => esc_html__('Enter link to channel Twitter page', 'videopro' ),
 					  'std'         => '',
 					  'type'        => 'text',
 					  'class'       => '',
@@ -679,8 +679,8 @@ class videopro_channel{
 				  ),
 				  array(
 					  'id'          => 'youtube',
-					  'label'       => esc_html__('YouTube', '17jbh'),
-					  'desc'        => esc_html__('Enter link to channel YouTube page', '17jbh' ),
+					  'label'       => esc_html__('YouTube', 'videopro'),
+					  'desc'        => esc_html__('Enter link to channel YouTube page', 'videopro' ),
 					  'std'         => '',
 					  'type'        => 'text',
 					  'class'       => '',
@@ -688,8 +688,8 @@ class videopro_channel{
 				  ),
 				  array(
 					  'id'          => 'linkedin',
-					  'label'       => esc_html__('LinkedIn', '17jbh'),
-					  'desc'        => esc_html__('Enter link to channel LinkedIn page', '17jbh' ),
+					  'label'       => esc_html__('LinkedIn', 'videopro'),
+					  'desc'        => esc_html__('Enter link to channel LinkedIn page', 'videopro' ),
 					  'std'         => '',
 					  'type'        => 'text',
 					  'class'       => '',
@@ -697,8 +697,8 @@ class videopro_channel{
 				  ),
 				  array(
 					  'id'          => 'tumblr',
-					  'label'       => esc_html__('Tumblr', '17jbh'),
-					  'desc'        => esc_html__('Enter link to channel Tumblr page', '17jbh' ),
+					  'label'       => esc_html__('Tumblr', 'videopro'),
+					  'desc'        => esc_html__('Enter link to channel Tumblr page', 'videopro' ),
 					  'std'         => '',
 					  'type'        => 'text',
 					  'class'       => '',
@@ -706,8 +706,8 @@ class videopro_channel{
 				  ),
 				  array(
 					  'id'          => 'google-plus',
-					  'label'       => esc_html__('Google Plus', '17jbh'),
-					  'desc'        => esc_html__('Enter link to channel Google Plus page', '17jbh' ),
+					  'label'       => esc_html__('Google Plus', 'videopro'),
+					  'desc'        => esc_html__('Enter link to channel Google Plus page', 'videopro' ),
 					  'std'         => '',
 					  'type'        => 'text',
 					  'class'       => '',
@@ -715,8 +715,8 @@ class videopro_channel{
 				  ),
 				  array(
 					  'id'          => 'pinterest',
-					  'label'       => esc_html__('Pinterest', '17jbh'),
-					  'desc'        => esc_html__('Enter link to channel Pinterest page', '17jbh' ),
+					  'label'       => esc_html__('Pinterest', 'videopro'),
+					  'desc'        => esc_html__('Enter link to channel Pinterest page', 'videopro' ),
 					  'std'         => '',
 					  'type'        => 'text',
 					  'class'       => '',
@@ -724,8 +724,8 @@ class videopro_channel{
 				  ),
 				  array(
 					  'id'          => 'flickr',
-					  'label'       => esc_html__('Flickr', '17jbh'),
-					  'desc'        => esc_html__('Enter link to channel Flickr page', '17jbh' ),
+					  'label'       => esc_html__('Flickr', 'videopro'),
+					  'desc'        => esc_html__('Enter link to channel Flickr page', 'videopro' ),
 					  'std'         => '',
 					  'type'        => 'text',
 					  'class'       => '',
@@ -733,8 +733,8 @@ class videopro_channel{
 				  ),
 				  array(
 					  'id'          => 'envelope',
-					  'label'       => esc_html__('Email', '17jbh'),
-					  'desc'        => esc_html__('Enter channel email contact', '17jbh' ),
+					  'label'       => esc_html__('Email', 'videopro'),
+					  'desc'        => esc_html__('Enter channel email contact', 'videopro' ),
 					  'std'         => '',
 					  'type'        => 'text',
 					  'class'       => '',
@@ -742,8 +742,8 @@ class videopro_channel{
 				  ),
 				  array(
 					  'id'          => 'rss',
-					  'label'       => esc_html__('RSS', '17jbh'),
-					  'desc'        => esc_html__('Enter channel site\'s RSS URL', '17jbh' ),
+					  'label'       => esc_html__('RSS', 'videopro'),
+					  'desc'        => esc_html__('Enter channel site\'s RSS URL', 'videopro' ),
 					  'std'         => '',
 					  'type'        => 'text',
 					  'class'       => '',
@@ -752,28 +752,28 @@ class videopro_channel{
 		  	)
 		  );
 		  $meta_box_review['fields'][] = array(
-				'label'       => esc_html__('Custom Social Account', '17jbh'),
+				'label'       => esc_html__('Custom Social Account', 'videopro'),
 				'id'          => 'custom_social_account',
 				'type'        => 'list-item',
 				'class'       => '',
-				'desc'        => esc_html__('Add more social accounts using Font Awesome Icons', '17jbh'),
+				'desc'        => esc_html__('Add more social accounts using Font Awesome Icons', 'videopro'),
 				'choices'     => array(),
 				'settings'    => array(
 					 array(
-						'label'       => esc_html__( 'Font Awesome Icons', '17jbh' ),
+						'label'       => esc_html__( 'Font Awesome Icons', 'videopro' ),
 						'id'          => 'icon_custom_social_account',
 						'type'        => 'text',
-						'desc'        => esc_html__( 'Enter Font Awesome class (ex: fa-instagram)', '17jbh' ),
+						'desc'        => esc_html__( 'Enter Font Awesome class (ex: fa-instagram)', 'videopro' ),
 						'std'         => '',
 						'rows'        => '',
 						'post_type'   => '',
 						'taxonomy'    => ''
 					 ),
 					 array(
-						'label'       => esc_html__( 'URL', '17jbh' ),
+						'label'       => esc_html__( 'URL', 'videopro' ),
 						'id'          => 'url_custom_social_account',
 						'type'        => 'text',
-						'desc'        => esc_html__( 'Enter full link to channel social account (including http)', '17jbh' ),
+						'desc'        => esc_html__( 'Enter full link to channel social account (including http)', 'videopro' ),
 						'std'         => '',
 						'rows'        => '',
 						'post_type'   => '',
@@ -783,8 +783,8 @@ class videopro_channel{
 		  );
 		  $meta_box_review['fields'][] = array(
 					  'id'          => 'open_social_link_new_tab',
-					  'label'       => esc_html__( 'Open Social Link in new tab', '17jbh' ),
-					  'desc'        => esc_html__( 'Open link in new tab?', '17jbh' ),
+					  'label'       => esc_html__( 'Open Social Link in new tab', 'videopro' ),
+					  'desc'        => esc_html__( 'Open link in new tab?', 'videopro' ),
 					  'std'         => 'on',
 					  'type'        => 'on-off',
 					  'class'       => '',
@@ -801,7 +801,7 @@ class videopro_channel{
 	function add_custom_column_quickedit($columns) {
 
 		$new_columns = array(
-			'channel' => esc_html__('Channels', '17jbh')
+			'channel' => esc_html__('Channels', 'videopro')
 		);
 
 		return array_merge($columns, $new_columns);
@@ -820,7 +820,7 @@ class videopro_channel{
 		if($post_type == 'post' && $column_name == 'channel'){
 			?>
 			<fieldset class="inline-edit-col-right post-channels-edit"><div class="inline-edit-col">
-				<span class="title inline-edit-categories-label"><?php echo esc_html__('Channels', '17jbh');?></span>
+				<span class="title inline-edit-categories-label"><?php echo esc_html__('Channels', 'videopro');?></span>
 				<ul class="cat-checklist channel-checklist">
 					<?php
 					

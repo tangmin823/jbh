@@ -78,12 +78,12 @@ add_action( 'after_setup_theme', 'reg_ct_divider' );
 function reg_ct_divider(){
     if(function_exists('vc_map')){
     vc_map( 	array(
-			   "name" => esc_html__("VideoPro Divider",'17jbh'),
+			   "name" => esc_html__("VideoPro Divider",'videopro'),
 			   "base" => "c_divider",
 			   "class" => "",
 			   "icon" => "icon-divider",
 			   "controls" => "full",
-			   "category" => esc_html__('17jbh', '17jbh'),
+			   "category" => esc_html__('VideoPro', 'videopro'),
 			   "params" => 	array(
 					array(
 						"admin_label" => true,
@@ -101,7 +101,7 @@ function reg_ct_divider(){
 						"param_name" => false,
 						"param_name" => "custom_link_text",
 						"value" => "",
-						"description" => esc_html__('Text on the button', '17jbh' ),
+						"description" => esc_html__('Text on the button', 'videopro' ),
 					),
 					array(
 						"admin_label" => true,
@@ -110,7 +110,7 @@ function reg_ct_divider(){
 						"param_name" => false,
 						"param_name" => "custom_link_url",
 						"value" => "",
-						"description" => esc_html__('URL of the button', '17jbh' ),
+						"description" => esc_html__('URL of the button', 'videopro' ),
 					),
 					array(
 						"admin_label" => true,
@@ -127,19 +127,19 @@ function reg_ct_divider(){
 						"admin_label" => true,
 					   "type" => "colorpicker",
 					   "class" => "",
-					   "heading" => esc_html__("Divider color", '17jbh'),
+					   "heading" => esc_html__("Divider color", 'videopro'),
 					   "param_name" => "divider_color",
 					   "value" => '',
-					   "description" => esc_html__('RGB - hexa color of divider', '17jbh'),
+					   "description" => esc_html__('RGB - hexa color of divider', 'videopro'),
 					),
 					array(
 						"admin_label" => true,
 					   "type" => "colorpicker",
 					   "class" => "",
-					   "heading" => esc_html__("Title Color", '17jbh'),
+					   "heading" => esc_html__("Title Color", 'videopro'),
 					   "param_name" => "title_color",
 					   "value" => '',
-					   "description" => esc_html__('RGB - hexa color of title', '17jbh'),
+					   "description" => esc_html__('RGB - hexa color of title', 'videopro'),
 					),
 				)
 			));

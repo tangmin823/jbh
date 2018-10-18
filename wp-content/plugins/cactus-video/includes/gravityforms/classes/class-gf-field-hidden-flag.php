@@ -12,7 +12,7 @@ class GF_Field_VS_NeedRefresh extends GF_Field {
 	public $type = 'vs_needrefresh';
 
 	public function get_form_editor_field_title() {
-		return esc_html__( 'Refresh After Uploaded', '17jbh' );
+		return esc_html__( 'Refresh After Uploaded', 'videopro' );
 	}
     
     /**

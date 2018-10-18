@@ -2278,7 +2278,91 @@ if ( ! function_exists( 'ot_type_social_links' ) ) {
     if ( empty( $field_value ) && apply_filters( 'ot_type_social_links_load_defaults', true, $field_id ) ) {
       
       $field_value = apply_filters( 'ot_type_social_links_defaults', array(
-
+        array(
+          'name'    => __( 'Facebook', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Twitter', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Google+', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'LinkedIn', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Pinterest', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Youtube', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Dribbble', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Github', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Forrst', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Digg', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Delicious', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Tumblr', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Skype', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'SoundCloud', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Vimeo', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'Flickr', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        ),
+        array(
+          'name'    => __( 'VK.com', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+        )
       ), $field_id );
       
     }

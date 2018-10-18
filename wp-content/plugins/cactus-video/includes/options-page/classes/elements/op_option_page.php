@@ -14,7 +14,7 @@ class OP_Option_page extends OP_Option{
 													
 		$html = '';
 		ob_start();
-		wp_dropdown_pages(array('selected'=>$selectedValue,'name'=>$this->name,'show_option_none'=> esc_html__('Select','17jbh'), 'option_none_value'=> ''));
+		wp_dropdown_pages(array('selected'=>$selectedValue,'name'=>$this->name,'show_option_none'=> esc_html__('Select','videopro'), 'option_none_value'=> ''));
 		$html = ob_get_contents();
 		ob_end_clean();
 					

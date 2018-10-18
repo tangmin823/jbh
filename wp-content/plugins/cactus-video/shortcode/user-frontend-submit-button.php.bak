@@ -48,7 +48,7 @@ function parse_v_submit_button($atts, $content){
 				var submit_tags = jQuery('input[name=tag].wpcf7-form-control').val().split(",");
 				if(submit_tags.length > <?php echo $limit_tags ?>){
 					if(jQuery('.limit-tag-alert').length==0){
-						jQuery('.wpcf7-form-control-wrap.tag').append('<span role="alert" class="wpcf7-not-valid-tip limit-tag-alert"><?php echo sprintf(esc_html__('Please enter less than or equal to %s tags', '17jbh'), $limit_tags); ?>.</span>');
+						jQuery('.wpcf7-form-control-wrap.tag').append('<span role="alert" class="wpcf7-not-valid-tip limit-tag-alert"><?php echo sprintf(esc_html__('Please enter less than or equal to %s tags', 'videopro'), $limit_tags); ?>.</span>');
 					}
 					return false;
 				}else{

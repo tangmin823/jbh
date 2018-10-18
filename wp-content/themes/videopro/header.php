@@ -18,12 +18,11 @@
 <!--<![endif]--><head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="baidu-site-verification" content="GjWu6WoMJw" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php //if(ot_get_option('seo_meta_tags', 'on') == 'on' ) videopro_meta_tags();?>
 <?php wp_head(); ?>
 <script src="https://xiongzhang.baidu.com/sdk/c.js?appid=1592187320868885"></script>
-    <?php
+<?php
     if(is_single()||is_page()){
         echo '<script type="application/ld+json">{
         "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
@@ -34,21 +33,28 @@
         "pubDate": "'.get_the_time('Y-m-d\TH:i:s').'"
         }</script>
     ';}
-function fanly_post_imgs(){
-    global $post;
-    $src = '';
-    $content = $post->post_content;
-    preg_match_all('/<img .*?src=[\"|\'](.+?)[\"|\'].*?>/', $content, $strResult, PREG_PATTERN_ORDER);
-    $n = count($strResult[1]);
-    if($n >= 3){
-        $src = $strResult[1][0].'","'.$strResult[1][1].'","'.$strResult[1][2];
-    }elseif($n >= 1){
-        $src = $strResult[1][0];
+    function fanly_post_imgs(){
+        global $post;
+        $src = '';
+        $content = $post->post_content;
+        preg_match_all('/<img .*?src=[\"|\'](.+?)[\"|\'].*?>/', $content, $strResult, PREG_PATTERN_ORDER);
+        $n = count($strResult[1]);
+        if($n >= 3){
+            $src = $strResult[1][0].'","'.$strResult[1][1].'","'.$strResult[1][2];
+        }elseif($n >= 1){
+            $src = $strResult[1][0];
+        }
+        return $src;
     }
-    return $src;
-}
 ?>
 <script src="https://cdn.staticfile.org/clipboard.js/1.5.9/clipboard.min.js"></script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-4823989970365238",
+        enable_page_level_ads: true
+    });
+</script>
 <script>
     (function(){
         var bp = document.createElement('script');

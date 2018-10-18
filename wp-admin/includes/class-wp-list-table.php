@@ -92,7 +92,7 @@ class WP_List_Table {
 	 * @var array
 	 */
 	protected $compat_methods = array( 'set_pagination_args', 'get_views', 'get_bulk_actions', 'bulk_actions',
-		'row_actions', 'months_dropdown', 'view_switcher', 'get_items_per_page', 'pagination',
+		'row_actions', 'months_dropdown', 'view_switcher', 'comments_bubble', 'get_items_per_page', 'pagination',
 		'get_sortable_columns', 'get_column_info', 'get_table_classes', 'display_tablenav', 'extra_tablenav',
 		'single_row_columns' );
 
@@ -602,6 +602,57 @@ class WP_List_Table {
 		?>
 		</div>
 <?php
+	}
+
+	/**
+	 * Display a comment count bubble
+	 *
+	 * @since 3.1.0
+	 *
+	 * @param int $post_id          The post ID.
+	 * @param int $pending_comments Number of pending comments.
+	 */
+	protected function comments_bubble( $post_id, $pending_comments ) {
+		$approved_comments = get_comments_number();
+
+		$approved_comments_number = number_format_i18n( $approved_comments );
+		$pending_comments_number = number_format_i18n( $pending_comments );
+
+		$approved_only_phrase = sprintf( _n( '%s comment', '%s comments', $approved_comments ), $approved_comments_number );
+		$approved_phrase = sprintf( _n( '%s approved comment', '%s approved comments', $approved_comments ), $approved_comments_number );
+		$pending_phrase = sprintf( _n( '%s pending comment', '%s pending comments', $pending_comments ), $pending_comments_number );
+
+		// No comments at all.
+		if ( ! $approved_comments && ! $pending_comments ) {
+			printf( '<span aria-hidden="true">&#8212;</span><span class="screen-reader-text">%s</span>',
+				__( 'No comments' )
+			);
+		// Approved comments have different display depending on some conditions.
+		} elseif ( $approved_comments ) {
+			printf( '<a href="%s" class="post-com-count post-com-count-approved"><span class="comment-count-approved" aria-hidden="true">%s</span><span class="screen-reader-text">%s</span></a>',
+				esc_url( add_query_arg( array( 'p' => $post_id, 'comment_status' => 'approved' ), admin_url( 'edit-comments.php' ) ) ),
+				$approved_comments_number,
+				$pending_comments ? $approved_phrase : $approved_only_phrase
+			);
+		} else {
+			printf( '<span class="post-com-count post-com-count-no-comments"><span class="comment-count comment-count-no-comments" aria-hidden="true">%s</span><span class="screen-reader-text">%s</span></span>',
+				$approved_comments_number,
+				$pending_comments ? __( 'No approved comments' ) : __( 'No comments' )
+			);
+		}
+
+		if ( $pending_comments ) {
+			printf( '<a href="%s" class="post-com-count post-com-count-pending"><span class="comment-count-pending" aria-hidden="true">%s</span><span class="screen-reader-text">%s</span></a>',
+				esc_url( add_query_arg( array( 'p' => $post_id, 'comment_status' => 'moderated' ), admin_url( 'edit-comments.php' ) ) ),
+				$pending_comments_number,
+				$pending_phrase
+			);
+		} else {
+			printf( '<span class="post-com-count post-com-count-pending post-com-count-no-pending"><span class="comment-count comment-count-no-pending" aria-hidden="true">%s</span><span class="screen-reader-text">%s</span></span>',
+				$pending_comments_number,
+				$approved_comments ? __( 'No pending comments' ) : __( 'No comments' )
+			);
+		}
 	}
 
 	/**

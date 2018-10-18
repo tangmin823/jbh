@@ -12,7 +12,7 @@ class GF_Field_VS_Current_Channel extends GF_Field {
 	public $type = 'vs_current_channel';
 
 	public function get_form_editor_field_title() {
-		return esc_html__( 'Current Channel', '17jbh' );
+		return esc_html__( 'Current Channel', 'videopro' );
 	}
     
     /**

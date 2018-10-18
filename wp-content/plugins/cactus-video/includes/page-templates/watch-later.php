@@ -96,7 +96,7 @@ videopro_global_sidebar_style($sidebar_style);
                                                           <div class="navi-channel">
                                                                                                                 
                                                               <div class="navi pull-left">
-                                                                  <a href="<?php echo add_query_arg( array('list' => 'WL'), get_the_permalink() );?>" class="btn btn-default"><i class="fa fa-play-circle"></i> <?php esc_html_e('Play All Videos','17jbh');?></a>
+                                                                  <a href="<?php echo add_query_arg( array('list' => 'WL'), get_the_permalink() );?>" class="btn btn-default"><i class="fa fa-play-circle"></i> <?php esc_html_e('Play All Videos','videopro');?></a>
                                                               </div>
                                                               
                                                           </div>
@@ -123,10 +123,10 @@ videopro_global_sidebar_style($sidebar_style);
                                 </div>
                                 <?php videopro_paging_nav('.cactus-listing-wrap.single-playlist .cactus-sub-wrap','cactus-video/content-video', false, $the_query);
                             } else {
-                                echo wp_kses_post(__('There isn\'t any videos yet!','17jbh'));
+                                echo wp_kses_post(__('There isn\'t any videos yet!','videopro'));
                             }
                         } else {
-                            echo wp_kses_post(__('There isn\'t any videos yet!','17jbh'));
+                            echo wp_kses_post(__('There isn\'t any videos yet!','videopro'));
                         }
 
                         ?>

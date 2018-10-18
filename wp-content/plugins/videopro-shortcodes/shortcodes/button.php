@@ -75,12 +75,12 @@ add_action( 'after_setup_theme', 'reg_ct_button' );
 function reg_ct_button(){
     if(function_exists('vc_map')){
     vc_map( 	array(
-			   "name" => esc_html__("VideoPro Button",'17jbh'),
+			   "name" => esc_html__("VideoPro Button",'videopro'),
 			   "base" => "c_button",
 			   "class" => "",
 			   "icon" => "icon-button",
 			   "controls" => "full",
-			   "category" => esc_html__('17jbh', '17jbh'),
+			   "category" => esc_html__('VideoPro', 'videopro'),
 			   "params" => 	array(
 					array(
 					  "type" => "textfield",
@@ -100,37 +100,37 @@ function reg_ct_button(){
 					   "type" => "colorpicker",
 					   "holder" => "div",
 					   "class" => "",
-					   "heading" => esc_html__("Background Color", '17jbh'),
+					   "heading" => esc_html__("Background Color", 'videopro'),
 					   "param_name" => "bg_color",
 					   "value" => '',
-					   "description" => esc_html__('RGB - Hexa color of background color, default #222222', '17jbh'),
+					   "description" => esc_html__('RGB - Hexa color of background color, default #222222', 'videopro'),
 					),
 					array(
 					   "type" => "colorpicker",
 					   "holder" => "div",
 					   "class" => "",
-					   "heading" => esc_html__("Background Color Hover", '17jbh'),
+					   "heading" => esc_html__("Background Color Hover", 'videopro'),
 					   "param_name" => "bg_color_hover",
 					   "value" => '',
-					   "description" => esc_html__('RGB - Hexa color of background color when button is hovered, default #555555', '17jbh'),
+					   "description" => esc_html__('RGB - Hexa color of background color when button is hovered, default #555555', 'videopro'),
 					),
 					array(
 					   "type" => "colorpicker",
 					   "holder" => "div",
 					   "class" => "",
-					   "heading" => esc_html__("Text Color", '17jbh'),
+					   "heading" => esc_html__("Text Color", 'videopro'),
 					   "param_name" => "text_color",
 					   "value" => '',
-					   "description" => esc_html__('RGB - hexa color of text, default #FFFFFF', '17jbh'),
+					   "description" => esc_html__('RGB - hexa color of text, default #FFFFFF', 'videopro'),
 					),
 					array(
 					   "type" => "colorpicker",
 					   "holder" => "div",
 					   "class" => "",
-					   "heading" => esc_html__("Text Color Hover", '17jbh'),
+					   "heading" => esc_html__("Text Color Hover", 'videopro'),
 					   "param_name" => "text_color_hover",
 					   "value" => '',
-					   "description" => esc_html__('RGB - hexa color of text when button is hovered, default is #FFFFFF', '17jbh'),
+					   "description" => esc_html__('RGB - hexa color of text when button is hovered, default is #FFFFFF', 'videopro'),
 					),
 					array(
 						  "type" => "dropdown",
@@ -141,7 +141,7 @@ function reg_ct_button(){
 							  esc_html__("open URL in current tab", "videopro") => "",
 							  esc_html__("Open link in new windows","videopro")=>'_blank',
 						  ),
-						  "description" => esc_html__('empty or "_blank" (open new tab)', '17jbh'),
+						  "description" => esc_html__('empty or "_blank" (open new tab)', 'videopro'),
 					  ),
 				)
 			));

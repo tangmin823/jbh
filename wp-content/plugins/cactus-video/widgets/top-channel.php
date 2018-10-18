@@ -4,9 +4,9 @@ class VideoPro_Top_Channel extends WP_Widget {
 	function __construct() {
     	$widget_ops = array(
 			'classname'   => 'widget_top_channels',
-			'description' => esc_html__('VideoPro - Top Channels','17jbh')
+			'description' => esc_html__('VideoPro - Top Channels','videopro')
 		);
-    	parent::__construct('top-channel', esc_html__('VideoPro - Top Channels','17jbh'), $widget_ops);
+    	parent::__construct('top-channel', esc_html__('VideoPro - Top Channels','videopro'), $widget_ops);
 	}
 
 
@@ -138,10 +138,10 @@ class VideoPro_Top_Channel extends WP_Widget {
                     if($show_metadata){
 
 					$html .= '<div class="posted-on metadata-font">
-                            <span class="cactus-info font-size-1"><span> ' . sprintf(esc_html__('%d videos', '17jbh'), $n_video) . '</span></span>';
+                            <span class="cactus-info font-size-1"><span> ' . sprintf(esc_html__('%d videos', 'videopro'), $n_video) . '</span></span>';
                             if($total_views != ''){
 
-                            $html .= '<div class="cactus-info font-size-1"><i class="fa fa-eye"></i> ' . sprintf(__('%d views', '17jbh'), $total_views) . '</div>';
+                            $html .= '<div class="cactus-info font-size-1"><i class="fa fa-eye"></i> ' . sprintf(__('%d views', 'videopro'), $total_views) . '</div>';
 
                             }
 
@@ -177,40 +177,40 @@ class VideoPro_Top_Channel extends WP_Widget {
         $show_metadata = isset($instance['metadata']) ? $instance['metadata'] : 1;
         ?>
 
-        <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e('Title:','17jbh'); ?></label>
+        <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e('Title:','videopro'); ?></label>
         <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
         <p>
-          <label for="<?php echo $this->get_field_id('ids'); ?>"><?php esc_html_e('IDs (List of Channels IDs or Slugs, separated by a comma):','17jbh'); ?></label>
+          <label for="<?php echo $this->get_field_id('ids'); ?>"><?php esc_html_e('IDs (List of Channels IDs or Slugs, separated by a comma):','videopro'); ?></label>
           <input class="widefat" id="<?php echo $this->get_field_id('ids'); ?>" name="<?php echo $this->get_field_name('ids'); ?>" type="text" value="<?php echo $ids; ?>" />
         </p>
 
-        <p><label for="<?php echo $this->get_field_id('number'); ?>"><?php esc_html_e('Number of Items:','17jbh'); ?></label>
+        <p><label for="<?php echo $this->get_field_id('number'); ?>"><?php esc_html_e('Number of Items:','videopro'); ?></label>
         <input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
         <p>
         <label for="<?php echo $this->get_field_id("sortby"); ?>">
-        <?php esc_html_e('Order by','17jbh');	 ?>:
+        <?php esc_html_e('Order by','videopro');	 ?>:
         <select id="<?php echo $this->get_field_id("sortby"); ?>" name="<?php echo $this->get_field_name("sortby"); ?>">
-          <option value="view"<?php selected( isset($instance["sortby"]) ? $instance["sortby"] : '', "view" ); ?>><?php esc_html_e('Most Viewed ','17jbh'); ?></option>
-          <option value="rand"<?php selected( isset($instance["sortby"]) ? $instance["sortby"] : '', "rand" ); ?>><?php esc_html_e('Random','17jbh'); ?></option>
+          <option value="view"<?php selected( isset($instance["sortby"]) ? $instance["sortby"] : '', "view" ); ?>><?php esc_html_e('Most Viewed ','videopro'); ?></option>
+          <option value="rand"<?php selected( isset($instance["sortby"]) ? $instance["sortby"] : '', "rand" ); ?>><?php esc_html_e('Random','videopro'); ?></option>
         </select>
        </label>
         </p>
         <p>
         <label for="<?php echo $this->get_field_id("img_display"); ?>">
-        <?php esc_html_e('Images display','17jbh');	 ?>:
+        <?php esc_html_e('Images display','videopro');	 ?>:
         <select id="<?php echo $this->get_field_id("img_display"); ?>" name="<?php echo $this->get_field_name("img_display"); ?>">
-          <option value="avatar"<?php selected( isset($instance["img_display"]) ? $instance["img_display"] : '', "avatar" ); ?>><?php esc_html_e('Show avatar of author','17jbh'); ?></option>
-          <option value="cover"<?php selected( isset($instance["img_display"]) ? $instance["img_display"] : '', "cover" ); ?>><?php esc_html_e('Show cover photo','17jbh'); ?></option>
-          <option value="thumb"<?php selected( isset($instance["img_display"]) ? $instance["img_display"] : '', "thumb" ); ?>><?php esc_html_e('Show thumbnail image','17jbh'); ?></option>
+          <option value="avatar"<?php selected( isset($instance["img_display"]) ? $instance["img_display"] : '', "avatar" ); ?>><?php esc_html_e('Show avatar of author','videopro'); ?></option>
+          <option value="cover"<?php selected( isset($instance["img_display"]) ? $instance["img_display"] : '', "cover" ); ?>><?php esc_html_e('Show cover photo','videopro'); ?></option>
+          <option value="thumb"<?php selected( isset($instance["img_display"]) ? $instance["img_display"] : '', "thumb" ); ?>><?php esc_html_e('Show thumbnail image','videopro'); ?></option>
         </select>
        </label>
         </p>
         <p>
         <label for="<?php echo $this->get_field_id("metadata"); ?>">
-        <?php esc_html_e('Show Channel Information','17jbh');	 ?>:
+        <?php esc_html_e('Show Channel Information','videopro');	 ?>:
         <select id="<?php echo $this->get_field_id("metadata"); ?>" name="<?php echo $this->get_field_name("metadata"); ?>">
-          <option value="1"<?php selected( isset($instance["metadata"]) ? $instance["metadata"] : '', 1 ); ?>><?php esc_html_e('Yes','17jbh'); ?></option>
-          <option value="0"<?php selected( isset($instance["metadata"]) ? $instance["metadata"] : '', 0 ); ?>><?php esc_html_e('No','17jbh'); ?></option>
+          <option value="1"<?php selected( isset($instance["metadata"]) ? $instance["metadata"] : '', 1 ); ?>><?php esc_html_e('Yes','videopro'); ?></option>
+          <option value="0"<?php selected( isset($instance["metadata"]) ? $instance["metadata"] : '', 0 ); ?>><?php esc_html_e('No','videopro'); ?></option>
         </select>
        </label>
         </p>

@@ -162,7 +162,7 @@ function videopro_reg_posts_slider(){
         "base"      => "videopro_slider",
         "class"     => "wpb_vc_videopro_slider_widget",
         "icon"        => "icon-post-slider",
-        "category" => esc_html__('17jbh', '17jbh'),
+        "category" => esc_html__('VideoPro', 'videopro'),
         "params"    => array(
 			array(
 				"admin_label" => true,
@@ -170,7 +170,7 @@ function videopro_reg_posts_slider(){
 				"heading" => esc_html__("Title", "videopro"),
 				"param_name" => "title",
 				"value" => "",
-				"description" => esc_html__('Title of the box', '17jbh')
+				"description" => esc_html__('Title of the box', 'videopro')
 			),
 			array(
 				"admin_label" => true,
@@ -194,14 +194,14 @@ function videopro_reg_posts_slider(){
 				"heading" => esc_html__("Button text", "videopro"),
 				"param_name" => "custom_button",
 				"value" => '',
-				"description" => esc_html__('Text for a custom button. If empty, button is hidden', '17jbh')
+				"description" => esc_html__('Text for a custom button. If empty, button is hidden', 'videopro')
 			),
 			array(
 				"type" => "textfield",
 				"heading" => esc_html__("Button url", "videopro"),
 				"param_name" => "custom_button_url",
 				"value" => '',
-				"description" => esc_html__('URL of the button', '17jbh')
+				"description" => esc_html__('URL of the button', 'videopro')
 			),
 			array(
 				"type" => "dropdown",
@@ -222,7 +222,7 @@ function videopro_reg_posts_slider(){
 								esc_html__("Channel", "videopro") => "ct_channel",
 								esc_html__("Playlist", "videopro") => "ct_playlist"
 							),
-				'group' => esc_html__('Query', '17jbh'),
+				'group' => esc_html__('Query', 'videopro'),
 			),
 			array(
 				"admin_label" => true,
@@ -237,7 +237,7 @@ function videopro_reg_posts_slider(){
 					esc_html__("Title - order by title alphabetically", "videopro") => "title", 
 					esc_html__("Input - order by input ID (only available when using ids parameter)", "videopro") => "input"), 
 				"description" => esc_html__("condition to query items", "videopro"),
-				'group' => esc_html__('Query', '17jbh'),
+				'group' => esc_html__('Query', 'videopro'),
 				'dependency' => array(
 										"element" => "posttype",
 										"value" => array( "post" ),
@@ -251,7 +251,7 @@ function videopro_reg_posts_slider(){
                 "param_name" => "count",
                 "value" => "",
                 "description" => esc_html__('number of items to query', "videopro"),
-				'group' => esc_html__('Query', '17jbh')
+				'group' => esc_html__('Query', 'videopro')
             ),
             array(
 				"type" => "dropdown",
@@ -260,8 +260,8 @@ function videopro_reg_posts_slider(){
 				"value" => array( 
 				esc_html__("Descending", "videopro") => "DESC", 
 				esc_html__("Ascending", "videopro") => "ASC" ),
-				"description" => esc_html__('Designates the ascending or descending order. More at <a href="http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress codex page</a>.', '17jbh'),
-				'group' => esc_html__('Query', '17jbh')
+				"description" => esc_html__('Designates the ascending or descending order. More at <a href="http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress codex page</a>.', 'videopro'),
+				'group' => esc_html__('Query', 'videopro')
 			),
 
 			array(
@@ -270,7 +270,7 @@ function videopro_reg_posts_slider(){
 				"heading" => esc_html__("Categories", "videopro"),
 				"param_name" => "cats",
 				"description" => esc_html__("List of categories (ID) to query items from, separated by a comma. For example: 1, 2, 3", "videopro"),
-				'group' => esc_html__('Query', '17jbh'),
+				'group' => esc_html__('Query', 'videopro'),
 				'dependency' => array(
 										"element" => "posttype",
 										"value" => array( "post" ),
@@ -284,7 +284,7 @@ function videopro_reg_posts_slider(){
 				"param_name" => "tags",
 				"value" => "",
 				"description" => esc_html__('List of tags to query items from, separated by a comma. For example: tag-1, tag-2, tag-3', "videopro"),
-				'group' => esc_html__('Query', '17jbh')
+				'group' => esc_html__('Query', 'videopro')
 			),
 			array(
 				"admin_label" => true,
@@ -293,15 +293,15 @@ function videopro_reg_posts_slider(){
 				"param_name" => "ids",
 				"value" => "",
 				"description" => esc_html__('List of post IDs to query, separated by a comma. If this value is not empty, cats, tags and featured are omitted', "videopro"),
-				'group' => esc_html__('Query', '17jbh')
+				'group' => esc_html__('Query', 'videopro')
 			),
 			array(
 				"type" => "dropdown",
 				"heading" => esc_html__("Post Format", "videopro"),
 				"param_name" => "post_format",
 				"value" => $post_formats,
-				"description" => esc_html__('Select Post Formats', '17jbh'),
-				'group' => esc_html__('Query', '17jbh'),
+				"description" => esc_html__('Select Post Formats', 'videopro'),
+				'group' => esc_html__('Query', 'videopro'),
 				'dependency' => array(
 										"element" => "posttype",
 										"value" => array( "post" ),
@@ -314,8 +314,8 @@ function videopro_reg_posts_slider(){
 				"value" => array( 
 								esc_html__("Yes", "videopro") => "1", 
 								esc_html__("No", "videopro") => "0" ),
-				"description" => esc_html__('Show post published datetime', '17jbh'),
-				'group' => esc_html__('Extra', '17jbh')
+				"description" => esc_html__('Show post published datetime', 'videopro'),
+				'group' => esc_html__('Extra', 'videopro')
 			),
 			array(
 				"type" => "dropdown",
@@ -324,8 +324,8 @@ function videopro_reg_posts_slider(){
 				"value" => array( 
 				esc_html__("Yes", "videopro") => "1", 
 				esc_html__("No", "videopro") => "0" ),
-				"description" => esc_html__('Show post author name', '17jbh'),
-				'group' => esc_html__('Extra', '17jbh')
+				"description" => esc_html__('Show post author name', 'videopro'),
+				'group' => esc_html__('Extra', 'videopro')
 			),
 			array(
 				"type" => "dropdown",
@@ -334,8 +334,8 @@ function videopro_reg_posts_slider(){
 				"value" => array( 
 				esc_html__("Yes", "videopro") => "1", 
 				esc_html__("No", "videopro") => "0" ),
-				"description" => esc_html__('Show post comment count number', '17jbh'),
-				'group' => esc_html__('Extra', '17jbh'),
+				"description" => esc_html__('Show post comment count number', 'videopro'),
+				'group' => esc_html__('Extra', 'videopro'),
 				'dependency' => array(
 										"element" => "posttype",
 										"value" => array( "post" ),
@@ -348,8 +348,8 @@ function videopro_reg_posts_slider(){
 				"value" => array( 
 				esc_html__("Yes", "videopro") => "1", 
 				esc_html__("No", "videopro") => "0" ),
-				"description" => esc_html__('Show post Like button, require WTI Like Post plugin installed', '17jbh'),
-				'group' => esc_html__('Extra', '17jbh'),
+				"description" => esc_html__('Show post Like button, require WTI Like Post plugin installed', 'videopro'),
+				'group' => esc_html__('Extra', 'videopro'),
 				'dependency' => array(
 										"element" => "posttype",
 										"value" => array( "post" ),
@@ -362,8 +362,8 @@ function videopro_reg_posts_slider(){
 				"value" => array( 
 				esc_html__("Yes", "videopro") => "1", 
 				esc_html__("No", "videopro") => "0" ),
-				"description" => esc_html__('Show video duration, if it is Video Post', '17jbh'),
-				'group' => esc_html__('Extra', '17jbh'),
+				"description" => esc_html__('Show video duration, if it is Video Post', 'videopro'),
+				'group' => esc_html__('Extra', 'videopro'),
 				'dependency' => array(
 										"element" => "posttype",
 										"value" => array( "post" ),
@@ -376,8 +376,8 @@ function videopro_reg_posts_slider(){
 				"value" => array( 
 				esc_html__("No", "videopro") => "0", 
 				esc_html__("Yes", "videopro") => "1" ),
-				"description" => esc_html__('Enable lightbox for video player if item is video post.', '17jbh'),
-				'group' => esc_html__('Extra', '17jbh'),
+				"description" => esc_html__('Enable lightbox for video player if item is video post.', 'videopro'),
+				'group' => esc_html__('Extra', 'videopro'),
 				'dependency' => array(
 										"element" => "posttype",
 										"value" => array( "post" ),
@@ -390,8 +390,8 @@ function videopro_reg_posts_slider(){
 				"value" => array( 
 				esc_html__("No", "videopro") => "0", 
 				esc_html__("Yes", "videopro") => "1" ),
-				"description" => esc_html__('Enable Video Player for video items. Applied for layout 5, 6, 7, 8, 9', '17jbh'),
-				'group' => esc_html__('Extra', '17jbh'),
+				"description" => esc_html__('Enable Video Player for video items. Applied for layout 5, 6, 7, 8, 9', 'videopro'),
+				'group' => esc_html__('Extra', 'videopro'),
 				'dependency' => array(
 										"element" => "posttype",
 										"value" => array( "post" ),
@@ -405,8 +405,8 @@ function videopro_reg_posts_slider(){
                 "value" => array(
                 esc_html__("No", "videopro") => "0",
                 esc_html__("Yes", "videopro") => "1"),
-                "description" => esc_html__('Autoplay or not', '17jbh'),
-				'group' => esc_html__('Extra', '17jbh'),
+                "description" => esc_html__('Autoplay or not', 'videopro'),
+				'group' => esc_html__('Extra', 'videopro'),
 				'dependency' => array(
 										"element" => "posttype",
 										"value" => array( "post" ),
